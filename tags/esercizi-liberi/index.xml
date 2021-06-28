@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Nov 2020 12:44:32 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Esercizi liberi lezioni 1-20</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>
-      <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
+      <pubDate>Wed, 25 Nov 2020 12:44:32 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</guid>
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
@@ -26,7 +26,7 @@ function sommAlterna(a) { let sum = 0; for (let i in a) { if (i % 2 == 0) sum +=
     <item>
       <title>Esercizi ricorsione</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
-      <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
+      <pubDate>Tue, 17 Nov 2020 12:16:50 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
@@ -41,7 +41,7 @@ function fattoriale(n) { if (n&amp;lt;=1) return 1; return n * fattoriale(n-1); 
     <item>
       <title>Esercizi liberi lezioni 1-14</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</link>
-      <pubDate>Sun, 27 Jun 2021 00:48:06 +0200</pubDate>
+      <pubDate>Thu, 12 Nov 2020 00:48:06 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</guid>
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.

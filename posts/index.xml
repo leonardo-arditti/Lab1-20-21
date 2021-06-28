@@ -6,13 +6,555 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 27 Nov 2020 17:31:18 +0200</lastBuildDate>
         <atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>04 - Compito in classe</title>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-04-classe/</link>
+            <pubDate>Fri, 27 Nov 2020 17:31:18 +0200</pubDate>
+            
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-04-classe/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 1 Si scriva la funzione ricorsiva sommaPari(a), che prende come parametro un array a di interi e restituisce la somma degli elementi pari.
+Esempi:
+sommaPari([5,9,1,-4,3,6,2,-5]) → 4
+sommaPari([5,9,1,33,7,-3]) → 0
+function sommaPariR(a,i = 0) { if (!(i &amp;lt; a.length)) return 0; return (a[i] % 2 == 0 ?</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="esercizio-1">Esercizio 1</h2>
+<p>Si scriva la funzione ricorsiva sommaPari(a), che prende come parametro un array a di interi e restituisce la somma degli elementi pari.</p>
+<p>Esempi:</p>
+<p>sommaPari([5,9,1,-4,3,6,2,-5]) → 4</p>
+<p>sommaPari([5,9,1,33,7,-3]) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommaPariR</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>))
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">sommaPariR</span>(<span style="color:#a6e22e">a</span>,<span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>);
+}
+</code></pre></div><h2 id="esercizio-2">Esercizio 2</h2>
+<p>Si scriva una funzione map(f,a), dove f è una funzione che prende come argomento un intero e restituisce un valore numerico, e a è un array di interi. map (f,a) restituisce l&rsquo;array il cui i-esimo elemento è il risultato dell&rsquo;applicazione di f all&rsquo;i-esimo elemento di a.</p>
+<p>Esempi:</p>
+<p>map(x =&gt; x*x, [1,2,3,4,5,6]) → [1,4,9,16,25,36]</p>
+<p>map (x =&gt; Math.sqrt(x),[1,2,3,4,5,6]) → [1,1.4142135623730951,1.7320508075688772,2,2.23606797749979,2.449489742783178]</p>
+<p>map(x =&gt; x++, [1,2,3,4,5,6]) → [1,2,3,4,5,6]</p>
+<p>map(x =&gt; ++x, [1,2,3,4,5,6]) → [2,3,4,5,6,7]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span>);
+}
+
+<span style="color:#75715e">// oppure
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>])
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>;
+}
+</code></pre></div><h2 id="esercizio-3">Esercizio 3</h2>
+<p>Si scriva una funzione filter(f,a), dove f è una funzione che prende come argomento un intero e restituisce un valore booleano, e a è un array di interi. filter (f,a) restituisce l&rsquo;array in cui sono presenti solo i valori per cui f restituisce true, nell&rsquo;ordine in cui compaiono in a.</p>
+<p>Esempi:</p>
+<p>filter(x =&gt; x&gt;0, [10,4,-90,21,-1]) → [10,4,21]</p>
+<p>filter(x =&gt; x&lt;0, [10,4,-90,21,-1]) → [-90,-1]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">elem</span> =&gt; <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">elem</span>))
+}
+
+<span style="color:#75715e">// oppure 
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">elem</span>))
+      <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>)
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+}
+</code></pre></div><h2 id="esercizio-4">Esercizio 4</h2>
+<p>Si scriva una funzione similitudine(a,b), con a e b stringhe. La funzione restituisce un oggetto che contiene come chiavi i caratteri che compaiono nelle due stringhe alla stessa posizione, e come valore la posizione corrispondente.</p>
+<p>Esempi:</p>
+<p>similitudine(&ldquo;The Holy Grail&rdquo;, &ldquo;Life of Brian&rdquo;) → {o: 5, a: 11}</p>
+<p>Se lo stesso carattere appare più volte in entrambe le stringhe nella stessa posizione, per esempio “pippo” e “pappa”, va bene restituire una qualunque delle posizioni in cui appare (nell’esempio: {p: 0} o {p: 2} o {p: 3}).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">similitudine</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">i</span>])
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span>;
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><p>Esercizio 5</p>
+<p>Si scriva una funzione tombola(a,b) che prende come argomenti due array di interi positivi (&gt;0) distinti (senza ripetizioni).
+se nessun intero in a compare in b, le funzione restituisce (esattamente) la stringa &ldquo;ritenta&rdquo;;
+se solo un intero in a compare in b, le funzione restituisce (esattamente) la stringa &ldquo;ritenta&rdquo;;
+se due interi in a compaiono in b, la funzione restituisce (esattamente) la stringa &ldquo;ambo&rdquo;;
+se tre interi in a compaiono in b, la funzione restituisce (esattamente) la stringa &ldquo;terno&rdquo;;
+in tutti gli altri casi restituisce (esattamente) la stringa &ldquo;tombola&rdquo;.</p>
+<p>Esempi:</p>
+<p>tombola([1,17,4,90],[4,17,33,89,32]) → &lsquo;ambo&rsquo;</p>
+<p>tombola([1,17,4,90],[6,27,33,89,32]) → &lsquo;ritenta&rsquo;</p>
+<p>tombola([1,17,4,90],[1,27,4,89,32,90,17]) → &lsquo;tombola&rsquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tombola</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">elem</span>))
+      <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+  }
+
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">count</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ritenta&#34;</span>
+
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> 
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ritenta&#34;</span>
+
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> 
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;ambo&#34;</span>
+
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;terno&#34;</span>
+
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> 
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;tombola&#34;</span>
+  }
+}
+</code></pre></div><p>Esercizio 6</p>
+<p>Le somme prefisse di una sequenza di interi x0, x1, &hellip;, xn sono una sequenza di interi y0, y1, &hellip;, yn tali che y0 = x0, y1= x0+x1, y2 = x0+x1+x2, &hellip;, yn = x0+x1+x2+&hellip;+xn.</p>
+<p>Si scriva una funzione sommeP(a) che prende come argomento un&rsquo;array a di interi e restituisce un array contenente le somme prefisse degli elementi di a.</p>
+<p>Esempi:</p>
+<p>sommeP([1,2,3,4,5,6]) → [1,3,6,10,15,21]</p>
+<p>sommeP([0,2,4,4,2,0,-2,-4,-6]) → [0,2,6,10,12,12,10,6,0]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommeP</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newArr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>)
+  <span style="color:#a6e22e">newArr</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">j</span>];
+    }
+
+    <span style="color:#a6e22e">newArr</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>;
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newArr</span>;
+}
+</code></pre></div><h2 id="esercizio-7">Esercizio 7</h2>
+<p>Si scriva una funzione decifra(s,k) con s una stringa cifrata e k un intero positivo. La funzione restituisce la corrispondente stringa decifrata utilizzando k (la chiave). La decriptazione segue le regole del cifrario di Cesare applicate alla codifica UNICODE dei caratteri. In particolare:
+data una lettera c della stringa cifrata questa viene sostituite dalla lettera che si trova k posizioni prima nella codifica UNICODE. Ad esempio, la lettera &lsquo;e&rsquo; viene decrittata nella lettera &lsquo;c&rsquo; quando la chiave k è uguale a 2;
+si assuma che la stringa contenga solo lettere minuscole dell&rsquo;alfabeto (inglese), oppure il carattere spazio;
+il carattere spazio va lasciato inalterato.</p>
+<p>Attenzione: se nel tornare indietro di k posizioni finite fuori dall&rsquo;alfabeto (prima della lettera &lsquo;a&rsquo;) ricominciate dal fondo (dalla ‘z’). Ad esempio la lettera criptata &lsquo;a&rsquo; viene decriptata con &lsquo;y&rsquo; quando k è uguale a 2; &lsquo;a&rsquo; viene decriptata con &lsquo;z&rsquo; se k = 1).
+SUGGERIMENTO: il codice UNICODE per &lsquo;a&rsquo; e' 97. Si usino le funzioni s.charCodeAt() e String.fromCharCode().</p>
+<p>Esempi:</p>
+<p>decifra(&ldquo;hal&rdquo;,25) → &lsquo;ibm&rsquo;</p>
+<p>decifra(&ldquo;hal zzzz&rdquo;,25) → &lsquo;ibm aaaa&rsquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"></code></pre></div><h2 id="esercizio-8">Esercizio 8</h2>
+<p>Si scriva una funzione verificaSomma(a) che prende come parametro un array di interi. La funzione restituisce true se ogni elemento di a (tranne il primo) è pari alla somma degli elementi che lo precedono, e false altrimenti.</p>
+<p>Esempi:</p>
+<p>verificaSomma([1, 2, 6, 10, 32]) → false</p>
+<p>verificaSomma([1, 1, 2, 4, 8]) → true</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">verificaSomma</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">j</span>]
+    }
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sum</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>])
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><h2 id="esercizio-9">Esercizio 9</h2>
+<p>Si scriva una funzione frequenzaC(s) che, preso come parametro una stringa s, restituisca un dizionario le cui chiavi sono i caratteri contenuti in s e i cui valori il numero di volte che quel carattere compare nella stringa (anche il carattere spazio va considerato).</p>
+<p>Esempi:</p>
+<p>frequenzaC(&ldquo;i vitelli dei romani sono belli&rdquo;) → {i: 6,' &lsquo;: 5,v: 1,t: 1,e: 3,l: 4,d: 1,r: 1,o: 3,m:1,a: 1,n: 2,s: 1,b: 1}</p>
+<p>frequenzaC(&ldquo;La forzA sia con te!&quot;) → {L: 1,a: 2,&rsquo; &lsquo;: 4,f: 1,o: 2,r: 1,z: 1,A: 1,s: 1,i:1,c: 1,n: 1,t: 1,e: 1,&rsquo;!': 1}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">frequenzaC</span>(<span style="color:#a6e22e">s</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">freq</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">freq</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">freq</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>) =&gt; <span style="color:#a6e22e">elem</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">char</span>).<span style="color:#a6e22e">length</span>;
+    <span style="color:#a6e22e">obj</span>[<span style="color:#66d9ef">char</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">count</span>;  
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="esercizio-10">Esercizio 10</h2>
+<p>Si scriva una funzione contaDispari(T) che dato un albero binario (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx) restituisca il numero di nodi contenente un valore dispari.</p>
+<p>Esempi:</p>
+<p>contaDispari({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}}) → 5</p>
+<p>contaDispari({val:8,sx:{val: -4, sx: {val: 33}, dx: {val:13, sx: {val: 4, dx:{val:-3}, sx:{val: 81}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 63}}}}) → 7</p>
+<p>contaDispari({val:8,sx:{val: -4, sx: {val: 32}, dx: {val:12, sx: {val: 2, dx:{val:-2}, sx:{val: 812}}}}, dx:{val: 112, dx: {val: 32}, sx: {val:82, sx: {val: 632}}}}) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contaDispari</span>(<span style="color:#a6e22e">T</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaDispari</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaDispari</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>);
+}
+</code></pre></div><h2 id="esercizio-11">Esercizio 11</h2>
+<p>Si scriva una funzione gby(data), che prende come argomento un array di dizionari (oggetti). Ogni dizionario rappresenta la carriera scolastica di uno studente. In particolare, ogni dizionario ha come chiave il nome di un insegnamento, e come valore il voto preso all&rsquo;esame (che si assume essere &gt;= 18).</p>
+<p>Ad esempio, il seguente array contiene le carriere di 3 studenti:
+data = [{lab1:20, fi: 30},{analisi:28, lab1:30},{algebraL:28, ProgAlgo:30}]</p>
+<p>La funzione gby(data) restituisce un dizionario le cui chiavi sono i nomi degli insegnamenti, e come valore la media dei voti presi da tutti gli studenti per quell&rsquo;insegnamento.</p>
+<p>Esempi:</p>
+<p>gby([{lab1:20, fi: 30}, {analisi:28, lab1:30}, {algebraL:28, progAlgo:30, fi: 18}]) → {lab1: 25, fi: 24, analisi: 28, algebraL: 28, progAlgo: 30}</p>
+<p>gby([{lab1:20, fi: 29}, {analisi:28, lab1:27}, {algebraL:28, progAlgo:30, fi: 18}]) → {lab1: 23.5, fi: 23.5, analisi: 28, algebraL: 28, progAlgo: 30}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">gby</span>(<span style="color:#a6e22e">data</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">n_studenti</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">o</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">data</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">o</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+        <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">o</span>[<span style="color:#a6e22e">key</span>];
+        <span style="color:#a6e22e">n_studenti</span>[<span style="color:#a6e22e">key</span>]<span style="color:#f92672">++</span>;
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>[<span style="color:#a6e22e">key</span>]
+        <span style="color:#a6e22e">n_studenti</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+      }
+    }
+  }
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>) {
+    <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>]<span style="color:#f92672">/</span><span style="color:#a6e22e">n_studenti</span>[<span style="color:#a6e22e">key</span>];
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="esercizio-12">Esercizio 12</h2>
+<p>Si scriva una funzione dna(s,a), che prende come argomento una stringa s ed un array di stringhe a, e restituisce un dizionario le cui chiavi sono tutte le stringhe in a. Il valore di una chiave c è l&rsquo;array contenente tutte le posizioni in s da cui iniziano le occorrenze di c (se non ci sono occorrenze di c in s allora l&rsquo;array sarà vuoto).
+Esempi:</p>
+<p>dna(&ldquo;actgcctgaactgactgaa&rdquo;,[&ldquo;act&rdquo;,&ldquo;cgt&rdquo;,&ldquo;aat&rdquo;]) → {act: [0,9,13], cgt: [], aat: []}</p>
+<p>dna(&ldquo;actgcgtgaactgactgaa&rdquo;,[&ldquo;act&rdquo;,&ldquo;cgt&rdquo;,&ldquo;aat&rdquo;]) → {act: [0,9,13], cgt: [4], aat: []}</p>
+<p>dna(&ldquo;actgcgtgaactgactgaa&rdquo;,[&ldquo;act&rdquo;,&ldquo;ctg&rdquo;,&ldquo;tga&rdquo;]) → {act: [0,9,13], ctg: [1,10,14], tga: [6,11,15]}</p>
+<p>PS: Non è detto che le stringhe in a siano sempre di 3 caratteri.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">dna</span>(<span style="color:#a6e22e">s</span>,<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> [];
+  }
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">elem</span>);
+    
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">index</span>);
+
+    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+      <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">elem</span>,<span style="color:#a6e22e">index</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">index</span>);
+    }
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="esercizio-13">Esercizio 13</h2>
+<p>Un ospedale possiede dati genetici di pazienti, dove ogni paziente è rappresentato dal numero di mutazioni su un set di geni. Possiamo rappresentare il paziente come un oggetto dove le chiavi sono i geni e i valori il numero di mutazioni.
+Per esempio paz1 = {&ldquo;TP53&rdquo;:10, &ldquo;BRC1&rdquo;:20, &ldquo;RAS&rdquo;:0,&ldquo;MAPK&rdquo;:3} rappresenta un paziente che presenta mutazioni su 4 geni.
+Un pathway è un insieme di geni. Per esempio pat1 = {&ldquo;TP53&rdquo;:1, &ldquo;RAS&rdquo;:1, &ldquo;BRC1&rdquo;:1} rappresenta un pathway con 3 geni.
+Dato un paziente paz, si definisce il livello di mutazione di paz rispetto a un pathway pat come la media del numero di mutazioni di paz per ogni gene presente in pat. Se un gene presente in pat non esiste nei dati del paziente, si assume che quella mutazione abbia valore 0 per paz.
+Per esempio, per il paz1 dell&rsquo;esempio riportato sopra,il livello di mutazione rispetto a pat1 è 10, risultante dalla media tra 10 (valore di TP53), 0 (valore di RAS) e 20 (valore di BRC1).
+Si scriva una funzione analisiPathway(pazienti, path) che prende due parametri: un array di pazienti e un pathway. La funzione restituisce un array con il livello di mutazione di quel pathway per ogni paziente presente nell&rsquo;array (nell&rsquo;array restituito, il valore in posizione i corrisponde al livello di mutazione per il paziente i).</p>
+<p>Esempi:</p>
+<p>analisiPathway([{&ldquo;TP53&rdquo;:10, &ldquo;BRC1&rdquo;:20, &ldquo;RAS&rdquo;:0,&ldquo;MAPK&rdquo;:3},{&ldquo;TP53&rdquo;:12, &ldquo;MAPK&rdquo;:3}, {&ldquo;TP53&rdquo;:1, &ldquo;RAS&rdquo;:1,&ldquo;BRC1&rdquo;:7},{&ldquo;RASK&rdquo;:1,&ldquo;CLN&rdquo;:1,&ldquo;MAPK&rdquo;:1}],{&ldquo;TP53&rdquo;:1,&ldquo;RAS&rdquo;:1,&ldquo;BRC1&rdquo;:1}) → [10,4,3,0]</p>
+<p>analisiPathway([{&ldquo;TP53&rdquo;:10, &ldquo;BRC1&rdquo;:20, &ldquo;RAS&rdquo;: 60, &ldquo;MAPK&rdquo;:3}, {&ldquo;TP53&rdquo;:6}, {&ldquo;TP53&rdquo;:3,&ldquo;RAS&rdquo;:3,&ldquo;BRC1&rdquo;:7}],{&ldquo;TP53&rdquo;:1,&ldquo;RAS&rdquo;:1,&ldquo;BRC1&rdquo;:1}) → [30,2,4.333333333333333]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">analisiPathway</span>(<span style="color:#a6e22e">pazienti</span>, <span style="color:#a6e22e">path</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">paz</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">pazienti</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">media</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">paz</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">path</span>) {
+        <span style="color:#a6e22e">media</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">paz</span>[<span style="color:#a6e22e">key</span>];
+        <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+      }
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+      <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">media</span><span style="color:#f92672">/</span>Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">path</span>).<span style="color:#a6e22e">length</span>);
+    <span style="color:#66d9ef">else</span>
+      <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">0</span>)
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+}
+</code></pre></div><h2 id="esercizio-14">Esercizio 14</h2>
+<p>Si scriva una funzione bisect(f,a,b), dove a e b sono valori numerici, e f è una funzione monotona, definita e continua nell&rsquo;intervallo [a,b], e tale che f(a)*f(b) &lt; 0. La funzione bisect(f,a,b) restituisce un valore x per cui |f(x)| &lt;= 0,0001 (in altre parole, deve approssimare lo zero di f nell&rsquo;intervallo [a,b] con una tolleranza di al più 0,0001).</p>
+<p>NOTA: dato che bisect(f,a,b) restituisce una approssimazione dello zero di f, non è detto che il valore che trovate sia esattamente uguale a quello riportato negli esempi. Per essere considerata corretta, la vostra soluzione deve riportare un valore che si discosta al più di 0.0001 dallo zero di f in [a,b]).</p>
+<p>Esempi:</p>
+<p>bisect(x=&gt;x**3, -1, 1) → 0</p>
+<p>bisect(x=&gt;x**3-x-2,1,2) → 1.52142333984375</p>
+<p>bisect(x=&gt;x*Math.cos(x),1,4) → 1.570831298828125</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bisect</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">precision</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0001</span>;
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">middle</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span><span style="color:#f92672">+</span><span style="color:#a6e22e">b</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+
+  <span style="color:#66d9ef">if</span> (Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">middle</span>)) <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">precision</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">middle</span>;
+  
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">middle</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">a</span>) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bisect</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">middle</span>)
+  
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bisect</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">middle</span>,<span style="color:#a6e22e">b</span>);
+}
+</code></pre></div><h2 id="esercizio-15">Esercizio 15</h2>
+<p>Diciamo che un nodo di un albero binario è in equilibrio se il suo valore è &gt;= del valore del suo figlio sinistro (se esiste), ed è &lt;= del valore del suo figlio destro (se esiste). Diciamo che un albero binario è in equilibrio se tutti i suoi nodi sono in equilibrio.
+Si scriva una funzione inEquilibrio(T) che dato un albero binario (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx) restituisca true se T è in equilibrio, e false altrimenti.</p>
+<p>Esempi:</p>
+<p>inEquilibrio({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:8}, sx:{val: 2}}}}, dx:{val: 11, dx: {val: 18}, sx: {val:3, sx: {val: 2}}}}) → true</p>
+<p>inEquilibrio({val:8,sx:{val: -4, sx: {val: 33}, dx: {val:13, sx: {val: 4, dx:{val:-3}, sx:{val: 81}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 63}}}}) → false</p>
+<p>inEquilibrio({val:8}) → true</p>
+<p>inEquilibrio({val:8,sx:{val: 8},dx:{val:8}}) → true</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">inEquilibrio</span>(<span style="color:#a6e22e">T</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">inEquilibrio</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">inEquilibrio</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>);
+}
+</code></pre></div><h2 id="esercizio-16">Esercizio 16</h2>
+<p>Si scriva una funzione innestaSottoAlberi(T,sT) che prende come parametri due alberi binari T e sT, (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx).
+La funzione sostituisce nell&rsquo;albero T i sottoalberi &lsquo;secchi&rsquo; con l&rsquo;albero sT. Un sottoalbero è secco se il valore nella radice è &lt; 0. Si assuma che sT non contiene sottoalberi secchi.</p>
+<p>Esempi:</p>
+<p>t={val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9}}}, dx:{val:-3, sx:{val:-8},dx:{val:7}}}</p>
+<p>st={val:1, sx:{val:1}, dx:{val:1}}</p>
+<p>Dopo la chiamata a innestaSottoAlberi(t,st), t contiene {val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9}}}, dx:{val:1, sx:{val:1}, dx:{val:1}}}</p>
+<p>t={val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9}}}, dx:{val:-3, sx:{val:-8},dx:{val:7}}}</p>
+<p>st={val: 0}</p>
+<p>Dopo la chiamata a innestaSottoAlberi(t,st), t contiene {val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9}}}, dx:{val:0}}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>,<span style="color:#a6e22e">sT</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">found_sx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">found_dx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sT</span>.<span style="color:#a6e22e">val</span>;
+    <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sT</span>.<span style="color:#a6e22e">dx</span>;
+    <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sT</span>.<span style="color:#a6e22e">sx</span>;
+    <span style="color:#66d9ef">return</span>;
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">sT</span>)
+    <span style="color:#a6e22e">found_sx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">sT</span>)
+    <span style="color:#a6e22e">found_dx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">found_dx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">found_sx</span>) {
+    <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>);
+    <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>);
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">found_dx</span>)
+    <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+  <span style="color:#66d9ef">else</span>
+    <span style="color:#a6e22e">innestaSottoAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>)
+}
+</code></pre></div><h2 id="esercizio-17">Esercizio 17</h2>
+<p>Si scriva una funzione risolvi(eq) che prende come argomento un&rsquo;equazione di primo grado ax+b=0, rappresentata come oggetto avente due proprietà, a e b. La funzione risolve l&rsquo;equazione, e inserisce il risultato (cioe' il valore dell&rsquo;incognita x) nell&rsquo;oggetto eq, nella proprietà x. Si può assumere che a!=0 sempre.</p>
+<p>La funzione non deve restituire nulla (no return).</p>
+<p>Esempi:</p>
+<p>eq = {a:9,b:18}</p>
+<p>Dopo la chiamata a risolvi(eq), eq contiene {a:9, b:18, x:-2}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">risolvi</span>(<span style="color:#a6e22e">eq</span>) {
+  <span style="color:#75715e">// ax + b = 0 =&gt; x = -b/a
+</span><span style="color:#75715e"></span>
+  <span style="color:#a6e22e">eq</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">eq</span>.<span style="color:#a6e22e">b</span><span style="color:#f92672">/</span><span style="color:#a6e22e">eq</span>.<span style="color:#a6e22e">a</span>; 
+}
+</code></pre></div><h2 id="esercizio-18">Esercizio 18</h2>
+<p>Una biblioteca ha una collezione di libri con titolo, autore e numero di copie disponibili. Un libro è rappresentato mediante un oggetto avente 3 proprietà: titolo, autore, copie. La biblioteca viene rappresentata da un array di libri.</p>
+<p>Si scriva una funzione prestito(biblioteca, s), con biblioteca un array di libri, e s una stringa che rappresenta il titolo di un libro. Se in biblioteca è presente un libro avente titolo s, quel libro viene dato in prestito: il numero di copie di quel libro in biblioteca viene decrementato, e la funzione restituisce true.</p>
+<p>Se il libro non è disponibile (o non esiste in biblioteca, o non ci sono copie disponibili), la funzione restituisce false, e biblioteca non viene modificato.</p>
+<p>Esempi:</p>
+<p>biblioteca = [{titolo:&lsquo;Pride and Prejudice&rsquo;,autore:&lsquo;Jane Austen&rsquo;, copie:10}, {titolo: &lsquo;Eloquent Javascript&rsquo;,autore:&lsquo;Marijn Haverbeke&rsquo;,copie:0},{titolo: &lsquo;The lord of the rings&rsquo;,autore:&lsquo;J. R. R. Tolkien.',copie:6}]</p>
+<p>prestito(biblioteca,&ldquo;The lord of the rings&rdquo;) restituisce true e biblioteca contiene
+[{titolo:&lsquo;Pride and Prejudice&rsquo;,autore:&lsquo;Jane Austin&rsquo;, copie:10},{titolo: &lsquo;Eloquent Javascript&rsquo;,autore:&lsquo;Marijn Haverbeke&rsquo;,copie:0},{titolo: &lsquo;The lord of the rings&rsquo;,autore:&lsquo;J. R. R. Tolkien.',copie:5}]</p>
+<p>biblioteca = [{titolo:&lsquo;Pride and Prejudice&rsquo;,autore:&lsquo;Jane Austen&rsquo;, copie:10}, {titolo: &lsquo;Eloquent Javascript&rsquo;,autore:&lsquo;Marijn Haverbeke&rsquo;,copie:0},{titolo: &lsquo;The lord of the rings&rsquo;,autore:&lsquo;J. R. R. Tolkien.',coppie:6}]</p>
+<p>prestito(biblioteca,&ldquo;Sense and Sensibility&rdquo;) restituisce false e biblioteca non viene modificato.</p>
+<p>biblioteca = [{titolo:&lsquo;Pride and Prejudice&rsquo;,autore:&lsquo;Jane Austen&rsquo;, copie:10}, {titolo: &lsquo;Eloquent Javascript&rsquo;,autore:&lsquo;Marijn Haverbeke&rsquo;,copie:0},{titolo: &lsquo;The lord of the rings&rsquo;,autore:&lsquo;J. R. R. Tolkien.',copie:6}]</p>
+<p>prestito(biblioteca,&lsquo;Eloquent Javascript&rsquo;) restituisce false e biblioteca non viene modificato.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">prestito</span>(<span style="color:#a6e22e">biblioteca</span>,<span style="color:#a6e22e">s</span>) {
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">libro</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">biblioteca</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">libro</span>[<span style="color:#e6db74">&#39;titolo&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">s</span>) {
+      <span style="color:#75715e">// controllo della disponibilità
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">libro</span>[<span style="color:#e6db74">&#39;copie&#39;</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+      <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">libro</span>[<span style="color:#e6db74">&#39;copie&#39;</span>]<span style="color:#f92672">--</span>;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+      }
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+}
+</code></pre></div><h2 id="esercizio-19">Esercizio 19</h2>
+<p>Si scriva una funzione tagliaAlberi(T), che prende come parametro un albero binario T (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx). La funzione taglia i sottoalberi &lsquo;secchi&rsquo;. Un sottoalbero è secco se il valore nella radice del sottoalbero è &lt; 0. Il taglio avviene eliminando il contenuto del nodo secco - le proprietà val, sx e dx (si vedano gli esempi).
+La funzione non deve restituire nulla (no return).</p>
+<p>Esempi:</p>
+<p>t={val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9} } }, dx:{val:-3, sx:{val:-8},dx:{val:7}}}</p>
+<p>Dopo la chiamata a tagliaAlberi(t), t contiene {val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9} } }, dx:{}}</p>
+<p>t={val:-2, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9} } }, dx:{val:-3, sx:{val:-8},dx:{val:7}}}</p>
+<p>Dopo la chiamata a tagliaAlberi(t), t contiene {}</p>
+<p>t={val:20, sx:{val:19, sx:{val:-8}, dx:{val:7, sx:{val:2} } }, dx:{val:3, sx:{val:-8},dx:{val:1}}};</p>
+<p>Dopo la chiamata a tagliaAlberi(t), t contiene {val:20, sx:{val:19, sx:{}, dx:{val:7, sx:{val:2} } }, dx:{val:3, sx:{},dx:{val:1}}}</p>
+<p>PS: Viene eliminato il contenuto, non il nodo: quindi resta un { }.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">found_sx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">found_dx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>;
+    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>;
+    <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span>;
+    <span style="color:#66d9ef">return</span>; 
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>)
+    <span style="color:#a6e22e">found_sx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+  }
+    
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+    <span style="color:#a6e22e">found_dx</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+  }
+    
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">found_sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">found_dx</span>) {
+    <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>)
+    <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">found_sx</span>) {
+    <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>)
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">found_dx</span>) {
+    <span style="color:#a6e22e">tagliaAlberi</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+  }
+}
+</code></pre></div><h2 id="esercizio-20">Esercizio 20</h2>
+<p>Si scriva una funzione sonoPari(f) che prende come parametro una funzione f che, dato come argomento un intero, restituisce un valore numerico. sonoPari(f) restituisce una funzione isp(a) che, preso come argomento un array a di valori numerici, restituisce un array di valori booleani res tale che res[i] è true se f(a[i]) è pari, e false altrimenti.</p>
+<p>Esempi:</p>
+<p>sonoPari(x=&gt;2*x)([1,2,4]) → [true,true,true]</p>
+<p>sonoPari(x=&gt;Math.sqrt(x))([1,2,4]) → [false,false,true]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sonoPari</span>(<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isp</span>(<span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">elem</span>) =&gt; <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">elem</span>) <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>);
+  }
+} 
+</code></pre></div><h2 id="esercizio-21">Esercizio 21</h2>
+<p>Si scriva una funzione sommaF(f) che prende come parametro una funzione f che preso un intero restituisce un valore numerico. sommaF(f) restituisce una funzione che prende come parametro un array di interi, e restituisce la somma dei valori restituiti da f su ogni elemento dell&rsquo;array.</p>
+<p>Esempi:</p>
+<p>sommaF(x=&gt;x*x)([1,2,3,4]) → 30</p>
+<p>sommaF(x=&gt;2*x)([1,2,3,4]) → 20</p>
+<p>sommaF(Math.sqrt)([1,2,3,4]) → 6.146264369941973</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommaF</span>(<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>,<span style="color:#a6e22e">curr</span>) =&gt; <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">curr</span>,<span style="color:#ae81ff">0</span>)
+  }
+}
+
+<span style="color:#75715e">// oppure 
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommaF</span>(<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) 
+      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">elem</span>)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
+  }
+}
+</code></pre></div><h2 id="esercizio-22">Esercizio 22</h2>
+<p>Un anno di dice bisestile se è divisibile per 400, oppure se è divisibile per 4 e non per 100.</p>
+<p>Si scriva una funzione contaBisestile(y1,y2), con y1 e y2 due interi positivi che rappresentano anni, con y1 &lt;= y2, restituisce il numero di anni bisestili nell&rsquo;intervallo [y1, y2].</p>
+<p>Esempio:</p>
+<p>contaBisestile(2020,2020) → 1</p>
+<p>contaBisestile(1904,1908) → 2</p>
+<p>contaBisestile(2049,2051) → 0</p>
+<p>contaBisestile(0,2020) → 491</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contaBisestile</span>(<span style="color:#a6e22e">y1</span>,<span style="color:#a6e22e">y2</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">y2</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+      <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>))
+      <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>;
+}
+</code></pre></div><h2 id="esercizio-23">Esercizio 23</h2>
+<p>In matematica, un numero vampiro è un numero naturale v&gt;0 costituito da un numero pari di cifre n, tale che v = xy, e x e y sono due naturali ognuno aventi n/2 cifre, che non abbiano entrambi zeri finali, e tali che v contenga esattamente tutte le cifre contenute in x e y.
+Ad esempio:
+1260 è un numero vampiro, perché 1260=21 * 60.</p>
+<p>125460 è un numero vampiro perché 125460 = 204 * 615 (o anche perché 125460 = 246*510)</p>
+<p>Si scriva una funzione isVampire(v) che, preso come argomento un valore naturale positivo v, restituisca il valore booleano true se v è un vampire number, e false altrimenti.
+SUGGERIMENTO: si utilizzi il metodo s.slice(i,j) delle stringhe, che, data una stringa s, restituisce la sottostringa di s tra l&rsquo;indice i (incluso) e j (escluso).</p>
+<p>Esempio:</p>
+<p>isVampire(1260) → true</p>
+<p>isVampire(10) → false</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">TO</span> <span style="color:#a6e22e">ADD</span>
+</code></pre></div><h2 id="esercizio-24">Esercizio 24</h2>
+<p>Si consideri il problema di dover prioritizzare l&rsquo;ordine di atterraggio degli aerei sulla base del loro carburante residuo.
+Un singolo aereo è rappresentato dalla proprietà (coppia chiave-valore) {iata:fuel}, dove iata è una stringa che rappresenta il codice univoco del volo e fuel è un valore numerico &gt;= 0 che rappresenta il carburante residuo.</p>
+<p>Si scriva la funzione torreDiControllo(aerei), dove aerei è un array (non-ordinato) di aerei. La funzione deve ordinare gli elementi dell&rsquo;array aerei in ordine crescente di fuel (ovvero dal valore più piccolo al più grande). Si noti che il riordinamento deve necessariamente essere effettuato sul solo array aerei, senza l&rsquo;utilizzo di ulteriori array di appoggio.
+La funzione non deve restituire nulla (no return).</p>
+<p>Esempi:</p>
+<p>aerei = [{AZ100: 56},{LH100: 0.9},{FR99: 12},{AZ800: 7}]
+dopo la chiamata a torreDiControllo(aerei), aerei contiene [{LH100: 0.9},{AZ800: 7},{FR99: 12},{AZ100: 56}]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">torreDiControllo</span>(<span style="color:#a6e22e">aerei</span>) {
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">a1</span>,<span style="color:#a6e22e">a2</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">carb_a1</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">a1</span>)[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">carb_a2</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">a2</span>)[<span style="color:#ae81ff">0</span>];
+    
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">carb_a1</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">carb_a2</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">carb_a2</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">carb_a1</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#75715e">// oppure semplicemente carb_a1 - carb_a2
+</span><span style="color:#75715e"></span>  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">aerei</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">compare</span>)
+}
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Esercizi liberi lezioni 1-20</title>
             <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>
-            <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
+            <pubDate>Wed, 25 Nov 2020 12:44:32 +0200</pubDate>
             
             <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
@@ -436,7 +978,7 @@ Esempi:</p>
         <item>
             <title>Esercizi ricorsione</title>
             <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
-            <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
+            <pubDate>Tue, 17 Nov 2020 12:16:50 +0200</pubDate>
             
             <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
@@ -605,9 +1147,93 @@ Esempi:</p>
         </item>
         
         <item>
+            <title>03 - Compito in classe</title>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-03-classe/</link>
+            <pubDate>Fri, 13 Nov 2020 17:31:18 +0200</pubDate>
+            
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-03-classe/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 03.1 - Array Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.
+function calcola(a) { let sum = 0; for (let i in a) sum += a[i]**2; return sum; } // calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733  // calcola([0,0,12,-66,9]) → 4581  // calcola([1,2,3,4,5,6]) → 91 Esercizio 03.</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="esercizio-031---array">Esercizio 03.1 - Array</h2>
+<p>Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calcola</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
+}
+
+<span style="color:#75715e">// calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// calcola([0,0,12,-66,9]) → 4581
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// calcola([1,2,3,4,5,6]) → 91
+</span></code></pre></div><h2 id="esercizio-032---elimina-elementi">Esercizio 03.2 - Elimina elementi</h2>
+<p>Si scriva una funzione cancellaConSoglia(a,n) che dato un array di interi a e un intero n, rimuova da a tutti gli elementi ≤ (minori di o uguali a) n e restituisca l&rsquo;array risultante.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cancellaConSoglia</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>) =&gt; (<span style="color:#a6e22e">elem</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">n</span>));
+}
+
+<span style="color:#75715e">// cancellaConSoglia([-21,32,0,99,101,101,2,76,22,1349],101) → [1349]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// cancellaConSoglia([0,0,12,-66,9],0) → [12,9]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// cancellaConSoglia([1,2,3,4,5,6],3) → [4,5,6]
+</span></code></pre></div><h2 id="esercizio-033---band-of-brothers">Esercizio 03.3 - Band of Brothers</h2>
+<p>Si scriva una funzione contaCoppia(T,val1,val2) che dato un albero binario T (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx) e due numeri val1 e val2, restituisca il numero di coppie di nodi fratelli tali che il fratello destro abbia val uguale a val1 e quello sinistro abbia val uguale a val2. Due nodi sono fratelli se sono figli dello stesso nodo padre. Si faccia attenzione a conteggiare le coppie che soddisfano la condizione, non il numero dei nodi (che sarebbe ovviamente il doppio rispetto al numero di coppie).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>))
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">val2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">val1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
+  <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
+}
+
+<span style="color:#75715e">// contaCoppia({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}},12,3) → 1
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// contaCoppia({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}},3,8) → 2
+</span></code></pre></div><h2 id="esercizio-034---blue-tuesday">Esercizio 03.4 - Blue Tuesday</h2>
+<p>Si scriva una funzione rudyGiuliani(trump,biden,votiLegali) che dati 3 insiemi (trump, biden e votiLegali) rappresentati come oggetti, restituisca (con la stessa rappresentazione) l&rsquo;insieme contenente sia gli elementi di votiLegali presenti in trump ma non appartenenti a biden che gli elementi di votiLegali presenti in biden ma non appartenenti a trump.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rudyGiuliani</span>(<span style="color:#a6e22e">trump</span>,<span style="color:#a6e22e">biden</span>,<span style="color:#a6e22e">votiLegali</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#75715e">// elementi di votiLegali presenti in trump ma non appartenenti a biden
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">votiLegali</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">trump</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">biden</span>))
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">votiLegali</span>[<span style="color:#a6e22e">elem</span>];
+  }
+
+  <span style="color:#75715e">// elementi di votiLegali presenti in biden ma non appartenenti a trump
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">votiLegali</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">biden</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">trump</span>))
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">votiLegali</span>[<span style="color:#a6e22e">elem</span>];
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+
+<span style="color:#a6e22e">trump</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lacalifornia&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;frittole&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;freddana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;bugliano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
+<span style="color:#a6e22e">biden</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;calafuria&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;pappiana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lacalifornia&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;massachuccoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lajatico&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
+<span style="color:#a6e22e">votiLegali</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;calafuria&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;pappiana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;massachuccoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;larderello&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lajatico&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;frittole&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;freddana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;bugliano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;orentano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
+<span style="color:#a6e22e">rudyGiuliani</span>(<span style="color:#a6e22e">trump</span>,<span style="color:#a6e22e">biden</span>,<span style="color:#a6e22e">votiLegali</span>) <span style="color:#75715e">// → {&#39;calafuria&#39;:1, &#39;pappiana&#39;:1, &#39;massachuccoli&#39;:1, &#39;lajatico&#39;:1, &#39;frittole&#39;:1, &#39;freddana&#39;:1, &#39;bugliano&#39;:1}
+</span></code></pre></div>]]></content>
+        </item>
+        
+        <item>
             <title>Esercizi liberi lezioni 1-14</title>
             <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</link>
-            <pubDate>Sun, 27 Jun 2021 00:48:06 +0200</pubDate>
+            <pubDate>Thu, 12 Nov 2020 00:48:06 +0200</pubDate>
             
             <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
@@ -999,93 +1625,9 @@ Esempi:</p>
         </item>
         
         <item>
-            <title>01 - Compito in classe</title>
-            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-01-classe/</link>
-            <pubDate>Sat, 26 Jun 2021 17:31:18 +0200</pubDate>
-            
-            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-01-classe/</guid>
-            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
-Si ricorda che dello stesso esercizio possono esistere più varianti.
- Esercizio 03.1 - Array Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.
-function calcola(a) { let sum = 0; for (let i in a) sum += a[i]**2; return sum; } // calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733  // calcola([0,0,12,-66,9]) → 4581  // calcola([1,2,3,4,5,6]) → 91 Esercizio 03.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
-<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
-<hr>
-<h2 id="esercizio-031---array">Esercizio 03.1 - Array</h2>
-<p>Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calcola</span>(<span style="color:#a6e22e">a</span>) {
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>)
-    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>;
-
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
-}
-
-<span style="color:#75715e">// calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// calcola([0,0,12,-66,9]) → 4581
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// calcola([1,2,3,4,5,6]) → 91
-</span></code></pre></div><h2 id="esercizio-032---elimina-elementi">Esercizio 03.2 - Elimina elementi</h2>
-<p>Si scriva una funzione cancellaConSoglia(a,n) che dato un array di interi a e un intero n, rimuova da a tutti gli elementi ≤ (minori di o uguali a) n e restituisca l&rsquo;array risultante.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cancellaConSoglia</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">n</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>) =&gt; (<span style="color:#a6e22e">elem</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">n</span>));
-}
-
-<span style="color:#75715e">// cancellaConSoglia([-21,32,0,99,101,101,2,76,22,1349],101) → [1349]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// cancellaConSoglia([0,0,12,-66,9],0) → [12,9]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// cancellaConSoglia([1,2,3,4,5,6],3) → [4,5,6]
-</span></code></pre></div><h2 id="esercizio-033---band-of-brothers">Esercizio 03.3 - Band of Brothers</h2>
-<p>Si scriva una funzione contaCoppia(T,val1,val2) che dato un albero binario T (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx) e due numeri val1 e val2, restituisca il numero di coppie di nodi fratelli tali che il fratello destro abbia val uguale a val1 e quello sinistro abbia val uguale a val2. Due nodi sono fratelli se sono figli dello stesso nodo padre. Si faccia attenzione a conteggiare le coppie che soddisfano la condizione, non il numero dei nodi (che sarebbe ovviamente il doppio rispetto al numero di coppie).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>))
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">val2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">val1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
-
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
-  <span style="color:#66d9ef">else</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
-}
-
-<span style="color:#75715e">// contaCoppia({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}},12,3) → 1
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// contaCoppia({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}},3,8) → 2
-</span></code></pre></div><h2 id="esercizio-034---blue-tuesday">Esercizio 03.4 - Blue Tuesday</h2>
-<p>Si scriva una funzione rudyGiuliani(trump,biden,votiLegali) che dati 3 insiemi (trump, biden e votiLegali) rappresentati come oggetti, restituisca (con la stessa rappresentazione) l&rsquo;insieme contenente sia gli elementi di votiLegali presenti in trump ma non appartenenti a biden che gli elementi di votiLegali presenti in biden ma non appartenenti a trump.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rudyGiuliani</span>(<span style="color:#a6e22e">trump</span>,<span style="color:#a6e22e">biden</span>,<span style="color:#a6e22e">votiLegali</span>) {
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
-
-  <span style="color:#75715e">// elementi di votiLegali presenti in trump ma non appartenenti a biden
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">votiLegali</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">trump</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">biden</span>))
-      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">votiLegali</span>[<span style="color:#a6e22e">elem</span>];
-  }
-
-  <span style="color:#75715e">// elementi di votiLegali presenti in biden ma non appartenenti a trump
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">votiLegali</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">biden</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">trump</span>))
-      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">votiLegali</span>[<span style="color:#a6e22e">elem</span>];
-  }
-
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
-}
-
-<span style="color:#a6e22e">trump</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lacalifornia&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;frittole&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;freddana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;bugliano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
-<span style="color:#a6e22e">biden</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;calafuria&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;pappiana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lacalifornia&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;massachuccoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lajatico&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
-<span style="color:#a6e22e">votiLegali</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;calafuria&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;pappiana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;massachuccoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;larderello&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lajatico&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;frittole&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;freddana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;bugliano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;orentano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
-<span style="color:#a6e22e">rudyGiuliani</span>(<span style="color:#a6e22e">trump</span>,<span style="color:#a6e22e">biden</span>,<span style="color:#a6e22e">votiLegali</span>) <span style="color:#75715e">// → {&#39;calafuria&#39;:1, &#39;pappiana&#39;:1, &#39;massachuccoli&#39;:1, &#39;lajatico&#39;:1, &#39;frittole&#39;:1, &#39;freddana&#39;:1, &#39;bugliano&#39;:1}
-</span></code></pre></div>]]></content>
-        </item>
-        
-        <item>
             <title>Introduzione al sito</title>
             <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</link>
-            <pubDate>Sat, 26 Jun 2021 17:23:19 +0200</pubDate>
+            <pubDate>Tue, 15 Sep 2020 17:23:19 +0200</pubDate>
             
             <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</guid>
             <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
@@ -1105,257 +1647,6 @@ Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i 
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network Docs</a></li>
 </ul>
 ]]></content>
-        </item>
-        
-        <item>
-            <title>03 - compito in classe</title>
-            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</link>
-            <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-            
-            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</guid>
-            <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&amp;rsquo;A.A 2020/2021 che si è svolto interamente online.
-Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows. Le soluzioni proposte sono un misto tra le soluzioni proprie sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
-            <content type="html"><![CDATA[<p>L&rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&rsquo;A.A 2020/2021 che si è svolto interamente online.</p>
-<p>Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma <a href="https://replit.com/">Repl.it</a> con un nuovo progetto <a href="https://nodejs.org/it/">Node.js</a> oppure usando la console devTools di Google Chrome premendo  Ctrl+Shift+I su OS Windows. 
-Le soluzioni proposte sono un misto tra le soluzioni proprie sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</p>
-<p>Questa raccolta ha il solo lo scopo di fornire un supporto a tutti gli studenti che si sono interfacciati alla programmazione (e al linguaggio JavaScript) per la prima volta, e non si sostituisce alle ore di lezione o esercitazione.</p>
-<p>Se avete proposte (o soluzioni migliori agli esercizi!) sentitevi liberi di contattarmi mediante i canali nella homepage in modo che io possa includerle nel sito.</p>
-<p>Buon proseguimento,</p>
-<p>Leonardo</p>
-<p>Hugo uses the excellent <a href="https://golang.org/">Go</a> <a href="https://golang.org/pkg/html/template/">html/template</a> library for
-its template engine. It is an extremely lightweight engine that provides a very
-small amount of logic. In our experience that it is just the right amount of
-logic to be able to create a good static website. If you have used other
-template systems from different languages or frameworks you will find a lot of
-similarities in Go templates.</p>
-<p>This document is a brief primer on using Go templates. The <a href="https://golang.org/pkg/html/template/">Go docs</a>
-provide more details.</p>
-<h2 id="introduction-to-go-templates">Introduction to Go Templates</h2>
-<p>Go templates provide an extremely simple template language. It adheres to the
-belief that only the most basic of logic belongs in the template or view layer.
-One consequence of this simplicity is that Go templates parse very quickly.</p>
-<p>A unique characteristic of Go templates is they are content aware. Variables and
-content will be sanitized depending on the context of where they are used. More
-details can be found in the <a href="https://golang.org/pkg/html/template/">Go docs</a>.</p>
-<h2 id="basic-syntax">Basic Syntax</h2>
-<p>Golang templates are HTML files with the addition of variables and
-functions.</p>
-<p><strong>Go variables and functions are accessible within {{ }}</strong></p>
-<p>Accessing a predefined variable &ldquo;foo&rdquo;:</p>
-<pre><code>{{ foo }}
-</code></pre>
-<p><strong>Parameters are separated using spaces</strong></p>
-<p>Calling the add function with input of 1, 2:</p>
-<pre><code>{{ add 1 2 }}
-</code></pre>
-<p><strong>Methods and fields are accessed via dot notation</strong></p>
-<p>Accessing the Page Parameter &ldquo;bar&rdquo;</p>
-<pre><code>{{ .Params.bar }}
-</code></pre>
-<p><strong>Parentheses can be used to group items together</strong></p>
-<pre><code>{{ if or (isset .Params &quot;alt&quot;) (isset .Params &quot;caption&quot;) }} Caption {{ end }}
-</code></pre>
-<h2 id="variables">Variables</h2>
-<p>Each Go template has a struct (object) made available to it. In hugo each
-template is passed either a page or a node struct depending on which type of
-page you are rendering. More details are available on the
-<a href="/layout/variables">variables</a> page.</p>
-<p>A variable is accessed by referencing the variable name.</p>
-<pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
-</code></pre>
-<p>Variables can also be defined and referenced.</p>
-<pre><code>{{ $address := &quot;123 Main St.&quot;}}
-{{ $address }}
-</code></pre>
-<h2 id="functions">Functions</h2>
-<p>Go template ship with a few functions which provide basic functionality. The Go
-template system also provides a mechanism for applications to extend the
-available functions with their own. <a href="/layout/functions">Hugo template
-functions</a> provide some additional functionality we believe
-are useful for building websites. Functions are called by using their name
-followed by the required parameters separated by spaces. Template
-functions cannot be added without recompiling hugo.</p>
-<p><strong>Example:</strong></p>
-<pre><code>{{ add 1 2 }}
-</code></pre>
-<h2 id="includes">Includes</h2>
-<p>When including another template you will pass to it the data it will be
-able to access. To pass along the current context please remember to
-include a trailing dot. The templates location will always be starting at
-the /layout/ directory within Hugo.</p>
-<p><strong>Example:</strong></p>
-<pre><code>{{ template &quot;chrome/header.html&quot; . }}
-</code></pre>
-<h2 id="logic">Logic</h2>
-<p>Go templates provide the most basic iteration and conditional logic.</p>
-<h3 id="iteration">Iteration</h3>
-<p>Just like in Go, the Go templates make heavy use of range to iterate over
-a map, array or slice. The following are different examples of how to use
-range.</p>
-<p><strong>Example 1: Using Context</strong></p>
-<pre><code>{{ range array }}
-    {{ . }}
-{{ end }}
-</code></pre>
-<p><strong>Example 2: Declaring value variable name</strong></p>
-<pre><code>{{range $element := array}}
-    {{ $element }}
-{{ end }}
-</code></pre>
-<p><strong>Example 2: Declaring key and value variable name</strong></p>
-<pre><code>{{range $index, $element := array}}
-    {{ $index }}
-    {{ $element }}
-{{ end }}
-</code></pre>
-<h3 id="conditionals">Conditionals</h3>
-<p>If, else, with, or, &amp; and provide the framework for handling conditional
-logic in Go Templates. Like range, each statement is closed with <code>end</code>.</p>
-<p>Go Templates treat the following values as false:</p>
-<ul>
-<li>false</li>
-<li>0</li>
-<li>any array, slice, map, or string of length zero</li>
-</ul>
-<p><strong>Example 1: If</strong></p>
-<pre><code>{{ if isset .Params &quot;title&quot; }}&lt;h4&gt;{{ index .Params &quot;title&quot; }}&lt;/h4&gt;{{ end }}
-</code></pre>
-<p><strong>Example 2: If -&gt; Else</strong></p>
-<pre><code>{{ if isset .Params &quot;alt&quot; }}
-    {{ index .Params &quot;alt&quot; }}
-{{else}}
-    {{ index .Params &quot;caption&quot; }}
-{{ end }}
-</code></pre>
-<p><strong>Example 3: And &amp; Or</strong></p>
-<pre><code>{{ if and (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
-</code></pre>
-<p><strong>Example 4: With</strong></p>
-<p>An alternative way of writing &ldquo;if&rdquo; and then referencing the same value
-is to use &ldquo;with&rdquo; instead. With rebinds the context <code>.</code> within its scope,
-and skips the block if the variable is absent.</p>
-<p>The first example above could be simplified as:</p>
-<pre><code>{{ with .Params.title }}&lt;h4&gt;{{ . }}&lt;/h4&gt;{{ end }}
-</code></pre>
-<p><strong>Example 5: If -&gt; Else If</strong></p>
-<pre><code>{{ if isset .Params &quot;alt&quot; }}
-    {{ index .Params &quot;alt&quot; }}
-{{ else if isset .Params &quot;caption&quot; }}
-    {{ index .Params &quot;caption&quot; }}
-{{ end }}
-</code></pre>
-<h2 id="pipes">Pipes</h2>
-<p>One of the most powerful components of Go templates is the ability to
-stack actions one after another. This is done by using pipes. Borrowed
-from unix pipes, the concept is simple, each pipeline&rsquo;s output becomes the
-input of the following pipe.</p>
-<p>Because of the very simple syntax of Go templates, the pipe is essential
-to being able to chain together function calls. One limitation of the
-pipes is that they only can work with a single value and that value
-becomes the last parameter of the next pipeline.</p>
-<p>A few simple examples should help convey how to use the pipe.</p>
-<p><strong>Example 1 :</strong></p>
-<pre><code>{{ if eq 1 1 }} Same {{ end }}
-</code></pre>
-<p>is the same as</p>
-<pre><code>{{ eq 1 1 | if }} Same {{ end }}
-</code></pre>
-<p>It does look odd to place the if at the end, but it does provide a good
-illustration of how to use the pipes.</p>
-<p><strong>Example 2 :</strong></p>
-<pre><code>{{ index .Params &quot;disqus_url&quot; | html }}
-</code></pre>
-<p>Access the page parameter called &ldquo;disqus_url&rdquo; and escape the HTML.</p>
-<p><strong>Example 3 :</strong></p>
-<pre><code>{{ if or (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
-Stuff Here
-{{ end }}
-</code></pre>
-<p>Could be rewritten as</p>
-<pre><code>{{  isset .Params &quot;caption&quot; | or isset .Params &quot;title&quot; | or isset .Params &quot;attr&quot; | if }}
-Stuff Here
-{{ end }}
-</code></pre>
-<h2 id="context-aka-the-dot">Context (aka. the dot)</h2>
-<p>The most easily overlooked concept to understand about Go templates is that {{ . }}
-always refers to the current context. In the top level of your template this
-will be the data set made available to it. Inside of a iteration it will have
-the value of the current item. When inside of a loop the context has changed. .
-will no longer refer to the data available to the entire page. If you need to
-access this from within the loop you will likely want to set it to a variable
-instead of depending on the context.</p>
-<p><strong>Example:</strong></p>
-<pre><code>  {{ $title := .Site.Title }}
-  {{ range .Params.tags }}
-    &lt;li&gt; &lt;a href=&quot;{{ $baseurl }}/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt; - {{ $title }} &lt;/li&gt;
-  {{ end }}
-</code></pre>
-<p>Notice how once we have entered the loop the value of {{ . }} has changed. We
-have defined a variable outside of the loop so we have access to it from within
-the loop.</p>
-<h1 id="hugo-parameters">Hugo Parameters</h1>
-<p>Hugo provides the option of passing values to the template language
-through the site configuration (for sitewide values), or through the meta
-data of each specific piece of content. You can define any values of any
-type (supported by your front matter/config format) and use them however
-you want to inside of your templates.</p>
-<h2 id="using-content-page-parameters">Using Content (page) Parameters</h2>
-<p>In each piece of content you can provide variables to be used by the
-templates. This happens in the <a href="/content/front-matter">front matter</a>.</p>
-<p>An example of this is used in this documentation site. Most of the pages
-benefit from having the table of contents provided. Sometimes the TOC just
-doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter
-of some pages to turn off the TOC from being displayed.</p>
-<p>Here is the example front matter:</p>
-<pre><code>---
-title: &quot;Permalinks&quot;
-date: &quot;2013-11-18&quot;
-aliases:
-  - &quot;/doc/permalinks/&quot;
-groups: [&quot;extras&quot;]
-groups_weight: 30
-notoc: true
----
-</code></pre><p>Here is the corresponding code inside of the template:</p>
-<pre><code>  {{ if not .Params.notoc }}
-    &lt;div id=&quot;toc&quot; class=&quot;well col-md-4 col-sm-6&quot;&gt;
-    {{ .TableOfContents }}
-    &lt;/div&gt;
-  {{ end }}
-</code></pre>
-<h2 id="using-site-config-parameters">Using Site (config) Parameters</h2>
-<p>In your top-level configuration file (eg, <code>config.yaml</code>) you can define site
-parameters, which are values which will be available to you in chrome.</p>
-<p>For instance, you might declare:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">params</span>:
-  <span style="color:#f92672">CopyrightHTML</span>: <span style="color:#e6db74">&#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;</span>
-  <span style="color:#f92672">TwitterUser</span>: <span style="color:#e6db74">&#34;spf13&#34;</span>
-  <span style="color:#f92672">SidebarRecentLimit</span>: <span style="color:#ae81ff">5</span>
-</code></pre></div><p>Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only
-provided if the <code>CopyrightHTML</code> parameter is provided, and if it is given,
-you would declare it to be HTML-safe, so that the HTML entity is not escaped
-again.  This would let you easily update just your top-level config file each
-January 1st, instead of hunting through your templates.</p>
-<pre><code>{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
-&lt;div class=&quot;text-center&quot;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
-&lt;/footer&gt;{{end}}
-</code></pre><p>An alternative way of writing the &ldquo;if&rdquo; and then referencing the same value
-is to use &ldquo;with&rdquo; instead. With rebinds the context <code>.</code> within its scope,
-and skips the block if the variable is absent:</p>
-<pre><code>{{with .Site.Params.TwitterUser}}&lt;span class=&quot;twitter&quot;&gt;
-&lt;a href=&quot;https://twitter.com/{{.}}&quot; rel=&quot;author&quot;&gt;
-&lt;img src=&quot;/images/twitter.png&quot; width=&quot;48&quot; height=&quot;48&quot; title=&quot;Twitter: {{.}}&quot;
- alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
-&lt;/span&gt;{{end}}
-</code></pre><p>Finally, if you want to pull &ldquo;magic constants&rdquo; out of your layouts, you can do
-so, such as in this example:</p>
-<pre><code>&lt;nav class=&quot;recent&quot;&gt;
-  &lt;h1&gt;Recent Posts&lt;/h1&gt;
-  &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
-    &lt;li&gt;&lt;a href=&quot;{{.RelPermalink}}&quot;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
-  {{end}}&lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre>]]></content>
         </item>
         
     </channel>

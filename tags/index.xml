@@ -7,11 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Nov 2020 17:31:18 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>compito-in-classe</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/compito-in-classe/</link>
+      <pubDate>Fri, 27 Nov 2020 17:31:18 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/compito-in-classe/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>esercizi-liberi</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/</link>
-      <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
+      <pubDate>Wed, 25 Nov 2020 12:44:32 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/</guid>
       <description></description>
@@ -20,45 +29,18 @@
     <item>
       <title>ricorsione</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/ricorsione/</link>
-      <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
+      <pubDate>Tue, 17 Nov 2020 12:16:50 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/ricorsione/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>compito-in-classe</title>
-      <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/compito-in-classe/</link>
-      <pubDate>Sat, 26 Jun 2021 17:31:18 +0200</pubDate>
-      
-      <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/compito-in-classe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>introduzione</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/introduzione/</link>
-      <pubDate>Sat, 26 Jun 2021 17:23:19 +0200</pubDate>
+      <pubDate>Tue, 15 Sep 2020 17:23:19 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/introduzione/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>esercizi</title>
-      <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/javascript/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://leonardo-arditti.github.io/Lab1-20-21/tags/javascript/</guid>
       <description></description>
     </item>
     
