@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Eserciziario Laboratorio 1 A.A 2020/2021</title>
-        <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/</link>
+        <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/</link>
         <description>Recent content in Posts on Eserciziario Laboratorio 1 A.A 2020/2021</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate>
-        <atom:link href="https://leonardo-arditti.github.io/Lab1_Repo/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Esercizi liberi lezioni 1-20</title>
-            <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-20/</link>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>
             <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
             
-            <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-20/</guid>
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  SommAlterna Si scriva una funzione sommAlterna(a) che, dato come argomento un array di numeri a, restituisca la somma alternata degli elementi, ovvero +a0-a1+a2-a3+a4-a5… Esempi:
@@ -435,10 +435,10 @@ Esempi:</p>
         
         <item>
             <title>Esercizi ricorsione</title>
-            <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-ricorsione/</link>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
             <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
             
-            <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-ricorsione/</guid>
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
 Fattoriale Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale. Esempi:
@@ -606,10 +606,10 @@ Esempi:</p>
         
         <item>
             <title>Esercizi liberi lezioni 1-14</title>
-            <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-14/</link>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</link>
             <pubDate>Sun, 27 Jun 2021 00:48:06 +0200</pubDate>
             
-            <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-14/</guid>
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Produttoria Si scriva una funzione produttoria(a,b) che, dati come argomenti due interi positivi a e b, con a ≤ b, restituisca il prodotto di tutti gli interi fra a e b, estremi compresi. Esempi:
@@ -1000,10 +1000,10 @@ Esempi:</p>
         
         <item>
             <title>01 - Compito in classe</title>
-            <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/compito-01-classe/</link>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-01-classe/</link>
             <pubDate>Sat, 26 Jun 2021 17:31:18 +0200</pubDate>
             
-            <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/compito-01-classe/</guid>
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-01-classe/</guid>
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Esercizio 03.1 - Array Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.
@@ -1084,10 +1084,10 @@ function calcola(a) { let sum = 0; for (let i in a) sum += a[i]**2; return sum; 
         
         <item>
             <title>Introduzione al sito</title>
-            <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/introduzione-al-sito/</link>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</link>
             <pubDate>Sat, 26 Jun 2021 17:23:19 +0200</pubDate>
             
-            <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/introduzione-al-sito/</guid>
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</guid>
             <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
 Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows.
 Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
@@ -1109,10 +1109,10 @@ Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i 
         
         <item>
             <title>03 - compito in classe</title>
-            <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/my-first-post/</link>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</link>
             <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
             
-            <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/my-first-post/</guid>
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</guid>
             <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&amp;rsquo;A.A 2020/2021 che si è svolto interamente online.
 Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows. Le soluzioni proposte sono un misto tra le soluzioni proprie sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
             <content type="html"><![CDATA[<p>L&rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&rsquo;A.A 2020/2021 che si è svolto interamente online.</p>
