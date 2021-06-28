@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>esercizi-liberi on Eserciziario Laboratorio 1 A.A 2020/2021</title>
-    <link>leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/</link>
+    <link>https://leonardo-arditti.github.io/Lab1_Repo/tags/esercizi-liberi/</link>
     <description>Recent content in esercizi-liberi on Eserciziario Laboratorio 1 A.A 2020/2021</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate><atom:link href="leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1_Repo/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Esercizi liberi lezioni 1-20</title>
-      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>
+      <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-20/</link>
       <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
       
-      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</guid>
+      <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-20/</guid>
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  SommAlterna Si scriva una funzione sommAlterna(a) che, dato come argomento un array di numeri a, restituisca la somma alternata degli elementi, ovvero +a0-a1+a2-a3+a4-a5… Esempi:
@@ -25,10 +25,10 @@ function sommAlterna(a) { let sum = 0; for (let i in a) { if (i % 2 == 0) sum +=
     
     <item>
       <title>Esercizi ricorsione</title>
-      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
+      <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-ricorsione/</link>
       <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
       
-      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
+      <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-ricorsione/</guid>
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
 Fattoriale Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale. Esempi:
@@ -40,10 +40,10 @@ function fattoriale(n) { if (n&amp;lt;=1) return 1; return n * fattoriale(n-1); 
     
     <item>
       <title>Esercizi liberi lezioni 1-14</title>
-      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</link>
+      <link>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-14/</link>
       <pubDate>Sun, 27 Jun 2021 00:48:06 +0200</pubDate>
       
-      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</guid>
+      <guid>https://leonardo-arditti.github.io/Lab1_Repo/posts/esercizi-liberi-1-14/</guid>
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Produttoria Si scriva una funzione produttoria(a,b) che, dati come argomenti due interi positivi a e b, con a ≤ b, restituisca il prodotto di tutti gli interi fra a e b, estremi compresi. Esempi:
