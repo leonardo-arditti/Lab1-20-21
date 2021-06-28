@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>esercizi-liberi on Eserciziario Laboratorio 1 A.A 2020/2021</title>
+    <link>leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/</link>
+    <description>Recent content in esercizi-liberi on Eserciziario Laboratorio 1 A.A 2020/2021</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate><atom:link href="leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Esercizi liberi lezioni 1-20</title>
+      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>
+      <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
+      
+      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ SommAlterna Si scriva una funzione sommAlterna(a) che, dato come argomento un array di numeri a, restituisca la somma alternata degli elementi, ovvero +a0-a1+a2-a3+a4-a5… Esempi:
+sommAlterna([1,2,3,4]) → -2
+sommAlterna([1, -1, 1, -1]) → 4
+sommAlterna([]) → 0
+function sommAlterna(a) { let sum = 0; for (let i in a) { if (i % 2 == 0) sum += a[i]; else sum -= a[i]; } return sum; } SubSeq Si scriva una funzione subSeq(ago,pagliaio) che, dati come argomenti due array con elementi di qualunque tipo, restituisca true se l’array ago è una sottosequenza dell’array pagliaio (ovvero, esiste un punto all’interno di pagliaio in cui si trovano tutti gli elementi di ago, consecutivamente e nello stesso ordine) Esempi:</description>
+    </item>
+    
+    <item>
+      <title>Esercizi ricorsione</title>
+      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
+      <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
+      
+      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+Fattoriale Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale. Esempi:
+fattoriale(1) → 1
+fattoriale(5) → 120
+fattoriale(10) → 3628800
+function fattoriale(n) { if (n&amp;lt;=1) return 1; return n * fattoriale(n-1); } function fattoriale_tailrec(n,acc = 1) { if (n &amp;lt;= 1) return acc; return fattoriale_tailrec(n-1,acc * n); } // fattoriale_tailrec(10) → 3628800 Numeri triangolari Realizzare una funzione ricorsiva che, dato un intero &amp;gt;=0 n, calcoli il valore dell’ennesimo numero triangolare.</description>
+    </item>
+    
+    <item>
+      <title>Esercizi liberi lezioni 1-14</title>
+      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</link>
+      <pubDate>Sun, 27 Jun 2021 00:48:06 +0200</pubDate>
+      
+      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Produttoria Si scriva una funzione produttoria(a,b) che, dati come argomenti due interi positivi a e b, con a ≤ b, restituisca il prodotto di tutti gli interi fra a e b, estremi compresi. Esempi:
+produttoria(4,6) → 120
+produttoria(10,10) → 10
+produttoria(10,11) → 110
+function produttoria(a,b) { let n = 1; for (let i = a; i &amp;lt;= b; i++) { n *= i; } return n; } Quaterne Si scriva una funzione quaterne(a,b) che, dati come argomenti due interi a e b, con a ≤ b, restituisca il numero di quaterne (cioè sequenze distinte di quattro numeri consecutivi) comprese fra a e b, estremi esclusi.</description>
+    </item>
+    
+  </channel>
+</rss>

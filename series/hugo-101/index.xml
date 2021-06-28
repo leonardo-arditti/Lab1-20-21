@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo 101 on Eserciziario Laboratorio 1 A.A 2020/2021</title>
+    <link>leonardo-arditti.github.io/Lab1-20-21/series/hugo-101/</link>
+    <description>Recent content in Hugo 101 on Eserciziario Laboratorio 1 A.A 2020/2021</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="leonardo-arditti.github.io/Lab1-20-21/series/hugo-101/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>03 - compito in classe</title>
+      <link>leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</guid>
+      <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&amp;rsquo;A.A 2020/2021 che si è svolto interamente online.
+Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows. Le soluzioni proposte sono un misto tra le soluzioni proprie sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
+    </item>
+    
+  </channel>
+</rss>

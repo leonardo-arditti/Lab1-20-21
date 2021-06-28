@@ -1,0 +1,1362 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Eserciziario Laboratorio 1 A.A 2020/2021</title>
+        <link>leonardo-arditti.github.io/Lab1-20-21/posts/</link>
+        <description>Recent content in Posts on Eserciziario Laboratorio 1 A.A 2020/2021</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 27 Jun 2021 12:44:32 +0200</lastBuildDate>
+        <atom:link href="leonardo-arditti.github.io/Lab1-20-21/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Esercizi liberi lezioni 1-20</title>
+            <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>
+            <pubDate>Sun, 27 Jun 2021 12:44:32 +0200</pubDate>
+            
+            <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ SommAlterna Si scriva una funzione sommAlterna(a) che, dato come argomento un array di numeri a, restituisca la somma alternata degli elementi, ovvero +a0-a1+a2-a3+a4-a5… Esempi:
+sommAlterna([1,2,3,4]) → -2
+sommAlterna([1, -1, 1, -1]) → 4
+sommAlterna([]) → 0
+function sommAlterna(a) { let sum = 0; for (let i in a) { if (i % 2 == 0) sum += a[i]; else sum -= a[i]; } return sum; } SubSeq Si scriva una funzione subSeq(ago,pagliaio) che, dati come argomenti due array con elementi di qualunque tipo, restituisca true se l’array ago è una sottosequenza dell’array pagliaio (ovvero, esiste un punto all’interno di pagliaio in cui si trovano tutti gli elementi di ago, consecutivamente e nello stesso ordine) Esempi:</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="sommalterna">SommAlterna</h2>
+<p>Si scriva una funzione sommAlterna(a) che, dato come argomento un array di numeri a, restituisca la somma alternata degli elementi, ovvero +a0-a1+a2-a3+a4-a5… 
+Esempi:</p>
+<p>sommAlterna([1,2,3,4]) → -2</p>
+<p>sommAlterna([1, -1, 1, -1]) → 4</p>
+<p>sommAlterna([]) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommAlterna</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>];
+    <span style="color:#66d9ef">else</span>
+      <span style="color:#a6e22e">sum</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>];
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
+}
+</code></pre></div><h2 id="subseq">SubSeq</h2>
+<p>Si scriva una funzione subSeq(ago,pagliaio) che, dati come argomenti due array con elementi di qualunque tipo, restituisca true se l’array ago è una sottosequenza dell’array pagliaio (ovvero, esiste un punto all’interno di pagliaio in cui si trovano tutti gli elementi di ago, consecutivamente e nello stesso ordine)
+Esempi:</p>
+<p>subSeq([1],[4,12,4,1,4]) → true</p>
+<p>subSeq([1,2],[4,7,2,1,4]) → false</p>
+<p>subSeq([true,false,true],[true,true,false,true,true]) → true</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">subSeq</span>(<span style="color:#a6e22e">ago</span>, <span style="color:#a6e22e">pagliaio</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pagliaio</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">ago</span>[<span style="color:#ae81ff">0</span>])
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ago</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">ago</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ago</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">pagliaio</span>[<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>]) {
+        <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">ago</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pagliaio</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">ago</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+
+        <span style="color:#75715e">/* console.log(count) */</span>
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+        <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+      }
+    }
+  } <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><h2 id="numeri-di-tribonacci">Numeri di Tribonacci</h2>
+<p>La successione Tribonacci è definita come segue: t(0)=0; t(1)=0; t(2)=1, e per ogni termine successivo vale t(n)=t(n-1)+t(n-2)+t(n-3).
+Si scriva una funzione tribo(n) che calcoli e restituisca t(n).
+Esempi:</p>
+<p>tribo(1) → 0</p>
+<p>tribo(10) → 81</p>
+<p>tribo(22) → 121415</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tribo</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tribo</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">tribo</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span><span style="color:#a6e22e">tribo</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);
+}
+</code></pre></div><h2 id="serieparziale">SerieParziale</h2>
+<p>Una successione è, come sapete, una sequenza ordinata di valori, che possiamo considerare una funzione f:ℕ→ℝ. Ad ogni successione può essere associata una serie, calcolata come somma degli elementi della successione. Una serie parziale si ottiene quando il calcolo della serie si arresta a un termine di indice n dato.
+Si scriva una serieParziale(f,n) che, data una funzione f come sopra, e un naturale n, restituisca la serie parziale di f limitata a n (partendo da 0, n incluso).
+Esempi:</p>
+<p>serieParziale(x=&gt;1, 5) → 6</p>
+<p>serieParziale(x=&gt;(x%2==0?1:-1),9) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">serieParziale</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">i</span>);
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
+}
+</code></pre></div><h2 id="serieparziale-2">SerieParziale 2</h2>
+<p>Con riferimento all’esercizio precedente, si scriva una funzione serieParziale2(f) che, ricevuta una funzione f:ℕ→ℝ che rappresenta una successione, restituisca una funzione gf:ℕ→ℝ tale che gf(n) calcoli la serie parziale di f (fra 0 e n inclusi).
+Esempi:</p>
+<p>serieParziale2(x=&gt;1)(5) → 6</p>
+<p>serieParziale2(x=&gt;(x%2==0?1:-1))(9) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">serieParziale2</span>(<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>) { 
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">serieParziale</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">x</span>)
+  };
+}
+
+<span style="color:#75715e">// oppure
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">serieParziale2</span>(<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">return</span> ((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">serieParziale</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">x</span>))
+}
+</code></pre></div><h2 id="mkmap">Mkmap</h2>
+<p>Si scriva una funzione mkmap(s) che, ricevuto un array di stringhe s, restituisca un oggetto avente una proprietà i: 1 per ogni elemento s[i] di s.
+Esempi:</p>
+<p>mkmap([&ldquo;pippo&rdquo;,&ldquo;pluto&rdquo;]) → { pippo: 1, pluto: 1 }</p>
+<p>mkmap([]) → { }</p>
+<p>mkmap([&ldquo;pippo&rdquo;,&ldquo;pippo&rdquo;]) → { pippo: 1 }</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mkmap</span>(<span style="color:#a6e22e">s</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">s</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#a6e22e">val</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>))
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">val</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="potatura">Potatura</h2>
+<p>Si scriva una funzione pota(t,k) che, dato un albero binario t costruito come visto a lezione con nodi {val:v, sx:ts, dx:td}, restituisca un nuovo albero identico a t salvo che per il fatto che tutti i nodi aventi v&gt;k (e gli eventuali sottoalberi radicati in tali nodi) vengono omessi.</p>
+<p><img src="../1.png" alt="Pota"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">=</span> {};
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> }, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } }
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span> } }; 
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">pota</span>(<span style="color:#a6e22e">t</span>, <span style="color:#a6e22e">k</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">k</span>)
+    <span style="color:#66d9ef">return</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">k</span>) {
+    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> {}, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pota</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>, <span style="color:#a6e22e">k</span>) }
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">k</span>) {
+    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> {}, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pota</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>, <span style="color:#a6e22e">k</span>) }
+  }
+
+  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pota</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>, <span style="color:#a6e22e">k</span>), <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pota</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>, <span style="color:#a6e22e">k</span>) }
+}
+</code></pre></div><h2 id="potatura-2">Potatura 2</h2>
+<p>Si scriva una funzione pota2(t,k) che, dato un albero binario t costruito come visto a lezione con nodi {val:v, sx:ts, dx:td}, modifichi t rimuovendo tutti i nodi aventi v&gt;k (e gli eventuali sottoalberi radicati in tali nodi), e restituisca il numero totale di nodi rimossi (inclusi quelli nei sottoalberi).</p>
+<p><img src="../2.png" alt="Pota"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">=</span> {};
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> }, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } }
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span> } }; 
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">countT</span>(<span style="color:#a6e22e">t</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">countT</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">countT</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">pota2</span>(<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">k</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">counter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">counter</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">k</span>) {
+   <span style="color:#a6e22e">counter</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">countT</span>(<span style="color:#a6e22e">t</span>);
+   <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">pota</span>(<span style="color:#a6e22e">t</span>,<span style="color:#f92672">-</span><span style="color:#66d9ef">Infinity</span>))
+   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">counter</span>;
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>) {
+      <span style="color:#a6e22e">counter</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">pota2</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">k</span>)
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>) {
+      <span style="color:#a6e22e">counter</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">pota2</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">k</span>)
+    }
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">counter</span>;
+}
+</code></pre></div><h2 id="potatura-3">Potatura 3</h2>
+<p>Si scriva una funzione pota3(t) che, dato un albero binario t costruito come visto a lezione con nodi {val:v, sx:ts, dx:td}, modifichi t rimuovendo tutte le foglie, sommando i valori delle foglie rimosse a quello del loro nodo padre. La funzione non deve restituire nulla.</p>
+<p><img src="../3.png" alt="Pota"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">=</span> {};
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> }, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } }
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">TREE</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}}, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}}, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>}}}};
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">pota3</span>(<span style="color:#a6e22e">t</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>) {
+      <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>;
+      <span style="color:#66d9ef">return</span>;
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>) {
+      <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)) {
+          <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span>;
+          <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>;
+      } <span style="color:#66d9ef">else</span> {
+          <span style="color:#a6e22e">pota3</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>);
+      }
+  }
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>) {
+      <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)) {
+          <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span>;
+          <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>;
+      } <span style="color:#66d9ef">else</span> {
+          <span style="color:#a6e22e">pota3</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>);
+      }
+  }
+}
+</code></pre></div><h2 id="mogol">Mogol</h2>
+<p>Si scriva una funzione mogol(r,p) che, dato un array di stringhe r (ciascuna delle quali è una parola) e una stringa p (anch’essa una parola), restituisca un array contenente tutti gli elementi di r che fanno rima con p. Una parola fa rima con un’altra se il suffisso della prima che parte dalla penultima vocale (inclusa) è uguale all’analogo suffisso della seconda. Si assuma che siano usate solo lettere minuscole.
+Esempi:</p>
+<p>mogol([&ldquo;cuore&rdquo;, &ldquo;amore&rdquo;, &ldquo;sale&rdquo;], &ldquo;sudore&rdquo;) → [&ldquo;cuore&rdquo;, &ldquo;amore&rdquo;]</p>
+<p>mogol([&ldquo;cuore&rdquo;, &ldquo;amore&rdquo;, &ldquo;sale&rdquo;], &ldquo;mare&rdquo;) → []</p>
+<p>mogol([&ldquo;cuore&rdquo;, &ldquo;amore&rdquo;, &ldquo;sale&rdquo;], &ldquo;male&rdquo;) → [&ldquo;sale&rdquo;]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mogol</span>(<span style="color:#a6e22e">r</span>, <span style="color:#a6e22e">p</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vocali</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span>, <span style="color:#e6db74">&#39;u&#39;</span>]
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">suffix</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">n_vocali</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">vocali</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>]))
+      <span style="color:#a6e22e">n_vocali</span><span style="color:#f92672">++</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n_vocali</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+      <span style="color:#66d9ef">break</span>;
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n_vocali</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+  <span style="color:#66d9ef">else</span>
+    <span style="color:#a6e22e">suffix</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>)
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">str</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">r</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">endsWith</span>(<span style="color:#a6e22e">suffix</span>))
+      <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">str</span>);
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+}
+</code></pre></div><h2 id="gran-mogol">Gran Mogol</h2>
+<p>Si scriva una funzione granMogol(Q) che, dato un array di oggetti Q che rappresenta l’esito di una votazione, in cui ciascun oggetto ha la forma 
+{ candidato: n0, votanti: [n1, …, nk] } con ni che è una stringa contenente il nome di un membro delle Giovani Marmotte, restituisca il nome del prossimo Gran Mogol, vincitore dell’elezione.
+Attenzione: non vince chi prende più voti, ma solo il candidato che abbia tra i suoi votanti tutti i 3 nipoti &ldquo;Qui&rdquo;, &ldquo;Quo&rdquo; e &ldquo;Qua&rdquo;. Se nessun candidato è stato votato da tutti i 3 nipoti, la funzione deve restituire undefined. Se più candidati sono stati votati da tutti i 3 nipoti, la funzione deve restituire il primo in ordine alfabetico.
+Si assuma che ogni membro delle Giovani Marmotte possa votare anche più candidati (quindi, il relativo nome può apparire in più liste di votanti).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">granMogol</span>(<span style="color:#a6e22e">Q</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">votedByNipoti</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">candidato</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">Q</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">nipoti_votanti</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">votante</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">candidato</span>[<span style="color:#e6db74">&#39;votanti&#39;</span>]) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">votante</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Qui&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">votante</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Qua&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">votante</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Quo&#39;</span>)
+        <span style="color:#a6e22e">nipoti_votanti</span><span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nipoti_votanti</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+      <span style="color:#a6e22e">votedByNipoti</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">candidato</span>[<span style="color:#e6db74">&#39;candidato&#39;</span>]);
+  }
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">votedByNipoti</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">votedByNipoti</span>.<span style="color:#a6e22e">sort</span>()[<span style="color:#ae81ff">0</span>]
+  } <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">votedByNipoti</span>[<span style="color:#ae81ff">0</span>];
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> [{ <span style="color:#a6e22e">candidato</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pippo&#39;</span>, <span style="color:#a6e22e">votanti</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;pluto&#39;</span>, <span style="color:#e6db74">&#39;paperino&#39;</span>, <span style="color:#e6db74">&#39;a&#39;</span>] }]
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">voti</span> <span style="color:#f92672">=</span> [{ <span style="color:#a6e22e">candidato</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bbb&#34;</span>, <span style="color:#a6e22e">votanti</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Quo&#34;</span>, <span style="color:#e6db74">&#34;fff&#34;</span>, <span style="color:#e6db74">&#34;Qui&#34;</span>, <span style="color:#e6db74">&#34;Qua&#34;</span>] }, { <span style="color:#a6e22e">candidato</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;zzz&#34;</span>, <span style="color:#a6e22e">votanti</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;Quo&#34;</span>, <span style="color:#e6db74">&#34;Qui&#34;</span>, <span style="color:#e6db74">&#34;Qua&#34;</span>, <span style="color:#e6db74">&#34;aaaa&#34;</span>] }, { <span style="color:#a6e22e">candidato</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ccc&#34;</span>, <span style="color:#a6e22e">votanti</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;gfgf&#34;</span>, <span style="color:#e6db74">&#34;vvbv&#34;</span>, <span style="color:#e6db74">&#34;vcbdvcbd&#34;</span>] }];
+
+<span style="color:#a6e22e">granMogol</span>(<span style="color:#a6e22e">voti</span>)
+</code></pre></div><h2 id="zip">Zip</h2>
+<p>Si scriva una funzione zip(o) che, ricevuto un oggetto qualunque o, restituisca un array così fatto: per ogni proprietà p = chiave: valore di o, l’array deve contenere come elemento la coppia [chiave, valore] rappresentata come array di 2 elementi.
+L’array risultante deve essere ordinato alfabeticamente per chiave.
+Esempi:</p>
+<p>zip({a:1, b:true}) → [ [&ldquo;a&rdquo;,1], [&ldquo;b&rdquo;, true] ]</p>
+<p>zip({b:true, a:1}) → [ [&ldquo;a&rdquo;,1], [&ldquo;b&rdquo;, true] ]</p>
+<p>zip({}) → []</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">zip</span>(<span style="color:#a6e22e">o</span>) {
+  <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">o</span>).<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>[<span style="color:#ae81ff">0</span>])
+      <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>[<span style="color:#ae81ff">0</span>])
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  })
+}
+</code></pre></div><h2 id="unzip">Unzip</h2>
+<p>Con riferimento all’esercizio precedente, si scriva una funzione unzip(a) che, ricevuto un array di coppie come restituito da zip, restituisca a sua volta l’oggetto corrispondente, applicando la trasformazione inversa.
+Esempi:</p>
+<p>unzip([[&ldquo;a&rdquo;,1], [&ldquo;b&rdquo;, true]]) → {a:1, b:true}</p>
+<p>unzip([]) → {}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unzip</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">1</span>];
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="visita">Visita</h2>
+<p>Si scriva una funzione visita(t,f) che, dato un albero binario t costruito come visto a lezione con nodi {val:v, sx:ts, dx:td}, e una funzione f, modifichi l’albero sostituendo il val di ogni nodo con il risultato di f applicata al valore precedente. La funzione non restituisce nulla.</p>
+<p><img src="../4.png" alt="Pota"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">visita</span>(<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span>;
+
+  <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>);
+  <span style="color:#a6e22e">visita</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">f</span>);
+  <span style="color:#a6e22e">visita</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">f</span>);
+}
+</code></pre></div><h2 id="visita-2">Visita 2</h2>
+<p>Si scriva una funzione visita2(t,f) che, dato un albero binario t costruito come visto a lezione con nodi {val:v, sx:ts, dx:td}, e una funzione f, restituisca un nuovo albero ottenuto sostituendo il val di ogni nodo con il risultato di f applicata al valore precedente. L’albero originale non deve essere modificato.</p>
+<p><img src="../5.png" alt="Visita"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">=</span> {};
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> }, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } }
+<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span> } }; 
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">visita2</span>(<span style="color:#a6e22e">t</span>,<span style="color:#a6e22e">f</span>) {  
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span>;
+
+  <span style="color:#66d9ef">return</span> {<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>), <span style="color:#a6e22e">sx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">visita2</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">f</span>), <span style="color:#a6e22e">dx</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">visita2</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">f</span>)};
+}
+</code></pre></div><h2 id="funprop">Funprop</h2>
+<p>Si scriva una funzione funprop(f,p) che, date due funzioni f:ℕ→ℝ e p:ℝ→𝔹 (dove 𝔹 rappresenta il dominio dei booleani), restituisca una funzione s(a,b) la quale, ricevuti due interi a e b con a≤b, restituisca un array ordinato di tutti gli interi k∈[a,b] in cui f soddisfa p. Se p non viene fornito, si considera sempre soddisfatto.
+Esempi:</p>
+<p>funprop(n=&gt;2*n,n=&gt;n%2==0)(4,6) → [4, 5, 6]</p>
+<p>funprop(n=&gt;2*n,n=&gt;n&gt;10)(4,8) → [6,7,8]</p>
+<p>funprop(n=&gt;n,n=&gt;n%2==1)(10,20) → [11,13,15,17,19]</p>
+<p>funprop(n=&gt;n*n)(4,6) → [4,5,6]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">funprop</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">n</span>) =&gt; (<span style="color:#66d9ef">true</span>)) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">s</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">b</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">i</span>);
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">p</span>(<span style="color:#a6e22e">num</span>)) <span style="color:#75715e">// nel caso di default non viene valutata ma restituisce solamente true
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+  }
+}
+</code></pre></div><h2 id="selapply">SelApply</h2>
+<p>Si scriva una funzione selApply(f,p) che, date due funzioni f:ℕ→ℝ e p:ℝ→𝔹 (dove 𝔹 rappresenta il dominio dei booleani), restituisca una funzione s(a) così definita: per ogni elemento ai di a (che sarà un array di naturali), verifica se l’elemento soddisfa p; in caso positivo, rimpiazzalo con f(ai), altrimenti lascia ai. La funzione s modifica l’array a cui è applicata.
+Esempi:
+se a=[1,2,3,4],</p>
+<p>selApply(n=&gt;n*n,n=&gt;n%2==0)(a); 	a → [1,4,3,16]</p>
+<p>selApply(n=&gt;0,n=&gt;n&gt;2)(a);			a → [1,2,0,0]</p>
+<p>selApply(n=&gt;n,n=&gt;n&gt;0)(a);			a → [1,2,3,4]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">selApply</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">p</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>])
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">p</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]))
+        <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">num</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>;
+  }
+}
+</code></pre></div><h2 id="isheap">isHeap</h2>
+<p>Si scriva una funzione isHeap(t) che, dato un albero k-ario t costruito come visto a lezione con nodi {val:v, figli: [t1, …, tn]}, restituisca true se l’albero soddisfa la proprietà di heap, ovvero il valore del padre è sempre maggiore del valore di ciascuno dei figli</p>
+<p><img src="../6.png" alt="Heap"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">T</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>, <span style="color:#a6e22e">figli</span><span style="color:#f92672">:</span> []}
+  <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">val</span><span style="color:#f92672">=</span><span style="color:#ae81ff">9</span>
+  <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">figli</span><span style="color:#f92672">=</span>[{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span>, <span style="color:#a6e22e">figli</span><span style="color:#f92672">:</span>[{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>},{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>},{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>}]},{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, <span style="color:#a6e22e">figli</span><span style="color:#f92672">:</span>[{<span style="color:#a6e22e">val</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>}]}]
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isHeap</span>(<span style="color:#a6e22e">t</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">figli</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">// è un heap se ho un albero con un solo nodo
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">figlio</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">figli</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">figlio</span>.<span style="color:#a6e22e">val</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+  <span style="color:#75715e">// Se sono qui sono tutti più piccoli
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">figlio</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">figli</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isHeap</span>(<span style="color:#a6e22e">figlio</span>))
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+  
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><h2 id="semplifica">Semplifica</h2>
+<p>Si scriva una funzione semplifica(ao,ak) che, ricevuto un array di oggetti ao, e un array di stringhe ak, &ldquo;semplifichi&rdquo; gli oggetti contenuti in ao in modo da eliminare in ciascun oggetto tutte le proprietà le cui chiavi non compaiono nell’elenco di ak. La funzione deve restituire il numero complessivo di proprietà eliminate.
+Si cerchi di realizzare un’implementazione efficiente, dal punto di vista algoritmico.
+Esempi:</p>
+<p>o = {a:12, q: 3}; ao=[ { a:1, b:3}, {a:5, c: 7}, {q:4, d:true}, o ]</p>
+<p>semplifica(ao,[&ldquo;q&rdquo;,&ldquo;c&rdquo;]) → 5</p>
+<p>ao → [ {}, {c:7}, {q:4}, {q:3} ]</p>
+<p>o → {q:3}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o</span><span style="color:#f92672">=</span> {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>, <span style="color:#a6e22e">q</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ao</span><span style="color:#f92672">=</span>[ { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>}, {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span>}, {<span style="color:#a6e22e">q</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>}, {<span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>, <span style="color:#a6e22e">q</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>}]
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">semplifica</span>(<span style="color:#a6e22e">ao</span>,<span style="color:#a6e22e">ak</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">counter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">ao</span>)
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>)
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">ak</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">key</span>)) {
+          <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>]
+          <span style="color:#a6e22e">counter</span><span style="color:#f92672">++</span>;
+        }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">counter</span>;
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>Esercizi ricorsione</title>
+            <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
+            <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
+            
+            <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+Fattoriale Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale. Esempi:
+fattoriale(1) → 1
+fattoriale(5) → 120
+fattoriale(10) → 3628800
+function fattoriale(n) { if (n&amp;lt;=1) return 1; return n * fattoriale(n-1); } function fattoriale_tailrec(n,acc = 1) { if (n &amp;lt;= 1) return acc; return fattoriale_tailrec(n-1,acc * n); } // fattoriale_tailrec(10) → 3628800 Numeri triangolari Realizzare una funzione ricorsiva che, dato un intero &amp;gt;=0 n, calcoli il valore dell’ennesimo numero triangolare.</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<h2 id="fattoriale">Fattoriale</h2>
+<p>Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale.
+Esempi:</p>
+<p>fattoriale(1) → 1</p>
+<p>fattoriale(5) → 120</p>
+<p>fattoriale(10) → 3628800</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fattoriale</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span><span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">fattoriale</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fattoriale_tailrec</span>(<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">acc</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fattoriale_tailrec</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">acc</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">n</span>);
+}
+
+<span style="color:#75715e">// fattoriale_tailrec(10) → 3628800
+</span></code></pre></div><h2 id="numeri-triangolari">Numeri triangolari</h2>
+<p>Realizzare una funzione ricorsiva che, dato un intero &gt;=0 n, calcoli il valore dell’ennesimo numero triangolare. 
+Esempi:</p>
+<p>triangle(3) → 6</p>
+<p>triangle(6) → 21</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">triangle</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span><span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">triangle</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">triangleCoda</span>(<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>;
+  }
+
+  <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">s</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">triangleCoda</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">s</span>));
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>;
+}
+</code></pre></div><h2 id="cifre">Cifre</h2>
+<p>Si scriva una funzione ricorsiva cifre(n) che, dato come argomento un intero positivo, mostri a video le sue cifre, una per riga.
+Esempi:</p>
+<p>cifre(2563) → 2 5 6 3</p>
+<p>cifre(5) → 5</p>
+<p>cifre(98763) → 9 8 7 6 3</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cifre</span>(<span style="color:#a6e22e">n</span>) {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+		<span style="color:#66d9ef">return</span>;
+	
+	<span style="color:#a6e22e">cifre</span>(Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>));
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>);
+}
+</code></pre></div><h2 id="cifre-in-ordine-inverso">Cifre in ordine inverso</h2>
+<p>Si scriva una funzione ricorsiva cifreInv(n) che, dato come argomento un intero positivo, mostri a video le sue cifre, in ordine inverso, una per riga.
+Esempi:</p>
+<p>cifreInv(2563) → 3 6 5 2</p>
+<p>cifreInv(5) → 5</p>
+<p>cifreInv(98763) → 3 6 7 8 9</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cifreInv</span>(<span style="color:#a6e22e">n</span>) {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+		<span style="color:#66d9ef">return</span>;
+
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>);
+	<span style="color:#a6e22e">cifreInv</span>(Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>));
+}
+</code></pre></div><h2 id="somma-cifre">Somma cifre</h2>
+<p>Si scriva una funzione ricorsiva sommaCifre(n) che, dato come argomento un intero positivo, restituisca la somma delle sue cifre.
+Esempi:</p>
+<p>sommaCifre(2563) → 16</p>
+<p>sommaCifre(5) → 5</p>
+<p>sommaCifre(98763) → 33</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommaCifre</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">sommaCifre</span>(Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>));
+}
+</code></pre></div><h2 id="somma-array">Somma array</h2>
+<p>Si scriva una funzione ricorsiva sommaArray(a) che, dato come argomento un array di interi, restituisca la somma dei suoi elementi.
+Esempi:</p>
+<p>sommaArray([3,6,1,3]) → 13</p>
+<p>sommaArray([46,-1,-45, 0,2 -4, 3,-1]) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommaArray</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">+</span> <span style="color:#a6e22e">sommaArray</span>(<span style="color:#a6e22e">a</span>);
+}
+</code></pre></div><h2 id="sequenza-crescente">Sequenza crescente</h2>
+<p>Realizzare una funzione ricorsiva che controlli che un array di numeri interi positivi dato in input sia ordinato in ordine strettamente crescente. 
+Esempi:</p>
+<p>ordinato([1,5,9,12,56,57,29]) → true</p>
+<p>ordinato([7]) → true</p>
+<p>ordinato([3,7,5,8,9,10]) → false</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ordinato</span>(<span style="color:#a6e22e">a</span>) {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+	
+	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">ordinato</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>));
+}
+</code></pre></div><h2 id="fibonacci">Fibonacci</h2>
+<p>Realizzare una funzione ricorsiva fib che, dato un intero positivo n, restituisca l’ennesimo numero nella serie di Fibonacci: F(0)=0; F(1)=1; F(n)=F(n-1)+F(n-2), n&gt;=2 
+Esempi:</p>
+<p>fib(5) → 5</p>
+<p>fib(7) → 13</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fib</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fib</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">fib</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fib_tailrec</span>(<span style="color:#a6e22e">n</span>)
+{
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">i</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)
+  {
+     <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
+     <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+     <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>;
+}
+</code></pre></div><h2 id="piastrelle">Piastrelle</h2>
+<p>Dobbiamo piastrellare una sentiero largo 1m con delle piastrelle che esistono in 2 dimensioni: 1 × 1 m o 1 × 2 m. Quelle da 1 × 1 possono essere rosse o blu, quelle da 1 × 2 possono essere gialle, verdi o nere. Se il sentiero è lungo n metri, in quanti modi diversi può essere piastrellato? Scrivere una funzione contaPossibilita(n) che restituisca il numero di possibilità, data la lunghezza n. Suggerimento: trovare una relazione ricorsiva per calcolare il numero di possibilità, poi implementare la funzione in modo ricorsivo (preferibilmente in coda.
+Esempi:</p>
+<p>contaPossibilita(1) → 2</p>
+<p>contaPossibilita(7) → 1640</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">piastrelle</span>(<span style="color:#a6e22e">n</span>) {
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>;
+
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">7</span>;
+	
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">piastrelle</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#a6e22e">piastrelle</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">piastrelleCoda</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">p1</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,<span style="color:#a6e22e">p2</span><span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>){
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p1</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">piastrelleCoda</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">p2</span>,<span style="color:#a6e22e">p1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">+</span><span style="color:#a6e22e">p2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>);
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>Esercizi liberi lezioni 1-14</title>
+            <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</link>
+            <pubDate>Sun, 27 Jun 2021 00:48:06 +0200</pubDate>
+            
+            <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-14/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Produttoria Si scriva una funzione produttoria(a,b) che, dati come argomenti due interi positivi a e b, con a ≤ b, restituisca il prodotto di tutti gli interi fra a e b, estremi compresi. Esempi:
+produttoria(4,6) → 120
+produttoria(10,10) → 10
+produttoria(10,11) → 110
+function produttoria(a,b) { let n = 1; for (let i = a; i &amp;lt;= b; i++) { n *= i; } return n; } Quaterne Si scriva una funzione quaterne(a,b) che, dati come argomenti due interi a e b, con a ≤ b, restituisca il numero di quaterne (cioè sequenze distinte di quattro numeri consecutivi) comprese fra a e b, estremi esclusi.</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="produttoria">Produttoria</h2>
+<p>Si scriva una funzione produttoria(a,b) che, dati come argomenti due interi positivi a e b, con a ≤ b, restituisca il prodotto di tutti gli interi fra a e b, estremi compresi.
+Esempi:</p>
+<p>produttoria(4,6) → 120</p>
+<p>produttoria(10,10) → 10</p>
+<p>produttoria(10,11) → 110</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">produttoria</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">b</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">n</span> <span style="color:#f92672">*=</span> <span style="color:#a6e22e">i</span>; 
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>;
+}
+</code></pre></div><h2 id="quaterne">Quaterne</h2>
+<p>Si scriva una funzione quaterne(a,b) che, dati come argomenti due interi a e b, con a ≤ b, restituisca il numero di quaterne (cioè sequenze distinte di quattro numeri consecutivi) comprese fra a e b, estremi esclusi.
+Esempi:</p>
+<p>quaterne(4,6) → 0</p>
+<p>quaterne(4,10) → 2 (sono: 5/6/7/8 e 6/7/8/9)</p>
+<p>quaterne(-4,10) → 10 (sono -3/-2/-1/0, -2/-1/0/1, … , 5/6/7/8, 6/7/8/9)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">quaterne</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">n_quaterne</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>) <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>)
+      <span style="color:#a6e22e">n_quaterne</span><span style="color:#f92672">++</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n_quaterne</span>;
+}
+</code></pre></div><h2 id="numeri-perfetti">Numeri perfetti</h2>
+<p>Un numero naturale n si dice perfetto se è uguale alla somma dei propri divisori propri (ovvero, tutti i suoi divisori positivi escluso n). Si scriva una funzione perfetto(n) che, dato un numero naturale n, restituisca true se n è perfetto, false altrimenti.
+Esempi:</p>
+<p>perfetto(6) → true (infatti 1+2+3 = 6)</p>
+<p>perfetto(10) → false (infatti 1+2+5 ≠ 10)</p>
+<p>perfetto(28) → true (infatti 1+2+4+7+14 = 28)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">perfetto</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">divisori</span> <span style="color:#f92672">=</span> [];
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tot</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+      <span style="color:#a6e22e">divisori</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>);
+  }
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">divisori</span>)
+    <span style="color:#a6e22e">tot</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">divisori</span>[<span style="color:#a6e22e">i</span>];
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">tot</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">n</span>;
+}
+</code></pre></div><h2 id="range">Range</h2>
+<p>Si scriva una funzione range(a,b) che, dati due interi a e b restituisca un array ordinato di interi, contenente tutti e soli gli interi i tali che a ≤ i e i ≤ b.
+Esempi:</p>
+<p>range(2,6) → [2, 3, 4, 5, 6]</p>
+<p>range(10,10) → [10]</p>
+<p>range(-5, 1) → [-5, -4, -3, -2, -1, 0, 1]</p>
+<p>range(10, 4) → []</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">range</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">b</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>);
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+}
+</code></pre></div><h2 id="penultimo">Penultimo</h2>
+<p>Si scriva una funzione penultimo(a) che, dato un array di stringhe a, restituisca la penultima stringa secondo l’ordine alfabetico fra quelle presenti nell’array, oppure undefined se non esiste una penultima.
+Esempi:</p>
+<p>penultimo([&ldquo;pera&rdquo;, &ldquo;zucca&rdquo;, &ldquo;mela&rdquo;]) → &ldquo;pera&rdquo;</p>
+<p>penultimo([&ldquo;dattero&rdquo;, &ldquo;zucca&rdquo;, &ldquo;mela&rdquo;]) → &ldquo;mela&rdquo;</p>
+<p>penultimo([&ldquo;zucca&rdquo;]) → undefined</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">penultimo</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">undefined</span>;
+
+  <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">sort</span>();
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>];
+}
+</code></pre></div><h2 id="ordinamento-per-lunghezza">Ordinamento per lunghezza</h2>
+<p>Si scriva una funzione ordlun(a) che, dato un array di stringhe a, restituisca un array contenente le stesse stringhe, ordinate secondo la loro lunghezza (dalla più breve alla più lunga); a parità di lunghezza, andranno ordinate secondo l’ordine alfabetico.
+Esempi:</p>
+<p>ordlun([&ldquo;pera&rdquo;, &ldquo;zucca&rdquo;, &ldquo;mela&rdquo;]) → [&ldquo;mela&rdquo;, &ldquo;pera&rdquo;, &ldquo;zucca&rdquo;]</p>
+<p>ordlun([&ldquo;dattero&rdquo;, &ldquo;zucca&rdquo;, &ldquo;mela&rdquo;]) → [&ldquo;mela&rdquo;, &ldquo;zucca&rdquo;, &ldquo;dattero&rdquo;]</p>
+<p>ordlun([]) → []</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ordlun</span>(<span style="color:#a6e22e">a</span>) {
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">str1</span>,<span style="color:#a6e22e">str2</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">len1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str1</span>.<span style="color:#a6e22e">length</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">len2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str2</span>.<span style="color:#a6e22e">length</span>;
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">len1</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len2</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">len1</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">len2</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">else</span> {
+      <span style="color:#75715e">// stessa lunghezza delle 2 stringhe =&gt; ordinamento lessicografico
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str1</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">str2</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    }
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">compare</span>);
+}
+</code></pre></div><h2 id="multiinsiemi---conversione">Multiinsiemi - conversione</h2>
+<p>Un multiinsieme è una generalizzazione del concetto di insieme in cui lo stesso elemento può apparire più volte. Si potrebbe rappresentare un multiinsieme come un array, per esempio: [4, 7, 10, 4, 9, 7, 4]. Lo si potrebbe anche rappresentare come un oggetto, in cui gli elementi sono le chiavi, e i corrispondenti valori indicano quante volte compare quell’elemento. L’array precedente può dunque essere rappresentato come { 4: 3, 7: 2, 9: 1, 10: 1}.</p>
+<p>Si scriva una funzione cvtmi(a) che, data la rappresentazione ad array di un multiinsieme (di interi o stringhe), restituisca la corrispondente rappresentazione a oggetto.
+Esempi:</p>
+<p>cvtmi([&ldquo;pera&rdquo;, &ldquo;zucca&rdquo;, &ldquo;mela&rdquo;]) → { mela: 1, pera: 1, zucca: 1}</p>
+<p>cvtmi([&ldquo;pera&rdquo;, &ldquo;pera&rdquo;, &ldquo;pera&rdquo;, &ldquo;zucca&rdquo;]) → {pera: 3, zucca: 1}</p>
+<p>cvtmi([1,2,3,4,3,4,5,2,1,1,9]) → {1:3, 2:2, 3:2, 4:2, 5:1, 9:1}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cvtmi</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>)
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">else</span>
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="multiinsiemi---unione-e-intersezione">Multiinsiemi - unione e intersezione</h2>
+<p>Si scrivano due funzioni: unionemi(a,b) che, dati due oggetti a e b che rappresentano multiinsiemi, come definiti nell’esercizio precedente, restituisca un oggetto che rappresenta l’unione dei due multiinsiemi, e intersezionemi(a,b) che allo stesso modo restituisce l’intersezione fra i due multiinsiemi.
+Esempi:</p>
+<p>unionemi({1:4, 2:1},{1:3, 3:1}) → {1:7, 2:1, 3:1}</p>
+<p>intersezionemi({1:4, 2:1},{1:3, 3:1}) → {1:3}</p>
+<p>intersezionemi({1:4, 2:1},{}) → {}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">unionemi</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">e</span>];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>)
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">e</span>];
+    <span style="color:#66d9ef">else</span> 
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">e</span>];
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">intersezionemi</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">b</span>)
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">?</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">e</span>] <span style="color:#f92672">:</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">e</span>]);
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="conta-vocali">Conta vocali</h2>
+<p>Si scriva una funzione contaVocali(s) che, data una stringa s, restituisca il numero totale di vocali (lettere a, e, i, o, u, sia maiuscole che minuscole) presenti in s.
+Esempi:</p>
+<p>contaVocali(&ldquo;Ai lati d’Italia&rdquo;) → 8</p>
+<p>contaVocali(&ldquo;qwerty&rdquo;) → 1</p>
+<p>contaVocali(&ldquo;3463234&rdquo;) → 0</p>
+<p>contaVocali(&ldquo;Nel mezzo del cammin di nostra vita&rdquo;) → 11</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contaVocali</span>(<span style="color:#a6e22e">s</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vocali</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;e&#39;</span>,<span style="color:#e6db74">&#39;i&#39;</span>,<span style="color:#e6db74">&#39;o&#39;</span>,<span style="color:#e6db74">&#39;u&#39;</span>];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">s</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">vocali</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#66d9ef">char</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">vocali</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#66d9ef">char</span>.<span style="color:#a6e22e">toLowerCase</span>()))
+      <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>;
+}
+</code></pre></div><h2 id="una-firma-atipica">Una firma atipica</h2>
+<p>Si scriva una funzione firma(s) che, data una stringa s, restituisca un intero positivo k calcolato come segue: si immagini di sostituire ogni vocale (maiuscola o minuscola) o spazio in s con 1, e qualunque altro carattere con 0. Si consideri poi la stringa risultante come un numero binario, e sia k il suo valore.
+Esempi:</p>
+<p>firma(&ldquo;Vincenzo Gervasi&rdquo;) → 18853</p>
+<p>firma(&ldquo;Alina Sirbu&rdquo;) → 1385</p>
+<p>firma(&quot;&quot;) → 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">firma</span>(<span style="color:#a6e22e">s</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">bin</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vocali</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;e&#39;</span>,<span style="color:#e6db74">&#39;i&#39;</span>,<span style="color:#e6db74">&#39;o&#39;</span>,<span style="color:#e6db74">&#39;u&#39;</span>,<span style="color:#e6db74">&#39; &#39;</span>];
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// risultato finale
+</span><span style="color:#75715e"></span>  
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#66d9ef">char</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">s</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">vocali</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#66d9ef">char</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">vocali</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#66d9ef">char</span>.<span style="color:#a6e22e">toLowerCase</span>())) {
+      <span style="color:#a6e22e">bin</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
+    } <span style="color:#66d9ef">else</span> {
+     <span style="color:#a6e22e">bin</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;0&#34;</span>; 
+    }
+  }
+
+  <span style="color:#75715e">// conversione binario-decimale
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">exp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">bin</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">--</span>) {
+    <span style="color:#a6e22e">k</span> <span style="color:#f92672">+=</span> (<span style="color:#a6e22e">bin</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#a6e22e">exp</span>);
+    <span style="color:#a6e22e">exp</span><span style="color:#f92672">++</span>;
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">k</span>;
+}
+</code></pre></div><h2 id="applicare-una-funzione-a-un-oggetto">Applicare una funzione a un oggetto</h2>
+<p>Si scriva una funzione applyobj(o, f) che, dato un oggetto o e una funzione f, restituisca un oggetto o’ con le stesse chiavi di o, e in cui il valore di ogni chiave k sia dato dall’applicazione di f al valore della chiave k in o, ovvero: o’.k == f(o.k).
+Esempi:</p>
+<p>applyobj({pere: 3, mele: 1}, x=&gt;2*x) → {pere: 6, mele: 2}</p>
+<p>applyobj({io: &ldquo;Vincenzo&rdquo;, tu: &ldquo;Alina&rdquo;}, e=&gt;e.length) → {io: 8, tu: 5}</p>
+<p>applyobj({io: 8, tu: 5}, e=&gt;e) → {io: 8, tu: 5}</p>
+<p>applyobj({}, e=&gt;e+1) → {}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">applyobj</span>(<span style="color:#a6e22e">o</span>,<span style="color:#a6e22e">f</span>) {
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">o</span>) {
+    <span style="color:#a6e22e">o</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">o</span>[<span style="color:#a6e22e">key</span>])
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">o</span>;
+}
+</code></pre></div><h2 id="maxprod">Maxprod</h2>
+<p>Si scriva una funzione maxprod(a) che, dato un array di numeri naturali a, restituisca un oggetto con struttura {idx: i, val: n} in cui i sia l’indice e n il valore dell’elemento in a per cui è massimo il prodotto dell’indice per il valore dell’elemento. In caso di parità, si scelga l’elemento di indice minore.
+Esempi:</p>
+<p>maxprod([8, 2, 2, 1]) → {idx: 2, val: 2}</p>
+<p>maxprod([1, 8, 1, 2, 2]) → {idx: 1, val: 8}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxprod</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">idx</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>}
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">val_max_prod</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#66d9ef">Infinity</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">val_max_prod</span>) {
+      <span style="color:#a6e22e">val_max_prod</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>;
+      <span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]
+      <span style="color:#a6e22e">idx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span>;
+    }
+  }
+
+  <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;idx&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">idx</span>; 
+  <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;val&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">val</span>;
+  
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="appiattimento">Appiattimento</h2>
+<p>Si consideri un array i cui elementi possono essere o numeri, oppure altri array dello stesso tipo (ovvero, aventi per elementi o numeri, oppure altri array dello stesso tipo, e così via). Si scriva una funzione appiattisci(a) che, dato un array a come descritto sopra, restituisca un array contenente i soli numeri, nello stesso ordine in cui comparivano nell’array a.
+Esempi:</p>
+<p>appiattisci([8, [2, 2], 1]) → [8, 2, 2, 1]</p>
+<p>appiattisci([[1], 8, [1, 2], 2, []]) → [1, 8, 1, 2, 2]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">appiattisci</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rec_flat</span>(<span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">instanceof</span> Array) {
+        <span style="color:#a6e22e">rec_flat</span>(<span style="color:#a6e22e">elem</span>);
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span>) {
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>);
+      }
+    }
+  }
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#66d9ef">instanceof</span> Array)
+      <span style="color:#a6e22e">rec_flat</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span>)
+      <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+  }  
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+}
+</code></pre></div><h2 id="rosa-dei-venti">Rosa dei venti</h2>
+<p>Si considerino le quattro direzioni cardinali (nord, est, sud, ovest), ciascuna codificata con la lettera corrispondente in (N, E, S, W), nonché le direzioni intermedie codificate con due lettere in ordine qualsiasi (es: NE = EN = nord-est).
+Si scriva una funzione rosa(s) che, data una stringa s contenente la codifica di una direzione come indicato sopra, restituisca un oggetto {x: i, y: j} in cui i e j sono valori fra -1, 0 e 1 che rappresentano lo spostamento unitario lungo l’asse x e lungo l’asse y, rispettivamente, corrispondente alla direzione codificata da s.
+Esempi:</p>
+<p>rosa(&ldquo;NE&rdquo;) → {x: 1, y: 1}</p>
+<p>rosa(&ldquo;EN&rdquo;) → {x: 1, y: 1}</p>
+<p>rosa(&ldquo;S&rdquo;) → {x: 0, y: -1}</p>
+<p>rosa(&ldquo;NW&rdquo;) → {x: -1, y: 1}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rosa</span>(<span style="color:#a6e22e">s</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>}
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">arr</span>) {
+    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>]) {
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;N&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;y&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">break</span>;
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;S&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;y&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">break</span>;
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;W&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;x&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">break</span>;
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;E&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;x&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">break</span>;
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+</code></pre></div><h2 id="percorso">Percorso</h2>
+<p>Si scriva una funzione percorso(a) che, dato un array a di direzioni codificate da stringhe come nell’esercizio precedente, restituisca la distanza euclidea fra l’origine degli assi e la posizione finale di un ipotetico viaggiatore che parta dall’origine e faccia un passo nella direzione indicata da ogni elemento del percorso, in ordine.
+Esempi:</p>
+<p>percorso([]) → 0</p>
+<p>percorso([&ldquo;N&rdquo;,&ldquo;E&rdquo;]) → 1.4142136</p>
+<p>percorso([&ldquo;N&rdquo;]) → 1</p>
+<p>percorso([&ldquo;N&rdquo;,&ldquo;N&rdquo;,&ldquo;NE&rdquo;]) → 3.1622777</p>
+<p>percorso([&ldquo;N&rdquo;,&ldquo;S&rdquo;]) → 0</p>
+<p>percorso([&ldquo;N&rdquo;,&ldquo;S&rdquo;,&ldquo;NE&rdquo;]) → 1.4142136</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">percorso</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tmp</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">tmp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rosa</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+    <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;x&#34;</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">tmp</span>[<span style="color:#e6db74">&#34;x&#34;</span>];
+    <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;y&#34;</span>] <span style="color:#f92672">+=</span> <span style="color:#a6e22e">tmp</span>[<span style="color:#e6db74">&#34;y&#34;</span>];
+  }
+  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">sqrt</span>((<span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;x&#34;</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#34;y&#34;</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>);
+}
+</code></pre></div><h2 id="composizione-di-funzioni">Composizione di funzioni</h2>
+<p>Si scriva una funzione componi(f,g) che, date due funzioni f e g, restituisca una funzione h tale che h(x) = g(f(x)).
+Esempi:</p>
+<p>componi(x=&gt;2<em>x, x=&gt;2</em>x)(3) → 12</p>
+<p>componi(s=&gt;s.length, x=&gt;x**2+1)(“Vincenzo”) → 65</p>
+<p>componi(a=&gt;a[0], s=&gt;s.length)([“pere”,”banane”]) → 4</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">componi</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">g</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">x</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">g</span>(<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">x</span>));
+  }
+}
+
+<span style="color:#75715e">// oppure
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">componi</span>(<span style="color:#a6e22e">f</span>,<span style="color:#a6e22e">g</span>) {
+  <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">g</span>(<span style="color:#a6e22e">x</span>)));
+}
+</code></pre></div><h2 id="differenza-di-date">Differenza di date</h2>
+<p>Si rappresenti una data come un oggetto della forma {giorno: g, mese: m, anno: a}, in cui g, m, e a sono indicati come numeri (con l’usuale convenzione: Gennaio = 1, … Dicembre = 12 per i mesi).
+Si scriva una funzione diff(d1, d2) che, date due date nel formato indicato sopra, restituisca il numero di giorni trascorsi fra la prima e la seconda data (si usino i numeri negativi se d2 è precedente a d1). Si ricorda che Febbraio è lungo 28 giorni negli anni ordinari, e 29 giorni negli anni bisestili; sono bisestili tutti gli anni divisibili per 4, salvo quelli che sono divisibili per 100 (che invece sono ordinari).
+Ai fini dell’esercizio si possono trascurare le varie riforme del calendario avvenute nei secoli.
+Esempi:</p>
+<p>diff({giorno: 1, mese: 1, anno: 2020},{giorno: 4, mese: 2, anno: 2020}) → 34</p>
+<p>diff({giorno: 1, mese: 1, anno: 2019},{giorno: 1, mese: 1, anno: 2020}) → 365</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">d1</span>,<span style="color:#a6e22e">d2</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tmp_d1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">d1</span>[<span style="color:#e6db74">&#34;anno&#34;</span>],<span style="color:#a6e22e">d1</span>[<span style="color:#e6db74">&#34;mese&#34;</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">d1</span>[<span style="color:#e6db74">&#34;giorno&#34;</span>]);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tmp_d2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">d2</span>[<span style="color:#e6db74">&#34;anno&#34;</span>],<span style="color:#a6e22e">d2</span>[<span style="color:#e6db74">&#34;mese&#34;</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">d2</span>[<span style="color:#e6db74">&#34;giorno&#34;</span>]);
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tmp_d2</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">tmp_d1</span>;
+  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">ceil</span>(<span style="color:#a6e22e">res</span><span style="color:#f92672">/</span>(<span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3600</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>)); <span style="color:#75715e">// divido per i millisecondi in un giorno
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h2 id="dividere-leredità">Dividere l&rsquo;eredità</h2>
+<p>Si consideri un albero k-ario, in cui i nodi hanno la struttura {val: n, figli: [ t1, … tk ]}, come visto a lezione. Si vuole distribuire l’eredità di ogni nodo intermedio ai suoi figli in questo modo: il valore n di un nodo viene distribuito in parti uguali ai figli, ciascuno dei quali riceve dunque n/k. La quota ereditata viene sommata al valore di n di ciascun erede, e se l’erede non è una foglia, il risultato viene ulteriormente diviso ai figli, e così via.
+Si scriva una funzione eredita(t) che, ricevuto come argomento un albero t nel formato descritto sopra, restituisca il valore totale (n proprio più quota ereditata) del nodo foglia con valore massimo.
+Esempi:</p>
+<p>t={val: 16, figli: [{val: 4},{val: 2, figli: [{val: 8},{val: 2}]}]}</p>
+<p>eredita(t) → 13</p>
+<p>eredita({val: 5}) → 5</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">eredita</span>(<span style="color:#a6e22e">t</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#66d9ef">Infinity</span>;
+  
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">figli</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>;
+
+  <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span><span style="color:#f92672">/</span><span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">figli</span>.<span style="color:#a6e22e">length</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">figlio</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">figli</span>) {
+    <span style="color:#a6e22e">figlio</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">val</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">figlio</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">max</span>)
+      <span style="color:#a6e22e">max</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">figlio</span>.<span style="color:#a6e22e">val</span>;
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">figlio</span>.<span style="color:#a6e22e">figli</span>) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">max_of_children</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">eredita</span>(<span style="color:#a6e22e">figlio</span>);
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">max_of_children</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">max</span>)
+        <span style="color:#a6e22e">max</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">max_of_children</span>
+    }   
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>;
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>01 - Compito in classe</title>
+            <link>leonardo-arditti.github.io/Lab1-20-21/posts/compito-01-classe/</link>
+            <pubDate>Sat, 26 Jun 2021 17:31:18 +0200</pubDate>
+            
+            <guid>leonardo-arditti.github.io/Lab1-20-21/posts/compito-01-classe/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 03.1 - Array Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.
+function calcola(a) { let sum = 0; for (let i in a) sum += a[i]**2; return sum; } // calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733  // calcola([0,0,12,-66,9]) → 4581  // calcola([1,2,3,4,5,6]) → 91 Esercizio 03.</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="esercizio-031---array">Esercizio 03.1 - Array</h2>
+<p>Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calcola</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
+}
+
+<span style="color:#75715e">// calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// calcola([0,0,12,-66,9]) → 4581
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// calcola([1,2,3,4,5,6]) → 91
+</span></code></pre></div><h2 id="esercizio-032---elimina-elementi">Esercizio 03.2 - Elimina elementi</h2>
+<p>Si scriva una funzione cancellaConSoglia(a,n) che dato un array di interi a e un intero n, rimuova da a tutti gli elementi ≤ (minori di o uguali a) n e restituisca l&rsquo;array risultante.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cancellaConSoglia</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>) =&gt; (<span style="color:#a6e22e">elem</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">n</span>));
+}
+
+<span style="color:#75715e">// cancellaConSoglia([-21,32,0,99,101,101,2,76,22,1349],101) → [1349]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// cancellaConSoglia([0,0,12,-66,9],0) → [12,9]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// cancellaConSoglia([1,2,3,4,5,6],3) → [4,5,6]
+</span></code></pre></div><h2 id="esercizio-033---band-of-brothers">Esercizio 03.3 - Band of Brothers</h2>
+<p>Si scriva una funzione contaCoppia(T,val1,val2) che dato un albero binario T (i cui nodi sono implementati come visto a lezione come oggetti con chiavi val, sx e dx) e due numeri val1 e val2, restituisca il numero di coppie di nodi fratelli tali che il fratello destro abbia val uguale a val1 e quello sinistro abbia val uguale a val2. Due nodi sono fratelli se sono figli dello stesso nodo padre. Si faccia attenzione a conteggiare le coppie che soddisfano la condizione, non il numero dei nodi (che sarebbe ovviamente il doppio rispetto al numero di coppie).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">||</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>))
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">val2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">val1</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">sx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
+  <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">contaCoppia</span>(<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">dx</span>,<span style="color:#a6e22e">val1</span>,<span style="color:#a6e22e">val2</span>);
+}
+
+<span style="color:#75715e">// contaCoppia({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}},12,3) → 1
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// contaCoppia({val:7,sx:{val: 4, sx: {val: 3}, dx: {val:12, sx: {val: 4, dx:{val:3}, sx:{val: 8}}}}, dx:{val: 11, dx: {val: 3}, sx: {val:8, sx: {val: 6}}}},3,8) → 2
+</span></code></pre></div><h2 id="esercizio-034---blue-tuesday">Esercizio 03.4 - Blue Tuesday</h2>
+<p>Si scriva una funzione rudyGiuliani(trump,biden,votiLegali) che dati 3 insiemi (trump, biden e votiLegali) rappresentati come oggetti, restituisca (con la stessa rappresentazione) l&rsquo;insieme contenente sia gli elementi di votiLegali presenti in trump ma non appartenenti a biden che gli elementi di votiLegali presenti in biden ma non appartenenti a trump.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">rudyGiuliani</span>(<span style="color:#a6e22e">trump</span>,<span style="color:#a6e22e">biden</span>,<span style="color:#a6e22e">votiLegali</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#75715e">// elementi di votiLegali presenti in trump ma non appartenenti a biden
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">votiLegali</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">trump</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">biden</span>))
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">votiLegali</span>[<span style="color:#a6e22e">elem</span>];
+  }
+
+  <span style="color:#75715e">// elementi di votiLegali presenti in biden ma non appartenenti a trump
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">votiLegali</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">biden</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(<span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">trump</span>))
+      <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">elem</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">votiLegali</span>[<span style="color:#a6e22e">elem</span>];
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+}
+
+<span style="color:#a6e22e">trump</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lacalifornia&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;frittole&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;freddana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;bugliano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
+<span style="color:#a6e22e">biden</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;calafuria&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;pappiana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lacalifornia&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;massachuccoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lajatico&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
+<span style="color:#a6e22e">votiLegali</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;calafuria&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;pappiana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;forcoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;massachuccoli&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;larderello&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;lajatico&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;frittole&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;freddana&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;bugliano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;orentano&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;newfollonica&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}
+<span style="color:#a6e22e">rudyGiuliani</span>(<span style="color:#a6e22e">trump</span>,<span style="color:#a6e22e">biden</span>,<span style="color:#a6e22e">votiLegali</span>) <span style="color:#75715e">// → {&#39;calafuria&#39;:1, &#39;pappiana&#39;:1, &#39;massachuccoli&#39;:1, &#39;lajatico&#39;:1, &#39;frittole&#39;:1, &#39;freddana&#39;:1, &#39;bugliano&#39;:1}
+</span></code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>Introduzione al sito</title>
+            <link>leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</link>
+            <pubDate>Sat, 26 Jun 2021 17:23:19 +0200</pubDate>
+            
+            <guid>leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</guid>
+            <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
+Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows.
+Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
+            <content type="html"><![CDATA[<p>L&rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&rsquo;A.A 2020/2021 che è stato erogato interamente online.</p>
+<p>Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma <a href="https://replit.com/">Repl.it</a> con un nuovo progetto <a href="https://nodejs.org/it/">Node.js</a> oppure usando la console devTools di Google Chrome premendo  Ctrl+Shift+I su OS Windows.</p>
+<p>Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</p>
+<p>Questa raccolta ha il solo scopo di fornire un supporto a tutti gli studenti che si sono interfacciati alla programmazione (e al linguaggio JavaScript) per la prima volta, e non si sostituisce alle ore di lezione o esercitazione.</p>
+<p>Se avete proposte (o soluzioni migliori agli esercizi!) sentitevi liberi di contattarmi mediante i canali nella homepage in modo che io possa includere le vostre modifiche al sito.</p>
+<p>Buon proseguimento,</p>
+<p>Leonardo</p>
+<hr>
+<p>Di seguito alcune risorse che possono rivelarsi utili durante lo svolgimento degli esercizi:</p>
+<ul>
+<li><a href="https://eloquentjavascript.net/">Eloquent Javascript</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network Docs</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>03 - compito in classe</title>
+            <link>leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</link>
+            <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+            
+            <guid>leonardo-arditti.github.io/Lab1-20-21/posts/my-first-post/</guid>
+            <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&amp;rsquo;A.A 2020/2021 che si è svolto interamente online.
+Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows. Le soluzioni proposte sono un misto tra le soluzioni proprie sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
+            <content type="html"><![CDATA[<p>L&rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 durante l&rsquo;A.A 2020/2021 che si è svolto interamente online.</p>
+<p>Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma <a href="https://replit.com/">Repl.it</a> con un nuovo progetto <a href="https://nodejs.org/it/">Node.js</a> oppure usando la console devTools di Google Chrome premendo  Ctrl+Shift+I su OS Windows. 
+Le soluzioni proposte sono un misto tra le soluzioni proprie sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</p>
+<p>Questa raccolta ha il solo lo scopo di fornire un supporto a tutti gli studenti che si sono interfacciati alla programmazione (e al linguaggio JavaScript) per la prima volta, e non si sostituisce alle ore di lezione o esercitazione.</p>
+<p>Se avete proposte (o soluzioni migliori agli esercizi!) sentitevi liberi di contattarmi mediante i canali nella homepage in modo che io possa includerle nel sito.</p>
+<p>Buon proseguimento,</p>
+<p>Leonardo</p>
+<p>Hugo uses the excellent <a href="https://golang.org/">Go</a> <a href="https://golang.org/pkg/html/template/">html/template</a> library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience that it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks you will find a lot of
+similarities in Go templates.</p>
+<p>This document is a brief primer on using Go templates. The <a href="https://golang.org/pkg/html/template/">Go docs</a>
+provide more details.</p>
+<h2 id="introduction-to-go-templates">Introduction to Go Templates</h2>
+<p>Go templates provide an extremely simple template language. It adheres to the
+belief that only the most basic of logic belongs in the template or view layer.
+One consequence of this simplicity is that Go templates parse very quickly.</p>
+<p>A unique characteristic of Go templates is they are content aware. Variables and
+content will be sanitized depending on the context of where they are used. More
+details can be found in the <a href="https://golang.org/pkg/html/template/">Go docs</a>.</p>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<p>Golang templates are HTML files with the addition of variables and
+functions.</p>
+<p><strong>Go variables and functions are accessible within {{ }}</strong></p>
+<p>Accessing a predefined variable &ldquo;foo&rdquo;:</p>
+<pre><code>{{ foo }}
+</code></pre>
+<p><strong>Parameters are separated using spaces</strong></p>
+<p>Calling the add function with input of 1, 2:</p>
+<pre><code>{{ add 1 2 }}
+</code></pre>
+<p><strong>Methods and fields are accessed via dot notation</strong></p>
+<p>Accessing the Page Parameter &ldquo;bar&rdquo;</p>
+<pre><code>{{ .Params.bar }}
+</code></pre>
+<p><strong>Parentheses can be used to group items together</strong></p>
+<pre><code>{{ if or (isset .Params &quot;alt&quot;) (isset .Params &quot;caption&quot;) }} Caption {{ end }}
+</code></pre>
+<h2 id="variables">Variables</h2>
+<p>Each Go template has a struct (object) made available to it. In hugo each
+template is passed either a page or a node struct depending on which type of
+page you are rendering. More details are available on the
+<a href="/layout/variables">variables</a> page.</p>
+<p>A variable is accessed by referencing the variable name.</p>
+<pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
+</code></pre>
+<p>Variables can also be defined and referenced.</p>
+<pre><code>{{ $address := &quot;123 Main St.&quot;}}
+{{ $address }}
+</code></pre>
+<h2 id="functions">Functions</h2>
+<p>Go template ship with a few functions which provide basic functionality. The Go
+template system also provides a mechanism for applications to extend the
+available functions with their own. <a href="/layout/functions">Hugo template
+functions</a> provide some additional functionality we believe
+are useful for building websites. Functions are called by using their name
+followed by the required parameters separated by spaces. Template
+functions cannot be added without recompiling hugo.</p>
+<p><strong>Example:</strong></p>
+<pre><code>{{ add 1 2 }}
+</code></pre>
+<h2 id="includes">Includes</h2>
+<p>When including another template you will pass to it the data it will be
+able to access. To pass along the current context please remember to
+include a trailing dot. The templates location will always be starting at
+the /layout/ directory within Hugo.</p>
+<p><strong>Example:</strong></p>
+<pre><code>{{ template &quot;chrome/header.html&quot; . }}
+</code></pre>
+<h2 id="logic">Logic</h2>
+<p>Go templates provide the most basic iteration and conditional logic.</p>
+<h3 id="iteration">Iteration</h3>
+<p>Just like in Go, the Go templates make heavy use of range to iterate over
+a map, array or slice. The following are different examples of how to use
+range.</p>
+<p><strong>Example 1: Using Context</strong></p>
+<pre><code>{{ range array }}
+    {{ . }}
+{{ end }}
+</code></pre>
+<p><strong>Example 2: Declaring value variable name</strong></p>
+<pre><code>{{range $element := array}}
+    {{ $element }}
+{{ end }}
+</code></pre>
+<p><strong>Example 2: Declaring key and value variable name</strong></p>
+<pre><code>{{range $index, $element := array}}
+    {{ $index }}
+    {{ $element }}
+{{ end }}
+</code></pre>
+<h3 id="conditionals">Conditionals</h3>
+<p>If, else, with, or, &amp; and provide the framework for handling conditional
+logic in Go Templates. Like range, each statement is closed with <code>end</code>.</p>
+<p>Go Templates treat the following values as false:</p>
+<ul>
+<li>false</li>
+<li>0</li>
+<li>any array, slice, map, or string of length zero</li>
+</ul>
+<p><strong>Example 1: If</strong></p>
+<pre><code>{{ if isset .Params &quot;title&quot; }}&lt;h4&gt;{{ index .Params &quot;title&quot; }}&lt;/h4&gt;{{ end }}
+</code></pre>
+<p><strong>Example 2: If -&gt; Else</strong></p>
+<pre><code>{{ if isset .Params &quot;alt&quot; }}
+    {{ index .Params &quot;alt&quot; }}
+{{else}}
+    {{ index .Params &quot;caption&quot; }}
+{{ end }}
+</code></pre>
+<p><strong>Example 3: And &amp; Or</strong></p>
+<pre><code>{{ if and (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
+</code></pre>
+<p><strong>Example 4: With</strong></p>
+<p>An alternative way of writing &ldquo;if&rdquo; and then referencing the same value
+is to use &ldquo;with&rdquo; instead. With rebinds the context <code>.</code> within its scope,
+and skips the block if the variable is absent.</p>
+<p>The first example above could be simplified as:</p>
+<pre><code>{{ with .Params.title }}&lt;h4&gt;{{ . }}&lt;/h4&gt;{{ end }}
+</code></pre>
+<p><strong>Example 5: If -&gt; Else If</strong></p>
+<pre><code>{{ if isset .Params &quot;alt&quot; }}
+    {{ index .Params &quot;alt&quot; }}
+{{ else if isset .Params &quot;caption&quot; }}
+    {{ index .Params &quot;caption&quot; }}
+{{ end }}
+</code></pre>
+<h2 id="pipes">Pipes</h2>
+<p>One of the most powerful components of Go templates is the ability to
+stack actions one after another. This is done by using pipes. Borrowed
+from unix pipes, the concept is simple, each pipeline&rsquo;s output becomes the
+input of the following pipe.</p>
+<p>Because of the very simple syntax of Go templates, the pipe is essential
+to being able to chain together function calls. One limitation of the
+pipes is that they only can work with a single value and that value
+becomes the last parameter of the next pipeline.</p>
+<p>A few simple examples should help convey how to use the pipe.</p>
+<p><strong>Example 1 :</strong></p>
+<pre><code>{{ if eq 1 1 }} Same {{ end }}
+</code></pre>
+<p>is the same as</p>
+<pre><code>{{ eq 1 1 | if }} Same {{ end }}
+</code></pre>
+<p>It does look odd to place the if at the end, but it does provide a good
+illustration of how to use the pipes.</p>
+<p><strong>Example 2 :</strong></p>
+<pre><code>{{ index .Params &quot;disqus_url&quot; | html }}
+</code></pre>
+<p>Access the page parameter called &ldquo;disqus_url&rdquo; and escape the HTML.</p>
+<p><strong>Example 3 :</strong></p>
+<pre><code>{{ if or (or (isset .Params &quot;title&quot;) (isset .Params &quot;caption&quot;)) (isset .Params &quot;attr&quot;)}}
+Stuff Here
+{{ end }}
+</code></pre>
+<p>Could be rewritten as</p>
+<pre><code>{{  isset .Params &quot;caption&quot; | or isset .Params &quot;title&quot; | or isset .Params &quot;attr&quot; | if }}
+Stuff Here
+{{ end }}
+</code></pre>
+<h2 id="context-aka-the-dot">Context (aka. the dot)</h2>
+<p>The most easily overlooked concept to understand about Go templates is that {{ . }}
+always refers to the current context. In the top level of your template this
+will be the data set made available to it. Inside of a iteration it will have
+the value of the current item. When inside of a loop the context has changed. .
+will no longer refer to the data available to the entire page. If you need to
+access this from within the loop you will likely want to set it to a variable
+instead of depending on the context.</p>
+<p><strong>Example:</strong></p>
+<pre><code>  {{ $title := .Site.Title }}
+  {{ range .Params.tags }}
+    &lt;li&gt; &lt;a href=&quot;{{ $baseurl }}/tags/{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt; - {{ $title }} &lt;/li&gt;
+  {{ end }}
+</code></pre>
+<p>Notice how once we have entered the loop the value of {{ . }} has changed. We
+have defined a variable outside of the loop so we have access to it from within
+the loop.</p>
+<h1 id="hugo-parameters">Hugo Parameters</h1>
+<p>Hugo provides the option of passing values to the template language
+through the site configuration (for sitewide values), or through the meta
+data of each specific piece of content. You can define any values of any
+type (supported by your front matter/config format) and use them however
+you want to inside of your templates.</p>
+<h2 id="using-content-page-parameters">Using Content (page) Parameters</h2>
+<p>In each piece of content you can provide variables to be used by the
+templates. This happens in the <a href="/content/front-matter">front matter</a>.</p>
+<p>An example of this is used in this documentation site. Most of the pages
+benefit from having the table of contents provided. Sometimes the TOC just
+doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter
+of some pages to turn off the TOC from being displayed.</p>
+<p>Here is the example front matter:</p>
+<pre><code>---
+title: &quot;Permalinks&quot;
+date: &quot;2013-11-18&quot;
+aliases:
+  - &quot;/doc/permalinks/&quot;
+groups: [&quot;extras&quot;]
+groups_weight: 30
+notoc: true
+---
+</code></pre><p>Here is the corresponding code inside of the template:</p>
+<pre><code>  {{ if not .Params.notoc }}
+    &lt;div id=&quot;toc&quot; class=&quot;well col-md-4 col-sm-6&quot;&gt;
+    {{ .TableOfContents }}
+    &lt;/div&gt;
+  {{ end }}
+</code></pre>
+<h2 id="using-site-config-parameters">Using Site (config) Parameters</h2>
+<p>In your top-level configuration file (eg, <code>config.yaml</code>) you can define site
+parameters, which are values which will be available to you in chrome.</p>
+<p>For instance, you might declare:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">params</span>:
+  <span style="color:#f92672">CopyrightHTML</span>: <span style="color:#e6db74">&#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;</span>
+  <span style="color:#f92672">TwitterUser</span>: <span style="color:#e6db74">&#34;spf13&#34;</span>
+  <span style="color:#f92672">SidebarRecentLimit</span>: <span style="color:#ae81ff">5</span>
+</code></pre></div><p>Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only
+provided if the <code>CopyrightHTML</code> parameter is provided, and if it is given,
+you would declare it to be HTML-safe, so that the HTML entity is not escaped
+again.  This would let you easily update just your top-level config file each
+January 1st, instead of hunting through your templates.</p>
+<pre><code>{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
+&lt;div class=&quot;text-center&quot;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
+&lt;/footer&gt;{{end}}
+</code></pre><p>An alternative way of writing the &ldquo;if&rdquo; and then referencing the same value
+is to use &ldquo;with&rdquo; instead. With rebinds the context <code>.</code> within its scope,
+and skips the block if the variable is absent:</p>
+<pre><code>{{with .Site.Params.TwitterUser}}&lt;span class=&quot;twitter&quot;&gt;
+&lt;a href=&quot;https://twitter.com/{{.}}&quot; rel=&quot;author&quot;&gt;
+&lt;img src=&quot;/images/twitter.png&quot; width=&quot;48&quot; height=&quot;48&quot; title=&quot;Twitter: {{.}}&quot;
+ alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
+&lt;/span&gt;{{end}}
+</code></pre><p>Finally, if you want to pull &ldquo;magic constants&rdquo; out of your layouts, you can do
+so, such as in this example:</p>
+<pre><code>&lt;nav class=&quot;recent&quot;&gt;
+  &lt;h1&gt;Recent Posts&lt;/h1&gt;
+  &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+    &lt;li&gt;&lt;a href=&quot;{{.RelPermalink}}&quot;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
+  {{end}}&lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>]]></content>
+        </item>
+        
+    </channel>
+</rss>

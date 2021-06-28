@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ricorsione on Eserciziario Laboratorio 1 A.A 2020/2021</title>
+    <link>leonardo-arditti.github.io/Lab1-20-21/tags/ricorsione/</link>
+    <description>Recent content in ricorsione on Eserciziario Laboratorio 1 A.A 2020/2021</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 27 Jun 2021 12:16:50 +0200</lastBuildDate><atom:link href="leonardo-arditti.github.io/Lab1-20-21/tags/ricorsione/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Esercizi ricorsione</title>
+      <link>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</link>
+      <pubDate>Sun, 27 Jun 2021 12:16:50 +0200</pubDate>
+      
+      <guid>leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-ricorsione/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+Fattoriale Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale. Esempi:
+fattoriale(1) → 1
+fattoriale(5) → 120
+fattoriale(10) → 3628800
+function fattoriale(n) { if (n&amp;lt;=1) return 1; return n * fattoriale(n-1); } function fattoriale_tailrec(n,acc = 1) { if (n &amp;lt;= 1) return acc; return fattoriale_tailrec(n-1,acc * n); } // fattoriale_tailrec(10) → 3628800 Numeri triangolari Realizzare una funzione ricorsiva che, dato un intero &amp;gt;=0 n, calcoli il valore dell’ennesimo numero triangolare.</description>
+    </item>
+    
+  </channel>
+</rss>
