@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>compito-in-classe on Eserciziario Laboratorio 1 A.A 2020/2021</title>
-    <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/compito-in-classe/</link>
-    <description>Recent content in compito-in-classe on Eserciziario Laboratorio 1 A.A 2020/2021</description>
+    <title>typescript on Eserciziario Laboratorio 1 A.A 2020/2021</title>
+    <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/typescript/</link>
+    <description>Recent content in typescript on Eserciziario Laboratorio 1 A.A 2020/2021</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 23 Apr 2021 22:39:54 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/compito-in-classe/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 22:39:54 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>09 - Compito in classe</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-09-classe/</link>
@@ -42,33 +42,6 @@ Si ricorda che dello stesso esercizio possono esistere più varianti.
       <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Esercizio 1 Siano a un array di numeri, ordinato in senso crescente, e k un numero. Si scriva una funzione JS cerca(a, k, i, j), che, con un numero OTTIMO di operazioni di accesso ad a, restituisca true se k occorre nell&amp;rsquo;array a in una posizione compresa tra gli indici i e j, con 0&amp;lt;=i&amp;lt;j&amp;lt;a.</description>
-    </item>
-    
-    <item>
-      <title>04 - Compito in classe</title>
-      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-04-classe/</link>
-      <pubDate>Fri, 27 Nov 2020 17:31:18 +0200</pubDate>
-      
-      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-04-classe/</guid>
-      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
-Si ricorda che dello stesso esercizio possono esistere più varianti.
- Esercizio 1 Si scriva la funzione ricorsiva sommaPari(a), che prende come parametro un array a di interi e restituisce la somma degli elementi pari.
-Esempi:
-sommaPari([5,9,1,-4,3,6,2,-5]) → 4
-sommaPari([5,9,1,33,7,-3]) → 0
-function sommaPariR(a,i = 0) { if (!(i &amp;lt; a.length)) return 0; return (a[i] % 2 == 0 ?</description>
-    </item>
-    
-    <item>
-      <title>03 - Compito in classe</title>
-      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-03-classe/</link>
-      <pubDate>Fri, 13 Nov 2020 17:31:18 +0200</pubDate>
-      
-      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-03-classe/</guid>
-      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
-Si ricorda che dello stesso esercizio possono esistere più varianti.
- Esercizio 03.1 - Array Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.
-function calcola(a) { let sum = 0; for (let i in a) sum += a[i]**2; return sum; } // calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733  // calcola([0,0,12,-66,9]) → 4581  // calcola([1,2,3,4,5,6]) → 91 Esercizio 03.</description>
     </item>
     
   </channel>

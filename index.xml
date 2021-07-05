@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 27 Nov 2020 17:31:18 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 22:39:54 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>09 - Compito in classe</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-09-classe/</link>
+      <pubDate>Fri, 23 Apr 2021 22:39:54 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-09-classe/</guid>
+      <description>Esercizio 1 - isSorted Scrivere una funzione isSorted(a), con a un array di numeri. La funzione restituisce true se l&amp;rsquo;array e&#39; ordinato in senso strettamente crescente, e false altrimenti.
+Esempi:
+isSorted([-21,-2,0,4,6,210]) → true
+isSorted([2,6,8,8,9,21]) → false
+isSorted([2,6,8,9,10,-42]) → false
+function isSorted(a) { for (let i = 0; i &amp;lt; a.length - 1; i++) { if (!(a[i] &amp;lt; a[i+1])) return false; } return true; } Esercizio 2 - Deframmenta Scrivere una funzione deframmenta(a), con a array di numeri.</description>
+    </item>
+    
+    <item>
+      <title>08 - Compito in classe</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-08-classe/</link>
+      <pubDate>Fri, 09 Apr 2021 22:39:54 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-08-classe/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 1 - TS Scrivere una funzione generica &amp;ldquo;sommaArray(a, somma)&amp;rdquo; in TS (usando Generics). La funzione prende in input un array omogeneo &amp;ldquo;a&amp;rdquo; che potrebbe contenere elementi di qualsiasi tipo e una funzione &amp;ldquo;somma(x,y)&amp;rdquo;, che prende come parametri due elementi dello stesso tipo e restitusce la loro somma.</description>
+    </item>
+    
+    <item>
+      <title>06 - Compito in classe</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-06-classe/</link>
+      <pubDate>Tue, 16 Mar 2021 22:39:54 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-06-classe/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 1 Siano a un array di numeri, ordinato in senso crescente, e k un numero. Si scriva una funzione JS cerca(a, k, i, j), che, con un numero OTTIMO di operazioni di accesso ad a, restituisca true se k occorre nell&amp;rsquo;array a in una posizione compresa tra gli indici i e j, con 0&amp;lt;=i&amp;lt;j&amp;lt;a.</description>
+    </item>
+    
     <item>
       <title>04 - Compito in classe</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-04-classe/</link>
@@ -86,7 +122,7 @@ function produttoria(a,b) { let n = 1; for (let i = a; i &amp;lt;= b; i++) { n *
       <pubDate>Tue, 15 Sep 2020 17:23:19 +0200</pubDate>
       
       <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</guid>
-      <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
+      <description>L&amp;rsquo;obiettivo di questa repository è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
 Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows.
 Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
     </item>

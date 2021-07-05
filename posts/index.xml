@@ -6,8 +6,1178 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 27 Nov 2020 17:31:18 +0200</lastBuildDate>
+        <lastBuildDate>Fri, 23 Apr 2021 22:39:54 +0200</lastBuildDate>
         <atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>09 - Compito in classe</title>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-09-classe/</link>
+            <pubDate>Fri, 23 Apr 2021 22:39:54 +0200</pubDate>
+            
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-09-classe/</guid>
+            <description>Esercizio 1 - isSorted Scrivere una funzione isSorted(a), con a un array di numeri. La funzione restituisce true se l&amp;rsquo;array e&#39; ordinato in senso strettamente crescente, e false altrimenti.
+Esempi:
+isSorted([-21,-2,0,4,6,210]) → true
+isSorted([2,6,8,8,9,21]) → false
+isSorted([2,6,8,9,10,-42]) → false
+function isSorted(a) { for (let i = 0; i &amp;lt; a.length - 1; i++) { if (!(a[i] &amp;lt; a[i+1])) return false; } return true; } Esercizio 2 - Deframmenta Scrivere una funzione deframmenta(a), con a array di numeri.</description>
+            <content type="html"><![CDATA[<h2 id="esercizio-1---issorted">Esercizio 1 - isSorted</h2>
+<p>Scrivere una funzione isSorted(a), con a un array di numeri. La funzione restituisce true se l&rsquo;array e' ordinato in senso strettamente crescente, e false altrimenti.</p>
+<p>Esempi:</p>
+<p>isSorted([-21,-2,0,4,6,210]) → true</p>
+<p>isSorted([2,6,8,8,9,21]) → false</p>
+<p>isSorted([2,6,8,9,10,-42]) → false</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isSorted</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><h2 id="esercizio-2---deframmenta">Esercizio 2 - Deframmenta</h2>
+<p>Scrivere una funzione deframmenta(a), con a array di numeri.
+La funzione restituisce una copia dell&rsquo;array a da cui sono state eliminate le occorrenze dei numeri quando queste non sono ripetute in sequenza (ovvero in posizioni contigue dell&rsquo;array) almeno una volta.
+Ad esempio  dato l&rsquo;array a = [1,1,2,3,3,3,2,2,4] la chiamata deframmenta(a) restituisce [1,1,3,3,3,2,2], dove gli elementi in posizione 2 e 8 sono stati eliminati in quanto non ripetuti in sequenza.
+Esempi:</p>
+<p>deframmenta([1,1,2,3,3,3,2,2,4]) -&gt; [1,1,3,3,3,2,2]</p>
+<p>deframmenta([0,0,0,0,0,1,0,1,1]) -&gt; [0,0,0,0,0,1,1]</p>
+<p>deframmenta([1,0]) -&gt; []</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deframmenta</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>,<span style="color:#a6e22e">i</span>) =&gt; ((<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">elem</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">elem</span>)))
+}
+
+<span style="color:#75715e">// oppure 
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deframmentaClassic</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deframmented</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>])
+    <span style="color:#a6e22e">deframmented</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>]);
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) { 
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">||</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]))
+      <span style="color:#a6e22e">deframmented</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+  }
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>])
+    <span style="color:#a6e22e">deframmented</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">deframmented</span>;
+}
+</code></pre></div><h2 id="esercizio-3---arrayfy">Esercizio 3 - Arrayfy</h2>
+<p>Si scriva una funzione arrayfy(f) che, dato come argomento una funzione f : X -&gt; Y (con X e Y qualunque), restituisca una funzione che, dato un array A con elementi di tipo X, lo modifichi sostituendo ogni elemento x di A con il valore restituito da f(x).
+Esempi:</p>
+<p>Sia a=[5,2,4]. Allora dopo arrayfy(x=&gt;0)(a), a vale [0,0,0]</p>
+<p>Sia a=[5,2,4]. Allora dopo arrayfy(x=&gt;2*x)(a), a vale [10,4,8]</p>
+<p>Sia a=&ldquo;pippo&rdquo;.split(&quot;&quot;). Allora dopo arrayfy(c=&gt;c==&ldquo;p&rdquo;)(a), a vale [true,false,true,true,false]</p>
+<p>typeof arrayfy(x=&gt;0) è &ldquo;function&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">arrayfy</span>(<span style="color:#a6e22e">f</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">A</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">copy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">length</span>);
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">A</span>) {
+      <span style="color:#a6e22e">copy</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">i</span>]);
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">copy</span>;
+  }
+}
+
+<span style="color:#75715e">/* Soluzione proposta a lezione
+</span><span style="color:#75715e">  
+</span><span style="color:#75715e">  In stile funzionale: 
+</span><span style="color:#75715e">  function arrayfy(f) {return (a =&gt; a.forEach((x,i)=&gt;{a[i]=f(x)}))}
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  In stile procedurale:
+</span><span style="color:#75715e">  function arrayfy(f) {return (a =&gt; {for (var i in a) a[i]=f(a[i])})}
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><h2 id="esercizio-4---extend">Esercizio 4 - Extend</h2>
+<p>Si scriva una funzione extend(a,b) che, dati due oggetti a e b, restituisca un nuovo oggetto che ha tutte le proprietà di a e tutte quelle di b. Se a e b hanno qualche proprietà con lo stesso nome, prevale il valore contenuto in b.
+Esempi:</p>
+<p>Sia a= {nome: &ldquo;pippo&rdquo;, età: 35} e b={nome: &ldquo;andrea&rdquo;, altezza: 200}, allora:</p>
+<p>extend(a,b) restituisce {nome: &ldquo;andrea&rdquo;, età: 35, altezza: 200}</p>
+<p>extend(a,{}) restituisce {nome: &ldquo;pippo&rdquo;, età: 35}</p>
+<p>extend({},{}) restituisce {}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">extend</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newObj</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">b</span>) {
+    <span style="color:#a6e22e">newObj</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>[<span style="color:#a6e22e">key</span>];
+  }
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#a6e22e">newObj</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">key</span>];
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newObj</span>;
+}
+
+<span style="color:#75715e">// Soluzione proposta a lezione
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">extend</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) { <span style="color:#66d9ef">return</span> {...<span style="color:#a6e22e">a</span>, ...<span style="color:#a6e22e">b</span>} }
+</code></pre></div><h2 id="esercizio-5---unique---ts">Esercizio 5 - Unique - TS</h2>
+<p>Scrivere una funzione Typescript &ldquo;unique(a, equals)&rdquo; che utilizza generics. La funzione prende come parametro un array &ldquo;a&rdquo; di oggetti di tipo &ldquo;T&rdquo; e una funzione &ldquo;equals(T,T)&rdquo; che confronta due oggetti di tipo T, restituendo true se sono uguali. La funzione &ldquo;unique&rdquo; restituisce un nuovo array contenente tutti gli elementi unici di &ldquo;a&rdquo; (quindi senza duplicati), nell&rsquo;ordine in cui sono in &ldquo;a&rdquo;. Nota: la funzione equals non va implementata, viene specificata dall&rsquo;utilizzatore della funzione.</p>
+<p>Esempio:</p>
+<p>unique<!-- raw HTML omitted -->([3,5,3,2,8,5],((x,y)=&gt;x==y)) → [3,5,2,8]</p>
+<p>unique<!-- raw HTML omitted -->([0,0,0,0,0,0,0],((x,y)=&gt;x==y)) → [ 0 ]</p>
+<p>unique<!-- raw HTML omitted -->([&lsquo;hello&rsquo;,&lsquo;hello&rsquo;, &lsquo;how&rsquo;,&lsquo;are&rsquo;,&lsquo;you&rsquo;],((x,y)=&gt;x==y)) → [ &lsquo;hello&rsquo;, &lsquo;how&rsquo;, &lsquo;are&rsquo;, &lsquo;you&rsquo; ]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#66d9ef">unique</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">T</span>[], <span style="color:#a6e22e">equals</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">T</span>, <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">boolean</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span>[] {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">T</span>[] <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">elem</span>,<span style="color:#a6e22e">index</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">equals</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>],<span style="color:#a6e22e">elem</span>)))
+              <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>])
+      }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+}
+</code></pre></div><h2 id="esercizio-6---car---ts">Esercizio 6 - Car - TS</h2>
+<p>Scrivere in Typescript una classe Car che rappresenta un automobile. La classe ha le seguenti proprietà:</p>
+<ul>
+<li>fuelType, rappresenta il tipo di carburante, di tipo Fuel definito dal seguente enum (che trovate anche nel REPL): enum Fuel {Diesel, Gasoline, Electric};</li>
+<li>fuelCapacity, di tipo numerico, rappresenta la capacità massima del serbatoio o batteria; 
+consumption, di tipo numerico, rappresenta il consumo medio, in unità di carburante per km;</li>
+<li>fuelLevel, di tipo numerico, rappresenta il livello del carburante rimanente nel serbatoio, o il livello della batteria. Prende valori tra 0 e fuelCapacity.</li>
+</ul>
+<p>La classe contiene un costruttore che prende come parametri, nell&rsquo;ordine: fuelType, fuelCapacity, consumption e fuelLevel. I primi tre parametri sono obbligatori, invece fuelLevel può mancare e ha 0 come valore di default.
+La classe implementa anche i seguenti metodi (usate ESATTAMENTE i nomi indicati):</p>
+<ul>
+<li>refillFuel(f) - prende come parametro una quantità di carburante/energia f e aggiorna la proprietà fuelLevel, incrementandola del valore f; attenzione a rispettare la capacità massima del serbatoio/batteria (specificata dalla proprietà fuelCapacity): se la capacità è superata, fuelLevel viene settato a fuelCapacity.  Il parametro f è opzionale: se non viene specificato il metodo fa il &lsquo;pieno&rsquo;, portando il valore di fuelLevel al valore massimo possibile (cioè alla capacità massima). Il metodo restituisce il nuovo livello di carburante/energia.</li>
+<li>drive (km) - prende come parametro il numero di km da percorrere, e aggiorna fuelLevel considerando il consumo medio; la funzione restituisce il nuovo valore di fuelLevel. Se il livello di carburante non è sufficiente per completare il viaggio, si lancia un&rsquo;eccezione di tipo NoFuelException. In caso di eccezione il livello del carburante non viene modificato.</li>
+</ul>
+<p>Esempio:</p>
+<p>let c1=new Car(Fuel.Diesel,30,0.5) -&gt; Car { fuelType: 0, fuelCapacity: 30, consumption: 0.5, fuelLevel: 0 }</p>
+<p>c1.drive(10) → lancia eccezione NoFuelException();</p>
+<p>c1.refillFuel(20); → 20</p>
+<p>c1.drive(10); → 15</p>
+<p>c1.drive(30); → 0</p>
+<p>c1.refillFuel(); → 30</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NoFuelException</span> <span style="color:#66d9ef">extends</span> Error {
+    ;
+}
+
+<span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">Fuel</span> { <span style="color:#a6e22e">Diesel</span>, <span style="color:#a6e22e">Gasoline</span>, <span style="color:#a6e22e">Electric</span> }
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+  <span style="color:#a6e22e">fuelType</span>: <span style="color:#66d9ef">Fuel</span>;
+  <span style="color:#a6e22e">fuelCapacity</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">consumption</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">fuelLevel</span>: <span style="color:#66d9ef">number</span>;
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">fuelType</span>: <span style="color:#66d9ef">Fuel</span>, <span style="color:#a6e22e">fuelCapacity</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">consumption</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">fuelLevel</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelType</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fuelType</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelCapacity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fuelCapacity</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumption</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">consumption</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fuelLevel</span>;
+  }
+
+  <span style="color:#a6e22e">refillFuel</span>(<span style="color:#a6e22e">f?</span>: <span style="color:#66d9ef">number</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelCapacity</span>;
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span>;
+      }
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelCapacity</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelCapacity</span>;
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span>;
+      }
+
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">f</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span>;
+  }
+
+  <span style="color:#a6e22e">drive</span>(<span style="color:#a6e22e">km</span>: <span style="color:#66d9ef">number</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumption</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">km</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span>)
+          <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NoFuelException</span>(<span style="color:#e6db74">&#34;Carburante non sufficiente per l&#39;itenerario.&#34;</span>)
+
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span> <span style="color:#f92672">-=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumption</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">km</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fuelLevel</span>;
+  }
+}
+</code></pre></div><h2 id="esercizio-7---angolo">Esercizio 7 - Angolo</h2>
+<p>Si scriva una funzione angolo(d) che, ricevuto come argomento un oggetto della classe Date di JavaScript, restituisca l&rsquo;angolo formato dalla lancetta delle ore e quella dei minuti di un tradizionale orologio analogico (con quadrante di 12 ore).
+Le lancette formano due angoli: si restituisca il più piccolo, espresso come un numero positivo di gradi sessagesimali, e approssimato all&rsquo;intero più vicino.
+Si assuma che le lancette cambino posizione in maniera continua, ogni minuto.
+Esempi:
+angolo(new Date(&ldquo;2021-04-23 14:00:00&rdquo;)) → 60
+angolo(new Date(&ldquo;2021-04-23 14:15:15&rdquo;)) → 23
+angolo(new Date(&ldquo;2021-04-23 6:50:50&rdquo;)) → 95</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">angolo</span>(<span style="color:#a6e22e">d</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">h</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getHours</span>()<span style="color:#f92672">%</span><span style="color:#ae81ff">12</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getMinutes</span>()
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ah</span><span style="color:#f92672">=</span>(<span style="color:#a6e22e">h</span><span style="color:#f92672">*</span><span style="color:#ae81ff">60</span><span style="color:#f92672">+</span><span style="color:#a6e22e">m</span>)<span style="color:#f92672">/</span>(<span style="color:#ae81ff">12</span><span style="color:#f92672">*</span><span style="color:#ae81ff">60</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">360</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">am</span><span style="color:#f92672">=</span>(<span style="color:#a6e22e">m</span>)<span style="color:#f92672">/</span>(<span style="color:#ae81ff">60</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">360</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">theta</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">ah</span><span style="color:#f92672">-</span><span style="color:#a6e22e">am</span>)
+  <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">round</span>(Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">theta</span>,<span style="color:#ae81ff">360</span><span style="color:#f92672">-</span><span style="color:#a6e22e">theta</span>))
+}
+</code></pre></div><h2 id="esercizio-8---produci">Esercizio 8 - Produci</h2>
+<p>Si consideri un oggetto G che rappresenta una grammatica. Le proprietà di G hanno chiavi il cui nome consiste di una sola lettera maiuscola (A-Z); il valore di queste proprietà è una stringa qualunque.</p>
+<p>Si scriva una funzione produci(G,s) che, data una grammatica G e una stringa qualunque s, restituisca la stringa ottenuta sostituendo ogni lettera maiuscola L contenuta in s con la corrispondente stringa associata a L in G, se esiste. Tutti i caratteri che non sono chiavi di G vengono lasciati intatti.</p>
+<p>Si scriva poi una funzione multip(G,s,k) che ripete il processo di produci k volte (con k intero non negativo), espandendo ripetutamente la stringa prodotta.</p>
+<p>Esempio:
+Sia G= {A:&ldquo;aAB&rdquo;, B:&ldquo;bb&rdquo;, C:&ldquo;33&rdquo;}, allora:</p>
+<p>produci(G,&ldquo;CAz&rdquo;) → &ldquo;33aABz&rdquo;</p>
+<p>produci(G,&ldquo;BAH!&quot;) → &ldquo;bbaABH!&rdquo;</p>
+<p>multip(G,&ldquo;CAz&rdquo;,3) → &ldquo;33aaaABbbbbz&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">produci</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">s</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newStr</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">L</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">s</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">L</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">G</span>)
+      <span style="color:#a6e22e">newStr</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">G</span>[<span style="color:#a6e22e">L</span>];
+    <span style="color:#66d9ef">else</span>
+      <span style="color:#a6e22e">newStr</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">L</span>; 
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newStr</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">multip</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">s</span>,<span style="color:#a6e22e">k</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">produci</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">s</span>);
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">newStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">produci</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">newStr</span>);
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newStr</span>;
+}
+
+<span style="color:#75715e">// Soluzione proposta a lezione:
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">produci</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">s</span>) {
+   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">=</span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">c</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">G</span>[<span style="color:#a6e22e">c</span>]<span style="color:#f92672">:</span><span style="color:#a6e22e">c</span>)).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+} 
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">multip</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">s</span>,<span style="color:#a6e22e">k</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">k</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">multip</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">produci</span>(<span style="color:#a6e22e">G</span>,<span style="color:#a6e22e">s</span>),<span style="color:#a6e22e">k</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+}
+</code></pre></div><h2 id="esercizio-9---contali">Esercizio 9 - Contali</h2>
+<p>Si scriva una funzione contali(C) che, ricevuto come argomento una classe C, restituisca una classe C2 identica a C ma con in più la capacità di contare quante istanze di oggetti della classe sono stati creati. In particolare, C2 deve esporre una proprietà statica di sola lettura quanti, il cui valore sia il numero totale di istanze create fino a quel momento.</p>
+<p>Esempio:</p>
+<p>var A2 = contali(Array)</p>
+<p>var S2 = contali(String)</p>
+<p>var a=new A2()          	// creo un primo &ldquo;Array contato&rdquo;</p>
+<p>var b=new A2(4,7,21)    	// creo e inizializzo un secondo &ldquo;Array contato&rdquo;</p>
+<p>b.push(42)              		// le istanze di A2 sono Array</p>
+<p>var c=new S2(&ldquo;pippo&rdquo;)   	// creo e inizializzo 1 &ldquo;Stringa contata&rdquo;</p>
+<p>console.log(c.length)   	// le istanze di S2 sono String</p>
+<p>console.log(A2.quanti)  	// stampa 2</p>
+<p>console.log(S2.quanti)  	// stampa 1</p>
+<p>A2.quanti=0             		// ignorato</p>
+<p>console.log(A2.quanti)  	// stampa ancora 2</p>
+<p>console.log(a instanceof Array) // stampa true</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Soluzione proposta a lezione
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">contali</span>(<span style="color:#a6e22e">C</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">istanze</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">class</span> {
+    <span style="color:#a6e22e">constructor</span>(...<span style="color:#a6e22e">args</span>) {
+      <span style="color:#a6e22e">istanze</span><span style="color:#f92672">++</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">C</span>(...<span style="color:#a6e22e">args</span>)
+    }
+    <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">quanti</span>() { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">istanze</span>}
+  }
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>08 - Compito in classe</title>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-08-classe/</link>
+            <pubDate>Fri, 09 Apr 2021 22:39:54 +0200</pubDate>
+            
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-08-classe/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 1 - TS Scrivere una funzione generica &amp;ldquo;sommaArray(a, somma)&amp;rdquo; in TS (usando Generics). La funzione prende in input un array omogeneo &amp;ldquo;a&amp;rdquo; che potrebbe contenere elementi di qualsiasi tipo e una funzione &amp;ldquo;somma(x,y)&amp;rdquo;, che prende come parametri due elementi dello stesso tipo e restitusce la loro somma.</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="esercizio-1---ts">Esercizio 1 - TS</h2>
+<p>Scrivere una funzione generica &ldquo;sommaArray(a, somma)&rdquo; in TS (usando Generics). La funzione prende in input un array omogeneo &ldquo;a&rdquo; che potrebbe contenere elementi di qualsiasi tipo e una funzione &ldquo;somma(x,y)&rdquo;, che prende come parametri due elementi dello stesso tipo e restitusce la loro somma. 
+Assumere che la funzione &ldquo;somma&rdquo; definisca l&rsquo;operazione somma in modo opportuno per il tipo corrente (per esempio può essere + per numeri, concatenazione per stringhe, concatenazione per array, + per matrici, etc.) 
+La funzione &ldquo;sommaArray&rdquo; applica la funzione &ldquo;somma&rdquo; su tutti gli elementi dell&rsquo;array &ldquo;a&rdquo;, a partire dai primi 2. Specificamente, prima fa la somma tra i primi 2, poi somma il risultato con il terzo, poi il risultato con il quarto, e così via.
+Definite con attenzione tutti i tipi delle variabili utilizzate.
+Non dovete implementare la funzione somma, viene passata come parametro nei test.</p>
+<p>Esempi:</p>
+<p>function sumNumbers (x:number,y:number):number{return x+y}</p>
+<p>sommaArray<!-- raw HTML omitted -->([3,6,4,2],sumNumbers) -&gt; 15</p>
+<p>sommaArray<!-- raw HTML omitted -->([3,6,4,&ldquo;34&rdquo;],sumNumbers)</p>
+<p>-&gt; error TS2322: Type &lsquo;string&rsquo; is not assignable to type &lsquo;number&rsquo;.</p>
+<hr>
+<p>function sumStrings (x:string,y:string):string{return x+&quot; &ldquo;+y;};</p>
+<p>sommaArray<!-- raw HTML omitted -->([&ldquo;o&rdquo;,&ldquo;che&rdquo;,&ldquo;bel&rdquo;,&ldquo;castello&rdquo;],sumStrings); -&gt; &lsquo;o che bel castello&rsquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sommaArray</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">T</span>[], <span style="color:#a6e22e">somma</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">T</span>, <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">T</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">T</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">somma</span>(<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>]);
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)
+        <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">somma</span>(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+}
+</code></pre></div><h2 id="esercizio-2---ts">Esercizio 2 - TS</h2>
+<p>Si definisca in TS una classe Libro contenente i seguenti campi: &ldquo;titolo&rdquo;, &ldquo;isbn&rdquo;, &ldquo;autore&rdquo; e &ldquo;disponibilità&rdquo;. Si definiscano adeguatamente i tipi per i campi (stringa per titolo, isbn e autore; numerico per la disponibilità). Nel costruttore si consideri il parametro di inizializzazione della disponibilità come opzionale (se non viene fornito si setti a 0). Si implementino i seguenti metodi per la classe:
+sell() la cui invocazione decrementa la disponibilità del libro di una quantità pari al numero di copie &ldquo;ncopie&rdquo; passato come parametro della funzione. Se la disponibilità residua è inferiore alla richiesta &ldquo;ncopie&rdquo; si lanci un&rsquo;eccezione di tipo EccezioneDisponibilità (da definire). Se il metodo viene invocato senza specificare parametri, si decrementi la disponibilità di 1 unità.
+stock() la cui invocazione incrementa la disponibilità del libro di una quantità pari al numero di copie &ldquo;ncopie&rdquo; passato come parametro della funzione.</p>
+<p>Esempi:</p>
+<p>let l:Libro = new Libro(&ldquo;Il buio oltre la siepe&rdquo;,&ldquo;978-8807881558&rdquo;,&ldquo;Harper Lee&rdquo;);</p>
+<p>-&gt; Libro {titolo: &lsquo;Il buio oltre la siepe&rsquo;,isbn: &lsquo;978-8807881558&rsquo;,autore: &lsquo;Harper Lee&rsquo;, &lsquo;disponibilità&rsquo;: 0}</p>
+<p>l.stock(10); -&gt; this.disponibilità==10;</p>
+<p>l.sell(11); -&gt; errore EccezioneDisponibilità</p>
+<p>l = new Libro(&ldquo;Fondazione&rdquo;,&ldquo;978-8804729198&rdquo;,&ldquo;Isaac Asimov&rdquo;,100);</p>
+<p>-&gt; Libro {titolo: &lsquo;Fondazione&rsquo;,isbn: &lsquo;978-8804729198&rsquo;,autore: &lsquo;Isaac Asimov&rsquo;, &lsquo;disponibilità&rsquo;: 100}</p>
+<hr>
+<p>l.sell(90); //this.disponibilità==10</p>
+<p>l.stock(2000); //this.disponibilità==2010</p>
+<p>l.sell(2010); //this.disponibilità==0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EccezioneDisponibilità</span> <span style="color:#66d9ef">extends</span> Error {
+    ;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Libro</span> {
+    <span style="color:#a6e22e">titolo</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">isbn</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">autore</span>: <span style="color:#66d9ef">string</span>;
+    <span style="color:#a6e22e">disponibilità</span>: <span style="color:#66d9ef">number</span>;
+
+    <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">titolo</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">isbn</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">autore</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">disponibilità</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">titolo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">titolo</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">autore</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">autore</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isbn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isbn</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">disponibilità</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">disponibilità</span>;
+    }
+
+    <span style="color:#a6e22e">sell</span>(<span style="color:#a6e22e">ncopie</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ncopie</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">disponibilità</span>)
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EccezioneDisponibilità</span>(<span style="color:#e6db74">&#34;Errore, disponibilità residua inferiore a quella richiesta.&#34;</span>);
+
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">disponibilità</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">ncopie</span>;
+    }
+
+    <span style="color:#a6e22e">stock</span>(<span style="color:#a6e22e">ncopie</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">disponibilità</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">ncopie</span>;
+    }
+}
+</code></pre></div><h2 id="esercizio-3---ts">Esercizio 3 - TS</h2>
+<p>Implementare in TS una classe Graph che gestisce un grafo orientato con liste di adiacenza. I nodi sono enumerati da 0 a n-1 (quindi, il nodo i ha indice i), dove &ldquo;n&rdquo; è la dimensione del Grafo.  La classe contiene una proprietà &ldquo;n&rdquo; che è il numero di nodi, e una proprietà &ldquo;edges&rdquo; che memorizza un array di liste di adiacenza. Specificamente, &ldquo;edges[i]&rdquo; è un array contenente la lista di tutti i nodi &ldquo;j&rdquo; per cui l&rsquo;arco (i,j) esiste, in ordine crescente. Considerare che un grafo può contenere anche gli archi (i,i).
+Il costruttore prende in input delle liste di adiacenza come array di array e inizializza le due proprietà dell&rsquo;oggetto.</p>
+<p>La classe offre 2 metodi:</p>
+<ul>
+<li>Il metodo &ldquo;complement&rdquo; genera un nuovo grafo con lo stesso numero di nodi, ma che contiene solo gli archi mancanti. Per esempio, se l&rsquo;arco (i,j) compare in G, allora l&rsquo;arco (i,j) nondeve comparire nel complemento. In modo simile, se l&rsquo;arco (i,j) non esiste in G, deve essere incluso nel complemento.</li>
+<li>Il metodo &ldquo;getSecondNeighbours&rdquo; prende in input l&rsquo;indice di un nodo e  restituisce un array di vicini di secondo livello, ordinato crescente. Un nodo j è vicino di secondo livello di i se esiste un nodo k per cui gli archi (i,k) e (k,j) esistono.
+Definite adeguatamente i tipi delle due proprietà e dei metodi.</li>
+</ul>
+<p>Esempio 1:
+let g:Graph=new Graph([[0,3],[1,2,3],[4],[],[0,1,2]]);</p>
+<p>avremo g -&gt; Graph {
+n: 5,
+edges: [ [ 0, 3 ], [ 1, 2, 3 ], [ 4 ], [], [ 0, 1, 2 ] ] 
+}</p>
+<p>g.complement()</p>
+<p>avremo Graph {
+n: 5,
+edges:
+[ [ 1, 2, 4 ],
+[ 0, 4 ],
+[ 0, 1, 2, 3 ],
+[ 0, 1, 2, 3, 4 ],
+[ 3, 4 ] ] }</p>
+<p>g.getSecondNeighbours(0) //[ 0, 3 ]</p>
+<p>g.getSecondNeighbours(1) //[ 1, 2, 3, 4 ]</p>
+<p>g.getSecondNeighbours(2)// [ 0, 1, 2 ]</p>
+<p>g.getSecondNeighbours(3)//[]</p>
+<p>g.getSecondNeighbours(4) //[ 0, 1, 2, 3, 4 ]</p>
+<hr>
+<p>Esempio 2
+g=new Graph([[],[],[]])</p>
+<p>avremo Graph { n: 3, edges: [ [], [], [] ] }</p>
+<p>g.complement()</p>
+<p>avremo Graph { n: 3, edges: [ [ 0, 1, 2 ], [ 0, 1, 2 ], [ 0, 1, 2 ] ] }</p>
+<p>g.getSecondNeighbours(2)//-&gt;[]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Graph</span> {
+  <span style="color:#a6e22e">n</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">edges</span>: <span style="color:#66d9ef">number</span>[][];
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">edges</span>: <span style="color:#66d9ef">number</span>[][]) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">edges</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">edges</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">edges</span>.<span style="color:#a6e22e">length</span>;
+  }
+
+  <span style="color:#a6e22e">complement</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Graph</span> {
+      <span style="color:#75715e">// nodes
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">nodes</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [];
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+          <span style="color:#a6e22e">nodes</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>)
+      }
+
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">complementEdges</span>: <span style="color:#66d9ef">number</span>[][] <span style="color:#f92672">=</span> [];
+
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">complementEdge</span>: <span style="color:#66d9ef">number</span>[];
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">edge</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">edges</span>) {
+          <span style="color:#a6e22e">complementEdge</span> <span style="color:#f92672">=</span> [];
+          <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nodes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+              <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#a6e22e">edge</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">nodes</span>[<span style="color:#a6e22e">i</span>])))
+                  <span style="color:#a6e22e">complementEdge</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>);
+          }
+          <span style="color:#a6e22e">complementEdges</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">complementEdge</span>);
+      }
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Graph</span>(<span style="color:#a6e22e">complementEdges</span>);
+  }
+
+  <span style="color:#a6e22e">getSecondNeighbours</span>(<span style="color:#a6e22e">i</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span>[] {
+
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">finalNeighbours</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [];
+
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#a6e22e">i</span>]) {
+          <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">edg</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#a6e22e">j</span>])
+              <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#a6e22e">finalNeighbours</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">edg</span>))) {
+                  <span style="color:#a6e22e">finalNeighbours</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">edg</span>)
+              } 
+      }
+
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">finalNeighbours</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>);
+  }
+}
+</code></pre></div><h2 id="esercizio-4---ts">Esercizio 4 - TS</h2>
+<p>Data l&rsquo;interfaccia Shape definita sotto, si realizzino due classi Square e Circle che l&rsquo;implementano.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Shape</span>{
+ <span style="color:#a6e22e">x</span>:<span style="color:#66d9ef">number</span>;
+ <span style="color:#a6e22e">y</span>:<span style="color:#66d9ef">number</span>;
+ <span style="color:#a6e22e">area</span>()<span style="color:#f92672">:</span><span style="color:#66d9ef">number</span>;
+ <span style="color:#a6e22e">getName</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span>;
+ <span style="color:#a6e22e">translate</span>(<span style="color:#a6e22e">x</span>:<span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">y</span>:<span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span>;
+}
+</code></pre></div><p>L&rsquo;intepretazione dei campi e metodi di Shape è la seguente:</p>
+<ul>
+<li>x,y : posizione della forma nello spazio 2D (x ascissa e y ordinata); l&rsquo;interpretazione della posizione varia per Circle (dove rappresenta il centro del cerchio) e per Square (dove rappresenta il vertice in alto a sinistra del quadrato)</li>
+<li>area() : restituisce l&rsquo;area della forma</li>
+<li>getName() : restituisce una stringa con il nome della forma, equivalente al nome della classe (Circle e Square, con prima lettera maiuscola)</li>
+<li>translate(a,b) : sposta la posizione della forma nelle nuove coordinate x=a e y=b; il metodo non restituisce nulla.</li>
+</ul>
+<p>Le due classi Circle e Square aggiungono ai campi dell&rsquo;interfaccia Shape un attributo che rappresenta, rispettivamente, il raggio (per Circle) e il lato (per Square). I costruttori delle 2 classi prendono come parametri (in ordine) quelli per inizializzare la posizione (x,y) e il terzo parametro dipendente dal tipo di classe (raggio o lato). I valori usati per inizializzare raggio e lato devono essere strettamente maggiori di zero; il costruttore deve controllare che la condizione non venga violata. Se così fosse vengono fissati ad un valore di default pari a 1.</p>
+<p>Esempi</p>
+<p>let c1 = new Circle(0,0,2) // -&gt; Circle { x: 0, y: 0, r: 2 }</p>
+<p>c1.area() // -&gt; 12.566370614359172</p>
+<p>c1.translate(1,-0.5) //-&gt; Circle { x: 1, y: -0.5, r: 2 }</p>
+<p>c1.getName() //-&gt; &lsquo;Circle&rsquo;</p>
+<p>let c2 = new Circle(10,1,0.5) // -&gt; Circle { x: 10, y: 1, r: 0.5 }//errore - x:10, y:1</p>
+<p>c2.area() // -&gt; 0.7853981633974483</p>
+<p>c2.translate(100,-100) //-&gt; Circle { x: 100, y: -100, r: 0.5 }</p>
+<hr>
+<p>let q1 = new Square(1,0,10) // -&gt; Square { x: 1, y: 0, l: 10 }}</p>
+<p>q1.area() // -&gt; 100</p>
+<p>q1.translate(-4.8,-3.5) //-&gt; Square { x: -4.8, y: -3.5, l: 10 }</p>
+<p>q1.getName() //-&gt; &lsquo;Square&rsquo;</p>
+<hr>
+<p>let q2 = new Square(0,0,0) // -&gt; Square { x: 0, y: 0, l: 1 }</p>
+<p>q2.area() // -&gt; 1</p>
+<p>q2.translate(1,1) //-&gt; Square { x: 1, y: 1, l: 1 }</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Shape</span> {
+  <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">lato</span>: <span style="color:#66d9ef">number</span>;
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">lato</span>: <span style="color:#66d9ef">number</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">lato</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lato</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lato</span>;
+      <span style="color:#66d9ef">else</span>
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lato</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+
+  <span style="color:#a6e22e">area</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lato</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>;
+  }
+
+  <span style="color:#a6e22e">getName</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Square&#34;</span>;
+  }
+
+  <span style="color:#a6e22e">translate</span>(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">b</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+  }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circle</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">Shape</span> {
+  <span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">raggio</span>: <span style="color:#66d9ef">number</span>;
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">y</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">raggio</span>: <span style="color:#66d9ef">number</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">raggio</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">raggio</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">raggio</span>;
+      <span style="color:#66d9ef">else</span>
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">raggio</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+
+  <span style="color:#a6e22e">area</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">PI</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">raggio</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>;
+  }
+
+  <span style="color:#a6e22e">getName</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Circle&#34;</span>;
+  }
+
+  <span style="color:#a6e22e">translate</span>(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">b</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+  }
+}
+</code></pre></div><h2 id="esercizio-5---ts">Esercizio 5 - TS</h2>
+<p>Si scriva una funzione TS &lsquo;leggiStudenti(file)&rsquo; che prende come parametro una stringa &lsquo;file&rsquo; che rappresenta il nome di un file di testo e restituisce un array di studenti letti dal file. Uno studente è un oggetto della classe Studente con attributi &ldquo;nome&rdquo;, &ldquo;cognome&rdquo;, &ldquo;citta&rdquo;, &ldquo;votoLaurea&rdquo; (i primi tre stringhe, l&rsquo;ultimo numerico). Definire sia la funzione che la classe Studente (con le 4 proprietà e il costruttore). Si assuma che il file di testo sia organizzato come segue:</p>
+<ol>
+<li>
+<p>Una riga per ogni Studente</p>
+</li>
+<li>
+<p>Ciascuna riga riporta l&rsquo;informazione sui 4 attributi dell&rsquo;oggetto Studente in ordine e separati da virgole.</p>
+</li>
+</ol>
+<p>File di test:</p>
+<ul>
+<li><a href="./studenti1.txt">studenti1.txt</a></li>
+<li><a href="./studenti2.txt">studenti2.txt</a></li>
+</ul>
+<p>Esempi:</p>
+<p>leggiStudenti(&ldquo;studenti1.txt&rdquo;);
+avremo -&gt;[ Studente {
+nome: &lsquo;Marco&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Anna&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;110&rsquo; },
+Studente {
+nome: &lsquo;Andrea&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Matteo&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;108&rsquo; } ]</p>
+<hr>
+<p>leggiStudenti(&ldquo;studenti2.txt&rdquo;);
+avremo -&gt; [ Studente {
+nome: &lsquo;Marco&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Anna&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;110&rsquo; },
+Studente {
+nome: &lsquo;Andrea&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Matteo&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;108&rsquo; },
+Studente {
+nome: &lsquo;Marco&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Anna&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;110&rsquo; },
+Studente {
+nome: &lsquo;Andrea&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Matteo&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;108&rsquo; },
+Studente {
+nome: &lsquo;Marco&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Anna&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;110&rsquo; },
+Studente {
+nome: &lsquo;Andrea&rsquo;,
+cognome: &lsquo;Rossi&rsquo;,
+citta: &lsquo;Pisa&rsquo;,
+votoLaurea: &lsquo;109&rsquo; },
+Studente {
+nome: &lsquo;Matteo&rsquo;,
+cognome: &lsquo;Bruno&rsquo;,
+citta: &lsquo;Firenze&rsquo;,
+votoLaurea: &lsquo;108&rsquo; } ]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studente</span> {
+  <span style="color:#a6e22e">nome</span>: <span style="color:#66d9ef">string</span>;
+  <span style="color:#a6e22e">cognome</span>: <span style="color:#66d9ef">string</span>;
+  <span style="color:#a6e22e">citta</span>: <span style="color:#66d9ef">string</span>;
+  <span style="color:#a6e22e">votoLaurea</span>: <span style="color:#66d9ef">number</span>;
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">nome</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">cognome</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">citta</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">votoLaurea</span>: <span style="color:#66d9ef">number</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">nome</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nome</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cognome</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cognome</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">citta</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">citta</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">votoLaurea</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">votoLaurea</span>;
+  }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">leggiStudenti</span>(<span style="color:#a6e22e">file</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Studente</span>[] {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">text</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#a6e22e">file</span>,
+      { <span style="color:#a6e22e">encoding</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;utf8&#39;</span>, <span style="color:#a6e22e">flag</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;r&#39;</span> }, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">string</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>)
+              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">err</span>);
+      }).<span style="color:#a6e22e">toString</span>();
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">studenti</span>: <span style="color:#66d9ef">Studente</span>[] <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">righe</span>: <span style="color:#66d9ef">string</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">/\n/</span>)
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">riga</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">righe</span>) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">attributiStud</span>: <span style="color:#66d9ef">string</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">riga</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>);
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">stud</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Studente</span>(<span style="color:#a6e22e">attributiStud</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">attributiStud</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">attributiStud</span>[<span style="color:#ae81ff">2</span>], Number(<span style="color:#a6e22e">attributiStud</span>[<span style="color:#ae81ff">3</span>]));
+      <span style="color:#a6e22e">studenti</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">stud</span>);
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">studenti</span>;
+}
+</code></pre></div><h2 id="esercizio-6---ts">Esercizio 6 - TS</h2>
+<p>Definire una classe TS generica (che usa Generics) chiamata GenericFileToArray, che gestisce un array di elementi di tipo T. La classe ha una sola proprietà &ldquo;arr&rdquo;, che è l&rsquo;array di oggetti da gestire.
+Il costruttore della classe prende in input un nome di un file &ldquo;nomeFile:string&rdquo; e una funzione &ldquo;parse&rdquo; di tipo &ldquo;(s:string):T&rdquo;. La funzione &ldquo;parse&rdquo; restituisce un oggetto di tipo T (vedi esempi per varie possibili definizioni di questa funzione - la funzione &ldquo;parse&rdquo; non la dovete scrivere, ma viene passata come argomento al costruttore). Il costruttore legge il contenuto del file e chiama la funzione  &ldquo;parse&rdquo; su ogni riga del file (potete assumere il file non vuoto), costruendo l&rsquo;array interno con i valori restituiti dalla funzione &ldquo;parse&rdquo;.</p>
+<p>La classe contiene anche due metodi:</p>
+<ul>
+<li>metodo &ldquo;toString&rdquo; restituisce la stringa contenente tutti gli elementi dell&rsquo;array in formato JSON separati da &lsquo;\n&rsquo;</li>
+<li>metodo &ldquo;cerca&rdquo; prende come parametro un oggetto &lsquo;o&rsquo; di tipo T da cercare e una funzione &ldquo;equals&rdquo; di tipo &ldquo;(a:T,b:T):boolean&rdquo;. Il metodo &ldquo;cerca&rdquo; restituisce l&rsquo;indice &ldquo;i&rdquo; del primo elemento dell&rsquo;array per cui la funzione equals(o, arr[i]) restituisce &ldquo;true&rdquo;. Gli esempi mostrano vari casi di funzioni &ldquo;equals&rdquo;.</li>
+</ul>
+<p>Le funzioni &ldquo;parse&rdquo; e &ldquo;equals&rdquo; non devono essere implementate, vanno considerate input ai metodi. Per testare il codice potete considerare le funzioni negli esempi.</p>
+<p>File di test:</p>
+<ul>
+<li><a href="./testNum.txt">testNum.txt</a></li>
+<li><a href="./testStr.txt">testStr.txt</a></li>
+</ul>
+<p>Esempio 1
+Sia la funzione &lsquo;parse&rsquo; la seguente:</p>
+<p>function succ(a:string):number{
+return Number(a)+1;
+}</p>
+<p>//Sia la Funzione &lsquo;equals&rsquo; la seguente:</p>
+<p>function equals(a:number,b:number):boolean{
+return a==b;
+}</p>
+<p>let el=new GenericFileToArray(&ldquo;testNum.txt&rdquo;,succ); //GenericFileToArray { arr: [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ] }</p>
+<p>el.toString(); //&lsquo;2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n&rsquo;</p>
+<p>el.cerca(3,equals); //1</p>
+<hr>
+<p>Esempio 2
+//Sia la funzione &lsquo;parse&rsquo; la seguente:</p>
+<p>function cap(a:string):string{
+return a.toUpperCase();
+}</p>
+<p>//Sia la Funzione &lsquo;equals&rsquo; la seguente:</p>
+<p>function equalsStr(a:string,b:string):boolean{
+return a.toUpperCase()==b.toUpperCase();
+}</p>
+<p>let el1=new GenericFileToArray(&ldquo;testStr.txt&rdquo;,cap); //GenericFileToArray { arr: [ &lsquo;PIPPO&rsquo;, &lsquo;PLUTO&rsquo;, &lsquo;PAPERINO&rsquo;, &lsquo;TOPOLINO&rsquo; ] }</p>
+<p>el1.toString(); //'&ldquo;PIPPO&rdquo;\n&quot;PLUTO&rdquo;\n&quot;PAPERINO&quot;\n&quot;TOPOLINO&quot;\n'</p>
+<p>el1.cerca(&lsquo;pluto&rsquo;,equalsStr); //1</p>
+<p>el1.cerca(&lsquo;pepe&rsquo;,equalsStr);//-1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericFileToArray</span>&lt;<span style="color:#f92672">T</span>&gt; {
+  <span style="color:#a6e22e">arr</span>: <span style="color:#66d9ef">T</span>[] <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">nomeFile</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">parse</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">s</span>: <span style="color:#66d9ef">string</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">T</span>) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">text</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#a6e22e">nomeFile</span>,
+          { <span style="color:#a6e22e">encoding</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;utf8&#39;</span>, <span style="color:#a6e22e">flag</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;r&#39;</span> }, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">data</span>: <span style="color:#66d9ef">string</span>) {
+              <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>)
+                  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">err</span>);
+          }).<span style="color:#a6e22e">toString</span>();
+
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">righe</span>: <span style="color:#66d9ef">string</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">/\n/</span>);
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">righe</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">elem</span>))
+      }
+  }
+
+  <span style="color:#a6e22e">toString</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;\n&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+  }
+
+  <span style="color:#a6e22e">cerca</span>(<span style="color:#a6e22e">o</span>: <span style="color:#66d9ef">T</span>, <span style="color:#a6e22e">equals</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">T</span>, <span style="color:#a6e22e">b</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">boolean</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arr</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">equals</span>(<span style="color:#a6e22e">o</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>]))
+              <span style="color:#66d9ef">return</span> Number(<span style="color:#a6e22e">i</span>);
+      }
+      <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  }
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>06 - Compito in classe</title>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-06-classe/</link>
+            <pubDate>Tue, 16 Mar 2021 22:39:54 +0200</pubDate>
+            
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-06-classe/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Esercizio 1 Siano a un array di numeri, ordinato in senso crescente, e k un numero. Si scriva una funzione JS cerca(a, k, i, j), che, con un numero OTTIMO di operazioni di accesso ad a, restituisca true se k occorre nell&amp;rsquo;array a in una posizione compresa tra gli indici i e j, con 0&amp;lt;=i&amp;lt;j&amp;lt;a.</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="esercizio-1">Esercizio 1</h2>
+<p>Siano a un array di numeri, ordinato in senso crescente, e k un numero. Si scriva una funzione JS cerca(a, k, i, j), che, con un numero OTTIMO di operazioni di accesso ad a, restituisca true se k occorre nell&rsquo;array a  in una posizione compresa tra gli indici i e j, con 0&lt;=i&lt;j&lt;a.length (indici i e j inclusi), e false altrimenti.</p>
+<p>ESEMPI:</p>
+<p>cerca([-21,22,23,45,67], 0, 0, 4) -&gt; false</p>
+<p>cerca([-21,22,23,45,67], -21, 0, 4) -&gt; true</p>
+<p>cerca([], -21, 0, 4) -&gt; false</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cerca</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">k</span>,<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">j</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">j</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">middle</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">j</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+  
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">k</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">k</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cerca</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">k</span>,<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">middle</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">else</span> <span style="color:#75715e">// a[middle] &lt; k
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cerca</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">k</span>,<span style="color:#a6e22e">middle</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">j</span>);
+  }
+}
+</code></pre></div><h2 id="esercizio-2">Esercizio 2</h2>
+<p>Sia a un array di numeri interi distinti &gt;=0, ordinato in senso crescente. Si scriva una funzione JS cercaId(a), che, con un numero OTTIMO di operazioni di accesso ad a, restituisce l&rsquo;indice i tale che a[i]==i, se esiste, e -1 altrimenti. Si assuma che, se tale indice esiste, allora e' l&rsquo;unico a verificare la condizione.</p>
+<p>ESEMPI:</p>
+<p>cercaId([-1,0,1,2,4]) -&gt; 4</p>
+<p>cercaId([-21,22,23,45,67]) -&gt; -1</p>
+<p>cercaId([0,2,3,4,5]) -&gt; 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cercaId</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">middle</span>;
+
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>) {
+    <span style="color:#a6e22e">middle</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">left</span><span style="color:#f92672">+</span><span style="color:#a6e22e">right</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">middle</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">middle</span>;
+    
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">middle</span>)
+        <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">middle</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">middle</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">middle</span>)
+        <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">middle</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+}
+</code></pre></div><h2 id="esercizio-3">Esercizio 3</h2>
+<p>Si scriva una funzione JS isAntisymmetric(m), con m una matrice quadrata (rappresentata come array di array). La funzione verifica se m è antisimmetrica, restituendo true se antisimmetrica e false altrimenti. Una matrice è antisimmetrica rispetto alla prima diagonale se gli elementi della diagonale sono tutti 0 e gli elementi della colonna c e riga r sono opposti in segno a quelli delle colonna r e riga c, per tutti gli indici r e c (con r diverso da c).
+Se la matrice in input non è quadrata, la funzione deve lanciare un’eccezione di tipo MatrixError. La classe MatrixError va definita in modo appropriato. 
+ESEMPI:</p>
+<p>isAntisymmetric([[0,2,-1],[-2,0,-4],[1,4,0]]) -&gt; true</p>
+<p>isAntisymmetric([[1,2,-1],[-2,0,-4],[1,4,0]]) -&gt; false</p>
+<p>isAntisymmetric([[1]]) -&gt; false</p>
+<p>isAntisymmetric([[0]]) -&gt; true</p>
+<p>isAntisymmetric([[0,2,-1],[-2,0,-4],[1,0]]) -&gt; lancia MatrixError</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MatrixError</span> <span style="color:#66d9ef">extends</span> Error {
+  ;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isAntisymmetric</span>(<span style="color:#a6e22e">m</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">row</span>) =&gt; <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">length</span>))
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MatrixError</span>(<span style="color:#e6db74">&#34;Matrice non quadrata&#34;</span>);
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">j</span>;
+
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">length</span>) {
+    <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">m</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">j</span>)
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+      <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">i</span>])
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+      }
+
+      <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>;
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">m</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>)
+        <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>;
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><h2 id="esercizio-4---ts">Esercizio 4 - TS</h2>
+<p>Si scriva una classe AnyMatrix che rappresenta una matrice rettangolare rxc (rappresentata come array di array) che contiene elementi omogenei, di qualsiasi tipo (stringhe, numeri, oggetti, ecc.). La classe deve offrire:
+Costruttore (che costruisce una matrice avente almeno dimensione 1x1), che prende anche un valore v con cui inizializzare il contenuto della matrice. 
+Metodo setAll(dati: T[][]): boolean che, preso un array di array di dimensione pxq, usa i valori contenuti nel parametro dati come valori da assegnare a questa matrice. Se le dimensioni di dati e di questa matrice non coincidono, il metodo restituisce false; altrimenti, true.
+Metodo transpose() che restituisce una nuova AnyMatrix, trasposta di questa matrice.</p>
+<p>NOTA: il metodo toString() vi e' gia' fornito. Non lo modificate. NOTA: nei test che faremo, useremo solo oggetti per cui esiste una rappresentazione sensata come stringa.</p>
+<p>Esempi:
+Sia m una AnyMatrix di stringhe (inizializzata con il carattere che vi pare).</p>
+<p>m.setAll([[&ldquo;p&rdquo;, &ldquo;i&rdquo;, &ldquo;p&rdquo;],[&ldquo;qui&rdquo;, &ldquo;quo&rdquo;, &ldquo;qua&rdquo;],[&ldquo;super&rdquo;, &ldquo;qui&rdquo;, &ldquo;va&rdquo;],[&ldquo;qua&rdquo;, &ldquo;va&rdquo;, &ldquo;qua&rdquo;]]) -&gt; true</p>
+<p>m.toString() -&gt; 4x3:</p>
+<p>|p,i,p|</p>
+<p>|qui,quo,qua|</p>
+<p>|super,qui,va|</p>
+<p>|qua,va,qua|</p>
+<hr>
+<p>m.transpose().toString() -&gt; 3x4:</p>
+<p>|p,qui,super,qua|</p>
+<p>|i,quo,qui,va|</p>
+<p>|p,qua,va,qua|</p>
+<p>m.setAll([[&ldquo;p&rdquo;, &ldquo;i&rdquo;],[&ldquo;qui&rdquo;, &ldquo;quo&rdquo;],[&ldquo;super&rdquo;, &ldquo;qui&rdquo;],[&ldquo;qua&rdquo;, &ldquo;va&rdquo;]]) -&gt; false</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnyMatrix</span>&lt;<span style="color:#f92672">T</span>&gt; {
+  <span style="color:#a6e22e">r</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">A</span>: <span style="color:#66d9ef">T</span>[][];
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">r</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">v</span>: <span style="color:#66d9ef">T</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">r</span>
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> []
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">c</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">v</span>;
+      }
+    }
+  }
+
+  <span style="color:#a6e22e">setAll</span>(<span style="color:#a6e22e">dati</span>: <span style="color:#66d9ef">T</span>[][])<span style="color:#f92672">:</span> <span style="color:#66d9ef">boolean</span> {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colonnePrimaRiga</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dati</span>[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">row</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">colonnePrimaRiga</span>.<span style="color:#a6e22e">length</span>))
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">dati</span>.<span style="color:#a6e22e">length</span>) <span style="color:#75715e">// matrici con un numero di righe diverse
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">j</span>;
+    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">r</span>) {
+      <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">c</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">dati</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>];
+
+        <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>;
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>)
+          <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>;
+      }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  }
+
+  <span style="color:#a6e22e">transpose</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">AnyMatrix</span>&lt;<span style="color:#f92672">T</span>&gt; {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newMatrix</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AnyMatrix</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">r</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">c</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">r</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">c</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+        <span style="color:#a6e22e">newMatrix</span>.<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">i</span>]
+      }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newMatrix</span>;
+  }
+
+  <span style="color:#a6e22e">toString</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">r</span><span style="color:#e6db74">}</span><span style="color:#e6db74">x</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">c</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">n|</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;|\n|&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">|`</span>
+  }
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AnyMatrix</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">setAll</span>([[<span style="color:#e6db74">&#34;p&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>, <span style="color:#e6db74">&#34;p&#34;</span>], [<span style="color:#e6db74">&#34;qui&#34;</span>, <span style="color:#e6db74">&#34;quo&#34;</span>, <span style="color:#e6db74">&#34;qua&#34;</span>], [<span style="color:#e6db74">&#34;super&#34;</span>, <span style="color:#e6db74">&#34;qui&#34;</span>, <span style="color:#e6db74">&#34;va&#34;</span>], [<span style="color:#e6db74">&#34;qua&#34;</span>, <span style="color:#e6db74">&#34;va&#34;</span>, <span style="color:#e6db74">&#34;qua&#34;</span>]]), <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">toString</span>(), <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">setAll</span>([[<span style="color:#e6db74">&#34;p&#34;</span>, <span style="color:#e6db74">&#34;i&#34;</span>], [<span style="color:#e6db74">&#34;qui&#34;</span>, <span style="color:#e6db74">&#34;quo&#34;</span>], [<span style="color:#e6db74">&#34;super&#34;</span>, <span style="color:#e6db74">&#34;qui&#34;</span>], [<span style="color:#e6db74">&#34;qua&#34;</span>, <span style="color:#e6db74">&#34;va&#34;</span>]]))
+</code></pre></div><h2 id="esercizio-5---ts">Esercizio 5 - TS</h2>
+<p>Si scriva in TypeScript una classe Pila che rappresenti, prevedibilmente, una pila. La pila deve poter gestire elementi omogenei, di qualsiasi tipo (stringhe, numeri, oggetti, ecc.). Potete implementare la pila con la struttura dati che preferite. Oltre a un costruttore, dovranno essere implementati i seguenti metodi:</p>
+<p>p.push(el) - inserisce in cima alla pila p l&rsquo;elemento el, e restituisce il numero di elementi presenti nella pila dopo l&rsquo;inserimento</p>
+<p>p.pop() - estrae l&rsquo;elemento in cima alla pila, e lo restituisce. Se la pila e' vuota, restituisce null</p>
+<p>p.top() - restituisce, senza rimuoverlo, l&rsquo;elemento in cima alla pila. Se la pila e' vuota, restituisce null</p>
+<p>p.size() - restituisce il numero di elementi presenti nella pila p</p>
+<p>p. reset() - elimina tutti gli elementi dalla pila p,  e restituisce 0</p>
+<p>p.merge(p1) - sia p1 una pila non vuota, e dello stesso tipo di p. Il metodo inserisce tutti gli elementi in p1 (a partire da quello in cime) in cima a p, e restituisce il numero degli elementi complessivi di p dopo l&rsquo;operazione di merge</p>
+<p>p.print() - restituisce una stringa contenente la rappresentazione in stringa  degli elementi in p (tutti gli elementi della coda sulla stessa riga, separati da virgola, senza spazi), a partire da quello in cima. NOTA: nei test che faremo, useremo solo oggetti per cui esiste una rappresentazione sensata come stringa.</p>
+<p>ESEMPI: 
+Sia p una nuova Pila di stringhe</p>
+<p>p.pop() -&gt; null</p>
+<p>p.push(&ldquo;ciao&rdquo;) -&gt; 1</p>
+<p>p.push(&ldquo;come&rdquo;) -&gt; 2</p>
+<p>p.push(&ldquo;va&rdquo;) -&gt; 3</p>
+<p>p.push(&ldquo;oggi&rdquo;) -&gt; 4</p>
+<p>p.print() -&gt; &ldquo;oggi,va,come,ciao&rdquo;</p>
+<p>p.size() -&gt; 4</p>
+<p>p.top() -&gt; &ldquo;oggi&rdquo;</p>
+<p>p.print() -&gt; &ldquo;oggi,va,come,ciao&rdquo;</p>
+<hr>
+<p>Sia p1 una nuova Pila di stringhe</p>
+<p>p1.push(&ldquo;oggi&rdquo;) -&gt; 1</p>
+<p>p1.push(&ldquo;bene&rdquo;) -&gt; 2</p>
+<p>p1.print() -&gt; &ldquo;bene,oggi&rdquo;</p>
+<p>p.merge(p1) -&gt; 6</p>
+<p>p.print() -&gt; &ldquo;oggi,bene,oggi,va,come,ciao&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pila</span>&lt;<span style="color:#f92672">T</span>&gt; {
+  <span style="color:#a6e22e">pila</span>: <span style="color:#66d9ef">T</span>[];
+
+  <span style="color:#66d9ef">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span> <span style="color:#f92672">=</span> [];
+  }
+
+  <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>: <span style="color:#66d9ef">T</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#a6e22e">elem</span>);
+  }
+
+  <span style="color:#a6e22e">pop</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>.<span style="color:#a6e22e">shift</span>()<span style="color:#f92672">!</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
+  }
+
+  <span style="color:#a6e22e">size</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>.<span style="color:#a6e22e">length</span>;
+  }
+
+  <span style="color:#a6e22e">top</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span> {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>[<span style="color:#ae81ff">0</span>];
+
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+  }
+
+  <span style="color:#a6e22e">reset</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  }
+
+  <span style="color:#a6e22e">merge</span>(<span style="color:#a6e22e">p1</span>: <span style="color:#66d9ef">Pila</span>&lt;<span style="color:#f92672">T</span>&gt;) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">size</span>(); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">pila</span>[<span style="color:#a6e22e">i</span>])
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span>();
+  }
+
+  <span style="color:#a6e22e">print</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">pila</span>.<span style="color:#a6e22e">toString</span>();
+  }
+}
+</code></pre></div><h2 id="esercizio-6">Esercizio 6</h2>
+<p>Il quadrato di un grafo orientato G = (V, E) e' il grafo G2 = (V, E2) tale che (x, y) ∈ E2 se e solo se 
+∃u : (x, u) ∈ E ∧ (u, y) ∈ E. In altre parole, se esiste un percorso di due archi fra i nodi x e y.
+Scrivere una funzione JS quadratoG(G) con G un grafo rappresentato mediante una matrice di adiacenza. 
+La funzione restituisce la matrice di adiacenza del grafo G2.
+Nota: assumete che la matrice di adiacenza passata come argomento sia quadrata, e che rappresenti una matrice di adiacenza di un grafo orientato.</p>
+<p>ESEMPI:</p>
+<p>quadratoG([[0,1,0,0],[0,0,1,1],[1,0,0,0],[0,0,0,0]])-&gt;[ [ 0, 0, 1, 1 ], [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 0, 0 ] ]</p>
+<p>quadratoG([[0,1,1,0],[0,0,0,0],[0,1,0,1],[0,0,1,0]])-&gt;[ [ 0, 1, 0, 1 ], [ 0, 0, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 1, 0, 1 ] ]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">quadratoG</span>(<span style="color:#a6e22e">G</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> [];
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> [];
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">G</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">G</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>) {
+          <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">G</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">k</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">G</span>[<span style="color:#a6e22e">k</span>][<span style="color:#a6e22e">j</span>];
+        }
+        <span style="color:#a6e22e">res</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>;
+      }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+  }
+</code></pre></div><h2 id="esercizio-7">Esercizio 7</h2>
+<p>Scrivere una funzione JS floyd(i), dove i e' un numero naturale (&gt;=0). Il triangolo di Floyd è un triangolo rettangolo che contiene numeri naturali, definito riempiendo le righe del triangolo con numeri consecutivi e partendo da 1 nell’angolo in alto a sinistra. Ecco, come esempio, le prime righe del triangolo di Floyd:</p>
+<p>1</p>
+<p>2 3</p>
+<p>4 5 6</p>
+<p>7 8 9 10</p>
+<p>11 12 13 14 15</p>
+<p>La funzione floyd(i) restituisce la riga i-esima del triangolo di Floyd, memorizzata in un array (le righe del triangolo si contano a partire da 0).</p>
+<p>ESEMPI:</p>
+<p>floyd(0) -&gt; [1]</p>
+<p>floyd(4) -&gt; [11,12,13,14,15]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">floyd</span>(<span style="color:#a6e22e">i</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>];
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">k</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">k</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    }
+
+    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+}
+</code></pre></div><h2 id="esercizio-8---ts">Esercizio 8 - TS</h2>
+<p>Si deve scrivere una classe TicTacToe che simuli il classico gioco del &ldquo;tris&rdquo;.</p>
+<p>Il gioco si svolge su una tabella di dimensione 3x3, ed e' giocato da due giocatori. A turno, i giocatori scelgono una cella vuota e vi disegnano il proprio simbolo (di solito un giocatore ha come simbolo una &ldquo;X&rdquo; e l&rsquo;avversario un cerchio &ldquo;O&rdquo; ). Vince il giocatore che riesce a disporre tre dei propri simboli in linea retta orizzontale, verticale o diagonale. Se la griglia viene riempita senza che nessuno dei giocatori sia riuscito a completare una linea retta (orizzontale, verticale o diagonale) di tre simboli, il gioco finisce in parità. [da Wikipedia]</p>
+<p>Decidete liberamente quale struttura dati utilizzare per implementare la 9 caselle del gioco. La mossa &ldquo;crocetta&rdquo; e' rappresentata con &ldquo;X&rdquo; (lettera X maiuscola) e la mossa &ldquo;cerchio&rdquo; con &ldquo;O&rdquo; (lettera O maiuscola).</p>
+<p>La classe, oltre al costruttore, deve fornire i seguenti metodi:
+move(i,j), che esegue una mossa sulla tabella, con 0&lt;=i,j&lt;=2, in posizione (i,j). Se l&rsquo;ultima mossa giocata e' stata una crocetta, allora verra' inserito un cerchio in posizione (i,j); altrimenti una crocetta. La prima mossa di una partita e' sempre una crocetta, ed e' sempre una mossa valida (si vedano i casi descritti in seguito). Si considerino inoltre i seguenti casi: 
+Se non e' possibile effettuare una mossa in posizione (i,j) perche' la cella e' gia' occupata, o perche' gli indici non sono corretti, allora viene restituito un oggetto avente due proprieta': res, il cui valore e' la stringa &ldquo;no&rdquo;, e last che contiene la stringa che rappresenta la mossa che si e' appena tentato di giocare.
+Se la mossa e' legale, allora viene giocata.
+Se la mossa porta a vincere una partita (c&rsquo;e' un tris), viene restituito un oggetto avente due proprieta': res, il cui valore e' la stringa &ldquo;tris&rdquo;, e last che contiene la stringa che rappresenta la mossa che si e' appena giocata.<br>
+Se invece la mossa porta a riempire la tabella (senza &ldquo;tris&rdquo;), viene restituito un oggetto avente due proprieta': res, il cui valore e' la stringa &ldquo;patta&rdquo;, e last che contiene la stringa che rappresenta la mossa che si e' appena giocata.
+reset() che resetta il contenuto della tabella, e quindi inizia una nuova partita; il metodo restituisce sempre true.</p>
+<p>Suggerimento: tenete opportunamente traccia dello &ldquo;stato&rdquo; del gioco, dove lo stato e' semplicemente l&rsquo;ultima mossa che e' stata giocata o che si e' provato a giocare (crocetta o cerchio). Lo stato puo' quindi assumere valori &ldquo;X&rdquo; oppure &ldquo;O&rdquo; (la lettera O maiuscola).</p>
+<p>ESEMPI:</p>
+<p>Sia t un oggetto della classe TicTacToe.</p>
+<p>t.move(0,0) -&gt; {res: &ldquo;ok&rdquo;, last:&ldquo;X&rdquo;}</p>
+<p>t.move(2,2) -&gt; {res: &ldquo;ok&rdquo;, last:&ldquo;O&rdquo;}</p>
+<p>t.move(0,0) -&gt; {res: &ldquo;no&rdquo;, last:&ldquo;X&rdquo;}</p>
+<p>t.move(0,0) -&gt; {res: &ldquo;no&rdquo;, last:&ldquo;X&rdquo;}</p>
+<p>t.move(2,2) -&gt; {res: &ldquo;no&rdquo;, last:&ldquo;X&rdquo;}</p>
+<p>t.move(1,1) -&gt; {res: &ldquo;ok&rdquo;, last:&ldquo;X&rdquo;}</p>
+<p>t.move(0,2) -&gt; {res: &ldquo;ok&rdquo;, last:&ldquo;O&rdquo;}</p>
+<p>t.move(1,0) -&gt; {res: &ldquo;ok&rdquo;, last:&ldquo;X&rdquo;}</p>
+<p>t.move(1,2) -&gt; {res: &ldquo;tris&rdquo;, last:&ldquo;O&rdquo;}</p>
+<p>t.reset() -&gt; true;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">esito</span> {
+  <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">string</span>;
+  <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">string</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TicTacToe</span> {
+  <span style="color:#a6e22e">grid</span>: <span style="color:#66d9ef">string</span>[][];
+  <span style="color:#a6e22e">currentMove</span>: <span style="color:#66d9ef">string</span>;
+
+  <span style="color:#66d9ef">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span> <span style="color:#f92672">=</span> [];
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> [];
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+      }
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>;
+  }
+
+  <span style="color:#a6e22e">move</span>(<span style="color:#a6e22e">i</span>: <span style="color:#66d9ef">number</span>, <span style="color:#a6e22e">j</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">esito</span> {
+
+    <span style="color:#75715e">// NB: la prima mossa è sempre una crocetta
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">||</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;&#39;</span>))
+      <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">this.currentMove</span> }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span>;
+
+    <span style="color:#75715e">// controllo riga
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rowSum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">col</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span>)
+        <span style="color:#a6e22e">rowSum</span><span style="color:#f92672">++</span>;
+    }
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">rowSum</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+      <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tris&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">this.currentMove</span> }
+
+    <span style="color:#75715e">// controllo colonna
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colSum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">row</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span>)
+        <span style="color:#a6e22e">colSum</span><span style="color:#f92672">++</span>;
+    }
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">colSum</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+      <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tris&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">this.currentMove</span> }
+
+    <span style="color:#75715e">// diagonale principale
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">j</span>) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">diagSum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">k</span>][<span style="color:#a6e22e">k</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span>)
+          <span style="color:#a6e22e">diagSum</span><span style="color:#f92672">++</span>;
+      }
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">diagSum</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+        <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tris&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">this.currentMove</span> }
+    }
+
+    <span style="color:#75715e">// diagonale secondaria
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">diagSum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">k</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">k</span>][<span style="color:#a6e22e">k</span>] <span style="color:#f92672">==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span>)
+          <span style="color:#a6e22e">diagSum</span><span style="color:#f92672">++</span>;
+      }
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">diagSum</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+        <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tris&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">this.currentMove</span> }
+    }
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">row</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">col</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>; <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span>) {
+          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prevMove</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span>;
+
+          <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;X&#34;</span>)
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;O&#34;</span>
+          <span style="color:#66d9ef">else</span>
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>;
+
+          <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ok&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">prevMove</span> }
+        }
+      }
+    }
+
+    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">res</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;patta&#34;</span>, <span style="color:#a6e22e">last</span>: <span style="color:#66d9ef">this.currentMove</span> }
+  }
+
+  <span style="color:#a6e22e">reset() {</span>
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">grid</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">row</span>: <span style="color:#66d9ef">string</span>[]) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#e6db74">&#34;&#34;</span>));
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentMove</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X&#34;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+  }
+}
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ttt</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TicTacToe</span>();
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)) <span style="color:#75715e">// -&gt; { res: &#34;ok&#34;, last: &#34;X&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)) <span style="color:#75715e">// -&gt; { res: &#34;ok&#34;, last: &#34;O&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)) <span style="color:#75715e">//-&gt; { res: &#34;no&#34;, last: &#34;X&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>))  <span style="color:#75715e">//-&gt; { res: &#34;no&#34;, last: &#34;X&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)) <span style="color:#75715e">//-&gt; { res: &#34;no&#34;, last: &#34;X&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)) <span style="color:#75715e">//-&gt; { res: &#34;ok&#34;, last: &#34;X&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)) <span style="color:#75715e">//-&gt; { res: &#34;ok&#34;, last: &#34;O&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>)) <span style="color:#75715e">//-&gt; { res: &#34;ok&#34;, last: &#34;X&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)) <span style="color:#75715e">//-&gt; { res: &#34;tris&#34;, last: &#34;O&#34; }
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ttt</span>.<span style="color:#a6e22e">grid</span>)
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>04 - Compito in classe</title>
@@ -1671,10 +2841,10 @@ Esempi:</p>
             <pubDate>Tue, 15 Sep 2020 17:23:19 +0200</pubDate>
             
             <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/introduzione-al-sito/</guid>
-            <description>L&amp;rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
+            <description>L&amp;rsquo;obiettivo di questa repository è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&amp;rsquo;A.A 2020/2021 che è stato erogato interamente online.
 Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma Repl.it con un nuovo progetto Node.js oppure usando la console devTools di Google Chrome premendo Ctrl+Shift+I su OS Windows.
 Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</description>
-            <content type="html"><![CDATA[<p>L&rsquo;obiettivo di questo blog è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&rsquo;A.A 2020/2021 che è stato erogato interamente online.</p>
+            <content type="html"><![CDATA[<p>L&rsquo;obiettivo di questa repository è di raggruppare tutti gli esercizi svolti durante il corso di Laboratorio 1 dell&rsquo;A.A 2020/2021 che è stato erogato interamente online.</p>
 <p>Tutte le soluzioni agli esercizi possono essere provate utilizzando la piattaforma <a href="https://replit.com/">Repl.it</a> con un nuovo progetto <a href="https://nodejs.org/it/">Node.js</a> oppure usando la console devTools di Google Chrome premendo  Ctrl+Shift+I su OS Windows.</p>
 <p>Le soluzioni proposte sono un misto tra le soluzioni sviluppate da me durante i compiti e quelle fornite dai docenti nelle ore di lezione.</p>
 <p>Questa raccolta ha il solo scopo di fornire un supporto a tutti gli studenti che si sono interfacciati alla programmazione (e al linguaggio JavaScript) per la prima volta, e non si sostituisce alle ore di lezione o esercitazione.</p>
