@@ -32,8 +32,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/leonardo-arditti/Lab1-20-21">
-    <img src="https://lh3.googleusercontent.com/proxy/3PdzTPi62IWkM8nVlrr5crJZxMaGjzN8f5VCIkGNI_aHFWVlBcUEClKH4ytzVy6uvY0mP7xljuhsfui976VaBpzEpMvtOLHmRSmFO4T02vM1aXbgIFlMvIvTGSIgkRo7Z9inCt23sE4" alt="Logo" width="150" height="150">
+  <a href="https://di.unipi.it/"> <img src="readme-images\cherubino.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">Eserciziario Laboratorio 1 A.A 2020/2021</h3>
