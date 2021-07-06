@@ -23,7 +23,7 @@ isSorted([-21,-2,0,4,6,210]) → true
 isSorted([2,6,8,8,9,21]) → false
 isSorted([2,6,8,9,10,-42]) → false
 function isSorted(a) { for (let i = 0; i &amp;lt; a.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="esercizio-1---issorted">Esercizio 1 - isSorted</h2>
@@ -296,7 +296,7 @@ Sia G= {A:&ldquo;aAB&rdquo;, B:&ldquo;bb&rdquo;, C:&ldquo;33&rdquo;}, allora:</p
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Esercizio 1 - TS Scrivere una funzione generica &amp;ldquo;sommaArray(a, somma)&amp;rdquo; in TS (usando Generics). La funzione prende in input un array omogeneo &amp;ldquo;a&amp;rdquo; che potrebbe contenere elementi di qualsiasi tipo e una funzione &amp;ldquo;somma(x,y)&amp;rdquo;, che prende come parametri due elementi dello stesso tipo e restitusce la loro somma.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="esercizio-1---ts">Esercizio 1 - TS</h2>
@@ -748,7 +748,7 @@ return a.toUpperCase()==b.toUpperCase();
             <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Esercizio 1 Siano a un array di numeri, ordinato in senso crescente, e k un numero. Si scriva una funzione JS cerca(a, k, i, j), che, con un numero OTTIMO di operazioni di accesso ad a, restituisca true se k occorre nell&amp;rsquo;array a in una posizione compresa tra gli indici i e j, con 0&amp;lt;=i&amp;lt;j&amp;lt;a.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="esercizio-1">Esercizio 1</h2>
@@ -1197,7 +1197,7 @@ Esempi:
 sommaPari([5,9,1,-4,3,6,2,-5]) → 4
 sommaPari([5,9,1,33,7,-3]) → 0
 function sommaPariR(a,i = 0) { if (!(i &amp;lt; a.length)) return 0; return (a[i] % 2 == 0 ?</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="esercizio-1">Esercizio 1</h2>
@@ -1780,7 +1780,7 @@ sommAlterna([1,2,3,4]) → -2
 sommAlterna([1, -1, 1, -1]) → 4
 sommAlterna([]) → 0
 function sommAlterna(a) { let sum = 0; for (let i in a) { if (i % 2 == 0) sum += a[i]; else sum -= a[i]; } return sum; } SubSeq Si scriva una funzione subSeq(ago,pagliaio) che, dati come argomenti due array con elementi di qualunque tipo, restituisca true se l’array ago è una sottosequenza dell’array pagliaio (ovvero, esiste un punto all’interno di pagliaio in cui si trovano tutti gli elementi di ago, consecutivamente e nello stesso ordine) Esempi:</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="sommalterna">SommAlterna</h2>
@@ -2204,7 +2204,7 @@ fattoriale(1) → 1
 fattoriale(5) → 120
 fattoriale(10) → 3628800
 function fattoriale(n) { if (n&amp;lt;=1) return 1; return n * fattoriale(n-1); } function fattoriale_tailrec(n,acc = 1) { if (n &amp;lt;= 1) return acc; return fattoriale_tailrec(n-1,acc * n); } // fattoriale_tailrec(10) → 3628800 Numeri triangolari Realizzare una funzione ricorsiva che, dato un intero &amp;gt;=0 n, calcoli il valore dell’ennesimo numero triangolare.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <h2 id="fattoriale">Fattoriale</h2>
 <p>Si scriva una funzione fattoriale(n) che, dato come argomento un intero positivo, restituisca il suo fattoriale.
@@ -2372,7 +2372,7 @@ Esempi:</p>
 Si ricorda che dello stesso esercizio possono esistere più varianti.
  Esercizio 03.1 - Array Si scriva una funzione calcola(a) che, dato un array di interi a, restituisca la somma dei quadrati degli elementi di a.
 function calcola(a) { let sum = 0; for (let i in a) sum += a[i]**2; return sum; } // calcola([-21,32,0,99,101,101,2,76,22,1349]) → 1857733  // calcola([0,0,12,-66,9]) → 4581  // calcola([1,2,3,4,5,6]) → 91 Esercizio 03.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="esercizio-031---array">Esercizio 03.1 - Array</h2>
@@ -2459,7 +2459,7 @@ produttoria(4,6) → 120
 produttoria(10,10) → 10
 produttoria(10,11) → 110
 function produttoria(a,b) { let n = 1; for (let i = a; i &amp;lt;= b; i++) { n *= i; } return n; } Quaterne Si scriva una funzione quaterne(a,b) che, dati come argomenti due interi a e b, con a ≤ b, restituisca il numero di quaterne (cioè sequenze distinte di quattro numeri consecutivi) comprese fra a e b, estremi esclusi.</description>
-            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="Lab1-20-21/posts/introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
 <p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
 <hr>
 <h2 id="produttoria">Produttoria</h2>
