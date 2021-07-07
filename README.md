@@ -45,7 +45,7 @@
     <br />
     <a href="https://github.com/leonardo-arditti/Lab1-20-21/issues">Segnala un Bug</a>
     ·
-    <a href="https://github.com/github_username/Lab1-20-21/issues">Richiedi una modifica</a>
+    <a href="https://github.com/leonardo-arditti/Lab1-20-21/issues">Richiedi una modifica</a>
   </p>
 </p>
 
