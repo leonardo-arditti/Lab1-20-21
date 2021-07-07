@@ -46,5 +46,17 @@ Si ricorda che dello stesso esercizio possono esistere più varianti.
  Esercizio 1 Siano a un array di numeri, ordinato in senso crescente, e k un numero. Si scriva una funzione JS cerca(a, k, i, j), che, con un numero OTTIMO di operazioni di accesso ad a, restituisca true se k occorre nell&amp;rsquo;array a in una posizione compresa tra gli indici i e j, con 0&amp;lt;=i&amp;lt;j&amp;lt;a.</description>
     </item>
     
+    <item>
+      <title>Esercizi liberi lezioni 22-33</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-22-33/</link>
+      <pubDate>Tue, 09 Mar 2021 10:59:35 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-22-33/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ SpitOut Si scriva una funzione spitOut(a,p) che, dati come argomenti un array a e una funzione p, stampi tramite console.log() tutti gli elementi e di a tali che l’invocazione di p(e) restituisca true o un valore che viene promosso a true Esempi:
+spitOut([12,7,14,0,561],e=&amp;gt;(e%3==0)) → stampa 12, 0, 561</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1185,6 +1185,439 @@ reset() che resetta il contenuto della tabella, e quindi inizia una nuova partit
         </item>
         
         <item>
+            <title>Esercizi liberi lezioni 22-33</title>
+            <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-22-33/</link>
+            <pubDate>Tue, 09 Mar 2021 10:59:35 +0200</pubDate>
+            
+            <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-22-33/</guid>
+            <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ SpitOut Si scriva una funzione spitOut(a,p) che, dati come argomenti un array a e una funzione p, stampi tramite console.log() tutti gli elementi e di a tali che l’invocazione di p(e) restituisca true o un valore che viene promosso a true Esempi:
+spitOut([12,7,14,0,561],e=&amp;gt;(e%3==0)) → stampa 12, 0, 561</description>
+            <content type="html"><![CDATA[<p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="spitout">SpitOut</h2>
+<p>Si scriva una funzione spitOut(a,p) che, dati come argomenti un array a e una funzione p, stampi tramite console.log() tutti gli elementi e di a tali che l’invocazione di p(e) restituisca true o un valore che viene promosso a true
+Esempi:</p>
+<p>spitOut([12,7,14,0,561],e=&gt;(e%3==0)) → stampa 12, 0, 561</p>
+<p>spitOut(&ldquo;la&rdquo;,&ldquo;vispa&rdquo;,&ldquo;teresa&rdquo;,&ldquo;solea&rdquo;],e=&gt;e.indexOf(&ldquo;s&rdquo;)) → stampa la, vispa, teresa</p>
+<p>spitOut([31,3.1415, 1.4142, 7],e=&gt;e==Math.round(e)) → stampa 31, 7</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">spitOut</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">p</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> []
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">p</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]))
+      <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>)
+}
+
+<span style="color:#75715e">// oppure
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">spitOut2</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">p</span>) {
+  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>) =&gt; <span style="color:#a6e22e">p</span>(<span style="color:#a6e22e">elem</span>));
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>));
+}
+</code></pre></div><h2 id="spitoutts">SpitOut.ts</h2>
+<p>Si risolva l’esercizio SpitOut precedente, scrivendo però codice in TypeScript con tutti i tipi pienamente annotati.
+Attenzione: risolvete l’esercizio indicando tutti i tipi, senza usare il tipo any
+Suggerimento: si ripassino in particolare i tipi generici (generics)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">spitOut</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt;, <span style="color:#a6e22e">p</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">boolean</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">void</span> {
+    <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">elem</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">p</span>(<span style="color:#a6e22e">elem</span>));
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(...<span style="color:#a6e22e">a</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">spitOut2</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt;, <span style="color:#a6e22e">p</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">boolean</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">p</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]))
+            <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>);
+}
+</code></pre></div><h2 id="crocette">Crocette</h2>
+<p>Si consideri una matrice A di m×n interi, ciascuno dei quali può essere 0 o 1, rappresentata come un array di m righe (ogni riga è un array di n interi).
+All’interno di A, una posizione (x,y) si dice contenere una &ldquo;crocetta&rdquo; se la cella (x,y) vale 1, come anche quelle subito sopra, sotto, a destra e a sinistra, mentre le quattro celle poste in diagonale valgono 0.
+Si scriva una funzione crocette(A) che, ricevuta una matrice come descritto sopra, restituisca un array di tutte le coordinate (x,y) in A che contengono crocette, in cui ogni coordinata è rappresentata come un vettore di due elementi [x, y]. L’origine è (0,0) e corrisponde all’angolo in alto a sinistra; l’asse Y va verso il basso.
+Esempi</p>
+<p>Sia A:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span>[[ <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> ],
+    [ <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span> ],
+    [ <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> ],	
+    [ <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span> ],
+    [ <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> ],
+    [ <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> ]]
+</code></pre></div><p>allora, crocette(A) → [[1,2],[3,2],[1,4]]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">crocette</span>(<span style="color:#a6e22e">A</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">coords</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#75715e">// il -1 è per evitare di scandire inutilmente il bordo della matrice
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">row</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">row</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">col</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">col</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">A</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">col</span><span style="color:#f92672">++</span>) {
+      <span style="color:#75715e">// controllo se in posizione (row,col) ho 1 e pure subito sopra, sotto, a destra e a sinistra. Sfrutto l&#39;AND cortocircuitato
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">col</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span>][<span style="color:#a6e22e">col</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>)) {
+        <span style="color:#75715e">// controllo che le quattro celle poste in diagonale valgano 0
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">col</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">col</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">col</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">row</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][<span style="color:#a6e22e">col</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+          <span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">col</span>,<span style="color:#a6e22e">row</span>])
+      }
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">coords</span>;
+}
+</code></pre></div><h2 id="crocettex">Crocettex</h2>
+<p>Si scriva una funzione crocettex che si comporti esattamente come crocette dell’esercizio precedente, ma che in più verifichi che la matrice ricevuta come argomento abbia il formato corretto, e in caso contrario lanci le seguenti eccezioni:</p>
+<ul>
+<li>TooSmallException - se la matrice è più piccola di 3x3</li>
+<li>InvalidFormatException - se la matrice ha righe di lunghezza diversa</li>
+<li>BadContentException - se la matrice contiene qualunque valore diverso da 0 e 1</li>
+</ul>
+<p>Le eccezioni vanno realizzate come oggetti di tipo diverso; gli oggetti lanciati possono contenere ulteriori informazioni di dettaglio, a vostra discrezione.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TooSmallException</span> <span style="color:#66d9ef">extends</span> Error {
+  ;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InvalidFormatException</span> <span style="color:#66d9ef">extends</span> Error {
+  ;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BadContentException</span> <span style="color:#66d9ef">extends</span> Error {
+  ;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">crocettex</span>(<span style="color:#a6e22e">A</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">row</span>) =&gt; <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>))
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TooSmallException</span>(<span style="color:#e6db74">&#34;Matrice più piccola della dimensione 3x3!&#34;</span>)
+
+  <span style="color:#75715e">/* A[0].length = lunghezza prima riga */</span>
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">row</span>) =&gt; <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">A</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>))
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">InvalidFormatException</span>(<span style="color:#e6db74">&#34;La matrice contiene righe di lunghezza diversa!&#34;</span>);
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">row</span>) =&gt; <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">elem</span>) =&gt; <span style="color:#a6e22e">elem</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">!=</span> <span style="color:#66d9ef">undefined</span>))
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BadContentException</span>(<span style="color:#e6db74">&#34;La matrice contiene un valore diverso da 0 e da 1!&#34;</span>)
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">crocette</span>(<span style="color:#a6e22e">A</span>);
+}
+
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tooSmallA</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]]
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">InvalidA</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+                [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>],
+                [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+                [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>],
+                [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+                [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>]]
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">BadA</span> <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>],
+            [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>],
+            [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+            [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>]]
+</code></pre></div><h2 id="multiset">MultiSet</h2>
+<p>Si scriva una classe MultiSet che implementi un multiinsieme (ovvero, un insieme che può contenere più volte lo stesso elemento).
+La classe deve implementare i seguenti metodi:</p>
+<ul>
+<li>add(e) - inserisce l’elemento e nel multiinsieme</li>
+<li>remove(e) - rimuove un elemento e dal multiinsieme; lancia un’eccezione NoSuchElementException se e non è presente nel multiinsieme</li>
+<li>size() - restituisce il numero di elementi contenuti nel multiinsieme (si implementi come una proprietà di sola lettura)</li>
+<li>union(S) - restituisce un nuovo multiinsieme contenente l’unione del multiinsieme con l’altro multiinsieme S (si usi il metodo add)</li>
+<li>diff(S) - restituisce un nuovo multiinsieme contenente la differenza fra il multiinsieme e l’altro multiinsieme S (si usi il metodo remove)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NoSuchElementException</span> <span style="color:#66d9ef">extends</span> Error {
+  ;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MultiSet</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span> <span style="color:#f92672">=</span> [];
+  }
+
+  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">n_elem</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">e</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">e</span>);
+  }
+
+  <span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">e</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">e</span>))
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NoSuchElementException</span>(<span style="color:#e6db74">`elemento </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> non presente nel multiinsieme.`</span>);
+
+    <span style="color:#75715e">// se ho più occorrenze di e elimino la prima scorrendo in ordine crescente dall&#39;indice 0
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">e</span>), <span style="color:#ae81ff">1</span>);
+  }
+
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">length</span>;
+  }
+
+  <span style="color:#a6e22e">union</span>(<span style="color:#a6e22e">S</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MultiSet</span>();
+    <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">multiinsieme</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array([...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>])
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">S</span>.<span style="color:#a6e22e">multiinsieme</span>)
+      <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">S</span>.<span style="color:#a6e22e">multiinsieme</span>[<span style="color:#a6e22e">i</span>]);
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>;
+  }
+
+  <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">S</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>]
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">S</span>.<span style="color:#a6e22e">multiinsieme</span>];
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> [];
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]))
+        <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>], <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// levo una occorrenza dell&#39;elem a[i]
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">else</span>
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+  }
+}
+</code></pre></div><h2 id="multisetts">MultiSet.ts</h2>
+<p>Si ripeta l’esercizio MultiSet, scrivendo però il codice in TypeScript. Come già in SpitOut.ts, si abbia cura di dichiarare correttamente tutti i tipi dei metodi e delle proprietà, usando dove necessario i generics.
+Si ricordi che anche le eccezioni lanciate andranno opportunamente adattate.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MultiSet</span>&lt;<span style="color:#f92672">T</span>&gt; {
+  <span style="color:#a6e22e">multiinsieme</span>: <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt;;
+  <span style="color:#66d9ef">constructor</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span> <span style="color:#f92672">=</span> [];
+  }
+
+  <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">T</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">e</span>);
+  }
+
+  <span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">T</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">e</span>))
+          <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">NoSuchElementException</span>(<span style="color:#e6db74">`elemento </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> non presente nel multiinsieme.`</span>);
+
+      <span style="color:#75715e">// se ho più occorrenze di e elimino la prima scorrendo in ordine crescente dall&#39;indice 0
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">e</span>), <span style="color:#ae81ff">1</span>);
+  }
+
+  <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">size() {</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>.<span style="color:#a6e22e">length</span>;
+  }
+
+  <span style="color:#a6e22e">union</span>(<span style="color:#a6e22e">S</span> : <span style="color:#66d9ef">MultiSet</span>&lt;<span style="color:#f92672">T</span>&gt;) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MultiSet</span>();
+      <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">multiinsieme</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array([...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>])
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">S</span>.<span style="color:#a6e22e">multiinsieme</span>)
+        <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">S</span>.<span style="color:#a6e22e">multiinsieme</span>[<span style="color:#a6e22e">i</span>]);
+  
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>;
+    }
+
+  <span style="color:#a6e22e">diff</span>(<span style="color:#a6e22e">S</span> : <span style="color:#66d9ef">MultiSet</span>&lt;<span style="color:#f92672">T</span>&gt;) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> : <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> [...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiinsieme</span>]
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> : <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">S</span>.<span style="color:#a6e22e">multiinsieme</span>];
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res</span> : <span style="color:#66d9ef">Array</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> [];
+
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]))
+              <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>], <span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// levo una occorrenza dell&#39;elem a[i]
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">else</span>
+              <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>]);
+      }
+
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resMS</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MultiSet</span>();
+      <span style="color:#a6e22e">resMS</span>.<span style="color:#a6e22e">multiinsieme</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">resMS</span>;
+  }
+}
+</code></pre></div><h2 id="reverse2">reverse2</h2>
+<p>Il metodo reverse() chiamato su un array a, modifica a invertendo l’ordine dei suoi elementi.
+Si aggiunga un metodo reverse2() a tutti gli array del vostro programma, che chiamato su un array a, restituisca un nuovo array contenente gli stessi elementi di a, in ordine inverso.</p>
+<p><em>Attenzione</em>: per questo esercizio, non potete usare reverse() per definire reverse2().
+Variante: svolgete l’esercizio su una sola riga, senza chiamare nessun metodo predefinito degli array.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">reverse2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">i</span>]);
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
+}
+
+<span style="color:#75715e">// variante one-liner
+</span><span style="color:#75715e"></span>
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">reverse3</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> [];
+  <span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>, ...<span style="color:#a6e22e">b</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>
+  <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">reverse3</span>(), <span style="color:#a6e22e">a</span>]
+}
+</code></pre></div><h2 id="groupanagrams">GroupAnagrams</h2>
+<p>Si scriva una funzione groupAnagrams(a) che, dato un array di stringhe a, raggruppi tutte le stringhe in a che sono anagrammi l’una dell’altra, e restituisca un array contenente i vari gruppi (rappresentati a loro volta come array di stringhe). L’ordine del risultato non è rilevante.
+Esempi:</p>
+<p>groupAnagrams([&ldquo;scarabeo&rdquo;, &ldquo;arabo&rdquo;, &ldquo;noob, &ldquo;arabesco&rdquo;, &ldquo;bono&rdquo;]) → [ [ &lsquo;scarabeo&rsquo;, &lsquo;arabesco&rsquo; ], [ &lsquo;arabo&rsquo; ], [ &lsquo;noob&rsquo;, &lsquo;bono&rsquo; ] ]</p>
+<p>groupAnagrams([]) → []</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">groupAnagrams</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> [];
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">elem</span>].<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">map</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">elem</span>))
+        <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>);
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>] <span style="color:#f92672">=</span> [];
+      <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>);
+    }
+  }
+
+  <span style="color:#66d9ef">return</span> Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">map</span>);
+}
+</code></pre></div><h2 id="groupanagrams-1">GroupAnagrams*</h2>
+<p>Si scriva una versione di groupAnagrams(), dall’esercizio precedente, implementata come generatore.
+Esempi:</p>
+<p>var x=groupAnagrams([&ldquo;scarabeo&rdquo;, &ldquo;arabo&rdquo;, &ldquo;noob, &ldquo;arabesco&rdquo;, &ldquo;bono&rdquo;])</p>
+<p>x.next().value → [&lsquo;scarabeo&rsquo;, &lsquo;arabesco&rsquo;]</p>
+<p>x.next().value → [&lsquo;arabo&rsquo;]</p>
+<p>x.next().value → [&lsquo;noob&rsquo;, &lsquo;bono&rsquo;]</p>
+<p>x.next().value → undefined</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">groupAnagramsGen</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">return</span> [];
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> {};
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">elem</span>].<span style="color:#a6e22e">sort</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>);
+    <span style="color:#75715e">/* console.log(elem,str) */</span>
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">map</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">elem</span>))
+        <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>);
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>] <span style="color:#f92672">=</span> [];
+      <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">str</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">elem</span>);
+    }
+  }
+
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elem</span> <span style="color:#66d9ef">of</span> Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">map</span>)) {
+    <span style="color:#66d9ef">yield</span> <span style="color:#a6e22e">elem</span>;
+  }
+}
+</code></pre></div><h2 id="malomostro">Malomostro</h2>
+<p>Si modifichi il Platform Game sviluppato a lezione, aggiungendo un nuovo tipo di Actor, detto Malomostro (rappresentato da una &ldquo;M&rdquo; nella mappa del livello), che abbia un comportamento simile a quello della lava a scorrimento orizzontale &ndash; ma con la differenza che, anziché cambiare direzione solo quando incontra un muro, ha una probabilità di cambiare direzione in maniera spontanea in qualunque momento.
+La grafica del Malomostro è a vostra discrezione.
+Suggerimento: è sensato che il Malomostro abbia, ad ogni update() una probabilità dell’1% di cambiare direzione.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// TO ADD, preferibilmente con un link a repl.it con una demo
+</span></code></pre></div><h2 id="complexts">Complex.ts</h2>
+<p>Si definisca in TypeScript una classe Complex che rappresenta i numeri complessi (a+bi), con le relative operazioni. La classe deve implementare:</p>
+<ul>
+<li>Un costruttore con due argomenti (parte reale e parte immaginaria, ciascuna delle quali può essere un numero reale, oppure un numero razionale come definito nella classe Rational vista a lezione)</li>
+<li>Un costruttore con un argomento, che può essere un numero o un Rational (nel qual caso, si assume che l’argomento sia la parte reale e che la parte immaginaria sia 0i), oppure un Complex (nel qual caso, il costruttore restituisce lo stesso valore dell’argomento)</li>
+<li>Le operazioni di somma e moltiplicazione fra Complex, definite come (a,b)+(c,d) = (a+c,b+d) e (a,b)∙(c,d) = (ac-bd,bc+ad)</li>
+<li>Opportune funzioni di accesso che consentano di recuperare le proprietà a (parte reale) e bi (parte immaginaria), nonché le corrispondenti proprietà r (modulo) e phi (angolo), ricordando che per un Complex z, si ha z = a+bi = r(cos(phi) + i sin(phi))
+Si curi di definire in maniera rigorosa tutti i tipi coinvolti.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Complex</span> {
+  <span style="color:#a6e22e">real</span>: <span style="color:#66d9ef">number</span>;
+  <span style="color:#a6e22e">imaginary</span>: <span style="color:#66d9ef">number</span>;
+
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">a</span>: <span style="color:#66d9ef">Rational</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Complex</span>, <span style="color:#a6e22e">b?</span>: <span style="color:#66d9ef">Rational</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span>) {
+      <span style="color:#75715e">// a -&gt; parte reale
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// b -&gt; parte immaginaria
+</span><span style="color:#75715e"></span>
+      <span style="color:#75715e">// caso Rational
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Rational</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">b</span>) { <span style="color:#75715e">// 1 solo argomento di tipo Rational
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">toString</span>());
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Rational</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">b</span>) { <span style="color:#75715e">// 2 argomenti (il primo Rational), di cui il secondo va identificato il tipo
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">toString</span>());
+
+          <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span>) <span style="color:#75715e">// 2nd arg è un numero
+</span><span style="color:#75715e"></span>              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+          <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Rational</span>) <span style="color:#75715e">// 2nd arg è un Rational
+</span><span style="color:#75715e"></span>              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">toString</span>())
+      }
+
+      <span style="color:#75715e">// caso numero
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">b</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">b</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>;
+
+          <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span>)
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>;
+          <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Rational</span>)
+              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> Number(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">toString</span>());
+      }
+
+      <span style="color:#75715e">// caso Complex
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Complex</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">real</span>;
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">imaginary</span>;
+      }
+  }
+
+  <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">Complex</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">Complex</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Complex</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">real</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">imaginary</span>);
+  }
+
+  <span style="color:#a6e22e">mul</span>(<span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">Complex</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Complex</span>((<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">real</span>) <span style="color:#f92672">-</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">imaginary</span>), (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">real</span>) <span style="color:#f92672">+</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">imaginary</span>))
+  }
+
+  <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">a</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Rational</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span>;
+  }
+
+  <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">b</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Rational</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span>;
+  }
+
+  <span style="color:#75715e">// Modulo
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">r</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">sqrt</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>);
+  }
+
+  <span style="color:#75715e">// Angolo
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">get</span> <span style="color:#a6e22e">phi</span>()<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span> {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+          <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">atan</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span>)
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+          <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">atan</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">real</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">imaginary</span>) <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">PI</span>;
+      }
+  }
+}
+</code></pre></div><h2 id="single">Single</h2>
+<p>Si scriva una funzione single(a) che, dato come argomento un array a di interi di lunghezza dispari n, ordinato in ordine crescente e in cui tutti gli elementi tranne uno appaiono esattamente due volte, restituisca il valore dell’unico elemento &ldquo;single&rdquo; che appare una sola volta.
+Attenzione: dovete risolvere questo problema in O(log n).
+Esempi:</p>
+<p>single([3,3,5,5,7,10,10,12,12]) → 7</p>
+<p>single([1,2,2,5,5,8,8]) → 1</p>
+<p>single([1,1,4,4,5,5,9,9,12,12,15,18,18]) → 15</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">single</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">right</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>]
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">right</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>])
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">2</span>]
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">2</span>])
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>];
+
+  <span style="color:#a6e22e">centre</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>((<span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">right</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);
+  <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">centre</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">centre</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>])) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">single</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">centre</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">right</span>);
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">centre</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">centre</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>])) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">single</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">centre</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>);
+  } <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">centre</span>];
+}
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
             <title>Esercizi liberi lezioni 18-25</title>
             <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/</link>
             <pubDate>Sat, 06 Feb 2021 10:56:51 +0200</pubDate>
