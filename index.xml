@@ -47,6 +47,28 @@ Si ricorda che dello stesso esercizio possono esistere più varianti.
     </item>
     
     <item>
+      <title>Esercizi liberi lezioni 18-25</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/</link>
+      <pubDate>Sat, 06 Feb 2021 10:56:51 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Fattori Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array. Esempi</description>
+    </item>
+    
+    <item>
+      <title>Progettino 1</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/progettino-1/</link>
+      <pubDate>Fri, 29 Jan 2021 17:23:19 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/progettino-1/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+I numeri razionali Come sapete, i numeri razionali (o frazioni) sono definiti da un numeratore e un denominatore che sono a loro volta numeri interi. Sono numeri razionali ¾, ⅞, ½, ecc. Qualunque numero espresso in notazione decimale finita è un numero razionale; per esempio, 3.1415 è esprimibile come 31415/10000 o anche come 6283/2000.</description>
+    </item>
+    
+    <item>
       <title>04 - Compito in classe</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-04-classe/</link>
       <pubDate>Fri, 27 Nov 2020 17:31:18 +0200</pubDate>

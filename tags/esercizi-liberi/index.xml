@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 25 Nov 2020 12:44:32 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Feb 2021 10:56:51 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Esercizi liberi lezioni 18-25</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/</link>
+      <pubDate>Sat, 06 Feb 2021 10:56:51 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Fattori Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array. Esempi</description>
+    </item>
+    
     <item>
       <title>Esercizi liberi lezioni 1-20</title>
       <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-1-20/</link>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>progetto on Eserciziario Laboratorio 1 A.A 2020/2021</title>
+    <link>https://leonardo-arditti.github.io/Lab1-20-21/tags/progetto/</link>
+    <description>Recent content in progetto on Eserciziario Laboratorio 1 A.A 2020/2021</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 29 Jan 2021 17:23:19 +0200</lastBuildDate><atom:link href="https://leonardo-arditti.github.io/Lab1-20-21/tags/progetto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Progettino 1</title>
+      <link>https://leonardo-arditti.github.io/Lab1-20-21/posts/progettino-1/</link>
+      <pubDate>Fri, 29 Jan 2021 17:23:19 +0200</pubDate>
+      
+      <guid>https://leonardo-arditti.github.io/Lab1-20-21/posts/progettino-1/</guid>
+      <description>Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+I numeri razionali Come sapete, i numeri razionali (o frazioni) sono definiti da un numeratore e un denominatore che sono a loro volta numeri interi. Sono numeri razionali ¾, ⅞, ½, ecc. Qualunque numero espresso in notazione decimale finita è un numero razionale; per esempio, 3.1415 è esprimibile come 31415/10000 o anche come 6283/2000.</description>
+    </item>
+    
+  </channel>
+</rss>

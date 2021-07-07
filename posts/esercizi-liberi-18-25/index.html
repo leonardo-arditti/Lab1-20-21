@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Fattori Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array. Esempi" />
+<meta name="keywords" content=", esercizi-liberi" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/" />
+
+
+    <title>
+        
+            Esercizi liberi lezioni 18-25 :: Eserciziario Laboratorio 1 A.A 2020/2021  — CdL in Informatica @ UniPi
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/Lab1-20-21/main.031a8efc33f94f55a4071bf4e91596478a5809fc8c148fab113801189cfd2152.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Esercizi liberi lezioni 18-25">
+<meta itemprop="description" content="Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Fattori Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array. Esempi"><meta itemprop="datePublished" content="2021-02-06T10:56:51&#43;02:00" />
+<meta itemprop="dateModified" content="2021-02-06T10:56:51&#43;02:00" />
+<meta itemprop="wordCount" content="1687">
+<meta itemprop="keywords" content="esercizi-liberi," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Esercizi liberi lezioni 18-25"/>
+<meta name="twitter:description" content="Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Fattori Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array. Esempi"/>
+
+
+
+
+    <meta property="og:title" content="Esercizi liberi lezioni 18-25" />
+<meta property="og:description" content="Per completezza, si rimanda al primo post del sito per ulteriori informazioni.
+Si ricorda che dello stesso esercizio possono esistere più varianti.
+ Fattori Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array. Esempi" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-06T10:56:51&#43;02:00" />
+<meta property="article:modified_time" content="2021-02-06T10:56:51&#43;02:00" /><meta property="og:site_name" content="Eserciziario Laboratorio 1 A.A 2020/2021" />
+
+
+
+
+
+    <meta property="article:section" content="esercizi" />
+
+
+
+    <meta property="article:published_time" content="2021-02-06 10:56:51 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://leonardo-arditti.github.io/Lab1-20-21/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd LeonardoArditti/LabI/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/Lab1-20-21/posts">Raccolta</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        8 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://leonardo-arditti.github.io/Lab1-20-21/posts/esercizi-liberi-18-25/">Esercizi liberi lezioni 18-25</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>Per completezza, si rimanda al <a href="../introduzione-al-sito/">primo post del sito</a> per ulteriori informazioni.</p>
+<p>Si ricorda che dello stesso esercizio possono esistere più varianti.</p>
+<hr>
+<h2 id="fattori">Fattori</h2>
+<p>Si scriva una funzione fattori(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutte le coppie di divisori di n, incluse le coppie (1,n) e (n,1), in ordine di primo elemento crescente. Ciascuna coppia è a sua volta rappresentata come un array.
+Esempi</p>
+<p>fattori(359) → [ [1,359], [359, 1] ]</p>
+<p>fattori(10) → [ [1,10], [2,5], [5,2], [10,1] ]</p>
+<p>fattori(12) → [ [1, 12], [2, 6], [3, 4], [4, 3], [6, 2], [12,1] ]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fattori</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">r1</span> <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">r2</span> <span style="color:#f92672">=</span> []
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> Math.<span style="color:#a6e22e">sqrt</span>(<span style="color:#a6e22e">n</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#a6e22e">r1</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">i</span>])
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">i</span>)
+        <span style="color:#a6e22e">r2</span>.<span style="color:#a6e22e">unshift</span>([<span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i</span>])
+    }
+  <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">r1</span>, ...<span style="color:#a6e22e">r2</span>]
+}
+
+<span style="color:#75715e">// Esercizio fattori, versione con generatore
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">genfattori</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+      <span style="color:#66d9ef">yield</span> [<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">i</span>]
+}
+</code></pre></div><h2 id="öffentliche-ordnung">Öffentliche Ordnung</h2>
+<p>Si scriva una funzione ordnung(a) che, dato come argomento un array a, i cui elementi sono a loro volta array di numeri, ordini lo stesso a in modo che ogni singolo elemento sia ordinato in ordine numerico crescente, e che a sia ordinato in base al valore numerico crescente del primo elemento di ciascun elemento; a parità si passa a confrontare il secondo elemento, e così via. In caso di parità di tutti gli elementi, l’array più corto va ordinato prima di quello più lungo. Questo è un esempio di ordinamento lessicografico, perché viene usato, per esempio nei dizionari, per ordinare le parole di una lingua.
+Esempi:</p>
+<p>ordnung([[5,1,3],[1,5,2,7],[3,4],[3]]) → [[1,2,5,7],[1,3,5],[3],[3,4]]</p>
+<p>ordnung([[5,7,3],[8,3,5],[1],[5]]) → [[1],[3,5,7],[3,5,8],[5]]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ordnung</span>(<span style="color:#a6e22e">a</span>) {
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cmpA</span>(<span style="color:#a6e22e">aa</span>, <span style="color:#a6e22e">bb</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">aa</span>.<span style="color:#a6e22e">length</span>, <span style="color:#a6e22e">bb</span>.<span style="color:#a6e22e">length</span>)
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">h</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">t</span>; <span style="color:#a6e22e">h</span><span style="color:#f92672">++</span>)
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">aa</span>[<span style="color:#a6e22e">h</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">bb</span>[<span style="color:#a6e22e">h</span>]) 
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">aa</span>[<span style="color:#a6e22e">h</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">bb</span>[<span style="color:#a6e22e">h</span>]
+    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">aa</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">bb</span>.<span style="color:#a6e22e">length</span>)
+  }
+  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">k</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>)
+    <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">k</span>].<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; (<span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>))
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">cmpA</span>)
+}
+</code></pre></div><h2 id="strafatto-_complicato_">Strafatto (<em>complicato!</em>)</h2>
+<p>Si scriva una funzione strafatto(n) che, dato come argomento un intero positivo n, restituisca un array contenente tutti i modi diversi di fattorizzare n, con divisori maggiori di 1 e minori di n. Ciascuna sequenza di divisori è a sua volta rappresentata come un array. Suggerimenti: notate che non ci limitiamo ai fattori primi, e ricordate che la ricorsione è vostra amica!
+Esempi:</p>
+<p>strafatto(359) → []</p>
+<p>strafatto(10) → [[2,5]]</p>
+<p>strafatto(12) → [[2,2,3],[2,6],[3,4]]</p>
+<p>strafatto(60) → [[2,2,3,5],[2,2,15],[2,30],[2,6,5],[2,3,10],&hellip; ]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// restituisce tutti i divisori di un numero (compreso esso stesso)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">divisors</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> []
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">d</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">d</span><span style="color:#f92672">++</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">d</span>)
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>
+}
+
+<span style="color:#75715e">// enumera tutti i modi di fattorizzare un numero: scorre i divisori, per ciascuno calcola ricorsivamente tutti i sotto-divisiri, poi usa lo spread per ricomperre l&#39;array. Questa genera molti duplicati (stessi fattori ma in ordine diverso)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strafatto0</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> []
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ds</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">divisors</span>(<span style="color:#a6e22e">n</span>)
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">ds</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ds</span>[<span style="color:#a6e22e">i</span>]
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ts</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strafatto0</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">h</span>)
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>)
+        <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">h</span>, ...<span style="color:#a6e22e">ts</span>[<span style="color:#a6e22e">j</span>]])
+    }
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> [<span style="color:#a6e22e">n</span>] <span style="color:#f92672">:</span> [])
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>
+}
+
+<span style="color:#75715e">// chiama strafatto0, poi porta tutte le fattorizzazioni in forma canonica e ordina l&#39;array (come in ordnung); alla fine, la filter toglie tutti i duplicati, nonché il primo elemento (che sarà sempre [n] stesso)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strafatto</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">acmp</span>(<span style="color:#a6e22e">aa</span>, <span style="color:#a6e22e">bb</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">aa</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">bb</span>.<span style="color:#a6e22e">length</span>)
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">aa</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">bb</span>.<span style="color:#a6e22e">length</span>
+    <span style="color:#66d9ef">else</span>
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">h</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">aa</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">h</span><span style="color:#f92672">++</span>)
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">aa</span>[<span style="color:#a6e22e">h</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">bb</span>[<span style="color:#a6e22e">h</span>]) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">aa</span>[<span style="color:#a6e22e">h</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">bb</span>[<span style="color:#a6e22e">h</span>]
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+  }
+
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strafatto0</span>(<span style="color:#a6e22e">n</span>)
+  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">d</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">fs</span>) {
+    <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>)
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">acmp</span>).<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">a</span>) =&gt; (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">acmp</span>(<span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>)
+}
+
+
+<span style="color:#75715e">// Esercizio strafatto, seconda versione: con calcolo divisori, generazione fattori e pulizia (fatta evitando di inserire) in un solo passaggio
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strafatto2</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> []
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">d</span> <span style="color:#f92672">&lt;=</span> Math.<span style="color:#a6e22e">sqrt</span>(<span style="color:#a6e22e">n</span>); <span style="color:#a6e22e">d</span><span style="color:#f92672">++</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">n</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">of</span> [[<span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">d</span>], ...<span style="color:#a6e22e">strafatto2</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">d</span>)])
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">d</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">x</span>[<span style="color:#ae81ff">0</span>])
+          <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">d</span>, ...<span style="color:#a6e22e">x</span>])
+    }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>
+}
+</code></pre></div><h2 id="calc1">Calc1</h2>
+<p>Si scriva una funzione calc1(a) che, dato come argomento un array a, in cui il primo elemento è un operatore aritmetico (+, -, *, /) rappresentato come carattere, restituisca il risultato ottenuto applicando l’operatore fra tutti i rimanente elementi dell’array. Suggerimenti: splendida occasione per un assegnamento destrutturante
+Esempi:</p>
+<p>calc1([&quot;+&quot;,4,5,2]) → 11</p>
+<p>calc1([&quot;*&quot;,4,5,2]) → 40</p>
+<p>calc1([&quot;/&quot;,64,2,2,4]) → 4</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Esercizio calc1. Uso un assegnamento destrutturante negli argomenti formali (incluso lo spread con rest) per estrarre direttamente le variabili dall&#39;argomento attuale, poi uso una reduce sugli argomenti rest
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calc1</span>([<span style="color:#a6e22e">op</span>, <span style="color:#a6e22e">p</span>, ...<span style="color:#a6e22e">args</span>]) {
+  <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">op</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;*&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">p</span>)
+  }
+}
+</code></pre></div><h2 id="calct">CalcT</h2>
+<p>Si scriva una funzione calcT(a) che, dato come argomento un array a, in cui il primo elemento è un operatore aritmetico (+, -, *, /) rappresentato come carattere, restituisca il risultato ottenuto applicando l’operatore fra tutti i rimanente elementi dell’array, con la cautela che se uno degli altri elementi è esso stesso un array, viene prima valutato il suo valore secondo la stessa regola.
+Esempi:</p>
+<p>calcT([&quot;+&quot;,4,[&quot;*&quot;,3,2]]) → 10</p>
+<p>calcT([&quot;*&quot;,4,5,2]) → 40</p>
+<p>calcT([&quot;/&quot;,64,[&quot;*&quot;,[&quot;+&quot;,2,2],4]]) → 4</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">x</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">instanceof</span> Array) {
+    [<span style="color:#a6e22e">op</span>, <span style="color:#a6e22e">p</span>, ...<span style="color:#a6e22e">args</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>
+    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">op</span>) {
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">v</span>), <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">p</span>))
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;+&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">v</span>), <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">p</span>))
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;*&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">v</span>), <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">p</span>))
+      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">v</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">v</span>), <span style="color:#a6e22e">calcT</span>(<span style="color:#a6e22e">p</span>))
+    }
+  } <span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>
+}
+</code></pre></div><h2 id="la-misteriosa-funzione-r">La misteriosa funzione r</h2>
+<p>Si consideri la funzione r così definita:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">r</span>([<span style="color:#a6e22e">a</span>,...<span style="color:#a6e22e">b</span>]) { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">?</span>[...<span style="color:#a6e22e">r</span>(<span style="color:#a6e22e">b</span>),<span style="color:#a6e22e">a</span>]<span style="color:#f92672">:</span>[] } 
+</code></pre></div><p>Senza eseguire il codice, siete in grado di capire cosa fa e come funziona?
+Provate a scriverne una versione più chiara.
+Dopo aver svolto questo esercizio, provate a riscrivere calcT (dall’esercizio precedente) nello stile della misteriosa funzione r.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// la funzione r effettua ricorsivamente l&#39;inversione di un array.
+</span><span style="color:#75715e">// se il primo elemento di a è considerato &#39;falsy&#39; allora restituisce array vuoto []
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">r_chiaro</span>([<span style="color:#a6e22e">a</span>, ...<span style="color:#a6e22e">b</span>]) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>)
+    <span style="color:#66d9ef">return</span> [];
+
+  <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">r_chiaro</span>(<span style="color:#a6e22e">b</span>), <span style="color:#a6e22e">a</span>];
+}
+</code></pre></div><h2 id="titolo">Titolo</h2>
+<p>Scrivete un frammento di codice JavaScript che, una volta eseguito, aggiunga a tutte le stringhe del vostro programma un metodo titolo() il cui effetto è di restituire la stringa su cui è invocato, ma tutta in maiuscolo e con uno spazio aggiunto fra le lettere della stringa originale.
+Esempi (dopo aver aggiunto il metodo):</p>
+<p>&ldquo;pippo&rdquo;.titolo() → &ldquo;P I P P O&rdquo;</p>
+<p>`3 * 2 fa ${3 * 2}`.titolo() →  &ldquo;3 * 2   F A   6&rdquo;</p>
+<p>var s=&ldquo;Pluto&rdquo;; s.titolo() → &ldquo;P L U T O&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">String.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">titolo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">return</span> [...<span style="color:#66d9ef">this</span>].<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39; &#39;</span>).<span style="color:#a6e22e">toUpperCase</span>() 
+}
+</code></pre></div><h2 id="mathrational">Math.rational</h2>
+<p>Aggiungete alla classe Math un metodo rational(x) che, ricevuto come argomento un numero x (non necessariamente un intero!), restituisca un array con due elementi interi che diano, rispettivamente, il numeratore e il denominatore di una rappresentazione razionale (semplificata) di x.
+Esempi (dopo aver aggiunto il metodo):</p>
+<p>Math.rational(4.5) → [9,2]</p>
+<p>Math.rational(-3)  → [-3,1]</p>
+<p>Math.rational(3.1415) → [6283,2000]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Math.<span style="color:#a6e22e">rational</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>) {
+  <span style="color:#75715e">// Utilità -&gt; https://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">strip</span>(<span style="color:#a6e22e">number</span>) {
+    <span style="color:#66d9ef">return</span> (parseFloat(<span style="color:#a6e22e">number</span>).<span style="color:#a6e22e">toPrecision</span>(<span style="color:#ae81ff">12</span>));
+  }
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mcd</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">c</span>;
+    <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">a</span>); <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">b</span>)
+    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">b</span>) { <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">%</span><span style="color:#a6e22e">b</span>; <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">b</span>; <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>; }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>
+  }
+
+  <span style="color:#75715e">// Utilità
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">simplify</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">num</span>,<span style="color:#a6e22e">den</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">mcd</span>(<span style="color:#a6e22e">num</span>,<span style="color:#a6e22e">den</span>)
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">den</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// segno
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">num</span> <span style="color:#f92672">/=</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">*</span><span style="color:#a6e22e">s</span>
+    <span style="color:#a6e22e">den</span> <span style="color:#f92672">/=</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">*</span><span style="color:#a6e22e">s</span>
+
+    <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">num</span>,<span style="color:#a6e22e">den</span>];
+  }
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroCounter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#75715e">// portare x in intero
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">x</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strip</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>);
+    
+    <span style="color:#a6e22e">zeroCounter</span><span style="color:#f92672">++</span>;
+  }
+
+  <span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">d</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">simplify</span>(<span style="color:#a6e22e">x</span>,Number(<span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;0&#34;</span>.<span style="color:#a6e22e">repeat</span>(<span style="color:#a6e22e">zeroCounter</span>)));
+  <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">d</span>]; 
+}
+</code></pre></div><h2 id="esprit-de-géométrie">Esprit de géométrie</h2>
+<p>Si scriva una classe PuntoCartesiano che rappresenti, prevedibilmente, un punto geometrico in coordinate cartesiane (x,y).
+Oltre a un costruttore, serviranno i metodi seguenti:</p>
+<p>p.dist(q) - restituisce la distanza euclidea fra i punti p e q</p>
+<p>p.translate(q) - sposta il punto p, traslandolo di q</p>
+<p>p.zero() - sposta il punto p alle coordinate (0,0)</p>
+<p>Potete, a piacere, aggiungere altri metodi che vi sembrino interessanti.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PuntoCartesiano</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+  }
+
+  <span style="color:#a6e22e">zero</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  }
+
+  <span style="color:#a6e22e">translate</span>(<span style="color:#a6e22e">q</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">x</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">y</span>;
+  }
+
+  <span style="color:#a6e22e">dist</span>(<span style="color:#a6e22e">q</span>) {
+    <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">sqrt</span>((<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>);
+  }
+}
+</code></pre></div><h2 id="studente">Studente</h2>
+<p>Si scriva una classe Studente, destinata a rappresentare uno studente. Ogni studente ha obbligatoriamente un numero di matricola (intero) e un nome (stringa); può avere opzionalmente altri attributi a vostro piacere: per esempio, corso di laurea, anno, corso (A/B/C), nazionalità, ecc.
+Ogni studente ha anche una carriera, inizialmente vuota; la carriera è una lista di esami superati, ciascuno dei quali rappresentato da un oggetto con campi {materia: stringa, cfu: numero, voto: numero, lode: booleano}.
+La classe dovrà implementare almeno:</p>
+<ul>
+<li>un costruttore che consenta di creare nuovi studenti, specificando tutti gli attributi obbligatori, e di volta in volta alcuni (anche nessuno o tutti) degli attributi opzionali, in qualunque combinazione;</li>
+<li>un metodo passato(esame) che aggiunge l’esame alla carriera dello studente</li>
+<li>un metodo media() che restituisce il calcolo della media (pesata per cfu, con 30 e lode che conta come 32)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// in qualunque combinazione == destrutturazione
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studente</span> {
+  <span style="color:#a6e22e">constructor</span>({<span style="color:#a6e22e">nome</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nome</span>, <span style="color:#a6e22e">matricola</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">matricola</span>, <span style="color:#a6e22e">opzionali</span> <span style="color:#f92672">:</span> {<span style="color:#a6e22e">corso_laurea</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">anno</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2021</span>, <span style="color:#a6e22e">corso</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">nazionalità</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>} <span style="color:#f92672">=</span> {}}) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">nome</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nome</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">matricola</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">matricola</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">carriera</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">opzionali</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">corso_laurea</span>, <span style="color:#a6e22e">anno</span>, <span style="color:#a6e22e">corso</span>, <span style="color:#a6e22e">nazionalità</span>};
+  }
+
+  <span style="color:#a6e22e">passato</span>(<span style="color:#a6e22e">esame</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">carriera</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">esame</span>);
+  }
+
+  <span style="color:#a6e22e">media</span>() {
+    <span style="color:#75715e">/* Media = ∑ (voto * CFU esame) / ∑ (CFU esame)  */</span>
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pesi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> , <span style="color:#a6e22e">cfu_tot</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">carriera</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">lode</span>)
+        <span style="color:#a6e22e">pesi</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">cfu</span>;
+      <span style="color:#66d9ef">else</span> 
+        <span style="color:#a6e22e">pesi</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">voto</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">cfu</span>;
+      
+      <span style="color:#a6e22e">cfu_tot</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">cfu</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pesi</span><span style="color:#f92672">/</span><span style="color:#a6e22e">cfu_tot</span>;
+  }
+}
+</code></pre></div>
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://leonardo-arditti.github.io/Lab1-20-21/tags/esercizi-liberi/">esercizi-liberi</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://leonardo-arditti.github.io/Lab1-20-21/categories/esercizi/">esercizi</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1687 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2021-02-06 09:56
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Esercizi%20liberi%20lezioni%2018-25&amp;caption=Esercizi%20liberi%20lezioni%2018-25&amp;canonicalUrl=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Esercizi%20liberi%20lezioni%2018-25&amp;body=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f&amp;media=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f;description=Esercizi%20liberi%20lezioni%2018-25" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f&amp;title=Esercizi%20liberi%20lezioni%2018-25&amp;summary=Esercizi%20liberi%20lezioni%2018-25&amp;source=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f&amp;resubmit=true&amp;title=Esercizi%20liberi%20lezioni%2018-25" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f;title=Esercizi%20liberi%20lezioni%2018-25" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Esercizi%20liberi%20lezioni%2018-25%20https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f&amp;t=Esercizi%20liberi%20lezioni%2018-25" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Esercizi%20liberi%20lezioni%2018-25&amp;url=https%3a%2f%2fleonardo-arditti.github.io%2fLab1-20-21%2fposts%2fesercizi-liberi-18-25%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://leonardo-arditti.github.io/Lab1-20-21/posts/compito-06-classe/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">06 - Compito in classe</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://leonardo-arditti.github.io/Lab1-20-21/posts/progettino-1/">
+                    <span class="button__text">Progettino 1</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span><a href="https://leonardo-arditti.github.io/Lab1-20-21/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span>Leonardo Arditti</span>
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/Lab1-20-21/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>
